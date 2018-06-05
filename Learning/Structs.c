@@ -40,13 +40,15 @@ void Person_print(struct Person *who){
 int main(int argc, char *argv[]){
     struct Person *Alex = Person_create("Alexander",26,65,70);
     printf("Alex's memory is at: %p\n", &Alex);
-    Person_print(Alex);
+
+    struct Person Jonas = {"Jonas",20,55,22};
     
     Alex->age += 20;
     Alex->height += 0;
     Alex->weight += 10;
 
     Person_print(Alex);
+    Person_print(&Jonas);
 
     Person_destroy(Alex);
     printf("\n");
