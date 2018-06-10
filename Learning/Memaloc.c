@@ -68,4 +68,29 @@ struct Connection *database_open(const char *filename,char mode){
 }
 
 
-void Database_close(){}
+void Database_close(struct Connection *conn){
+        if(conn){
+            if(conn->file)
+                fclose(conn->file);
+            if(conn->db)
+                free(conn->db);
+            free(conn);
+        }
+
+}
+
+void Database_write(struct Connection *conn){
+    rewind(conn->file);
+    int rc = fwrite(conn->db,sizeof(struct Database),1,conn->file);
+    if(rc != 1)
+        die("Failed to write to DB");
+
+    rc = fflush(conn->file);
+    if(rc == -1)
+        die("Cannot flush database");
+}
+
+void Database_create(struct Connection *conn){
+
+    
+}
