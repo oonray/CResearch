@@ -67,7 +67,6 @@ struct Connection *database_open(const char *filename,char mode){
     return conn;
 }
 
-
 void Database_close(struct Connection *conn){
         if(conn){
             if(conn->file)
@@ -76,7 +75,6 @@ void Database_close(struct Connection *conn){
                 free(conn->db);
             free(conn);
         }
-
 }
 
 void Database_write(struct Connection *conn){
