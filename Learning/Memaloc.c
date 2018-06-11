@@ -89,6 +89,40 @@ void Database_write(struct Connection *conn){
 }
 
 void Database_create(struct Connection *conn){
-
+    for(int i=0;i<MAX_ROWS;i++){
+        struct Address addr = { .id=i, .set=0 };
+        conn->db->rows[i]=addr;
+    }
     
 }
+
+void Database_set(struct Connection *conn, int id, const char *name, const char *email){
+    struct Address *addr = &conn->db->rows[id];
+    if(addr->set)
+        die("Alreaddy set, delte it first!");
+    addr->set = 1;
+    char *res = strncpy(addr->name, email, MAX_DATA);
+    if(!res)
+        die("Name Copy Failed!");
+        
+}
+
+void Database_get(struct Connection *conn,int id){
+    struct Address *addr = &conn->db->rows[id];
+    if(addr->set){
+        Address_Print(addr);
+    }else{
+        die("ID is not set!");
+    }
+}
+
+void Database_list(struct Connection *conn){
+    struct Database *db = conn->db;
+    for(int i = 0; i < MAX_ROWS;i++){
+        struct Address *cur = &db->rows[i];
+        if(cur->set){
+            Address_Print(cur);
+        }
+    }
+}
+
