@@ -1,4 +1,8 @@
-output: main.o
+
+unix: 
+	gcc -c main.c -o ./objects/main.o
+
+windows: main.o
 	tcc ./objects/main.o -o ./bin/PeParser.exe
 
 main.o: main.c
