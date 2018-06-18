@@ -24,7 +24,7 @@ struct Connection {
 
 };
 
-void die(const char message){
+void die(const char *message){
     if(errno){
         perror(message);
     }else{
@@ -43,7 +43,7 @@ void Database_load(struct Connection *conn){
         die("Faild to load database");
 }
 
-struct Connection *database_open(const char *filename,char mode){
+struct Connection *Database_open(const char *filename,char mode){
     struct Connection *conn = malloc(sizeof(struct Database));
     if(!conn)
         die("Memmory Error!");
@@ -101,9 +101,14 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     if(addr->set)
         die("Alreaddy set, delte it first!");
     addr->set = 1;
-    char *res = strncpy(addr->name, email, MAX_DATA);
+    char *res = strncpy(addr->name, name, MAX_DATA);
     if(!res)
         die("Name Copy Failed!");
+
+    res = strncpy(addr->email, email, MAX_DATA);
+    if(!res)
+        die("Email Copy Failed!");
+    
         
 }
 
@@ -167,7 +172,9 @@ int main(int argc, char *argv[]){
             break;
         default:
             die("Invalid Action!");
+            break;
+    }
 
         Database_close(conn);
         return 0;
-    }
+    };
