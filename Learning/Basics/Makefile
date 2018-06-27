@@ -10,7 +10,7 @@ forl.o: src/Forloops.c
 Forloops: forl.o
 	tcc -c objects/forl.o -o bin/Forloops.exe
 
-dbgm.o: src/Debugmacros.c
+dbgm.o: src/Debugmacros.c src/headders/debug.h
 	tcc -c src/Debugmacros.c -o objects/dbgm.o
 
 Debugmacros: dbgm.o
