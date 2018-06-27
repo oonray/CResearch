@@ -19,6 +19,6 @@
 #define check(A, M, ...)if(!(A)){log_err(m, ##__VA_ARGS__); errno=0; goto error;}
 #define sentinel(M, ...){log_err(M, ##__VA_ARGS__); errno=0; goto error; }
 #define check_mem(M, ...)check((A),"Out of Memmory!")
-#define check_debug(M, ...) if(!(A)){debug(M, ##__VA_ARGS__); errno=0; goto error;}
+#define check_debug(A,M, ...) if(!(A)){debug(M, ##__VA_ARGS__); errno=0; goto error;}
 
 #endif
