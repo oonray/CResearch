@@ -23,6 +23,13 @@ Debugmacros: dbg.o
 MathPointers: mapo.h
 	tcc objects/mapo.o -o .\bin\MathPointers.exe
 
+global.o: src/headders/debug.h src/headders/globals.h
+	tcc -c src/globals1.c -o objects/global1.o
+
+Globals: global.o
+	tcc src/globals_main.c objects/global1.o -o bin/global.exe
+
+
 All: Forloops Functionpointer Debugmacros MathPointers
 	
 clean:

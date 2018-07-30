@@ -1,0 +1,48 @@
+#############################################
+#   Student Stracker                        #
+#   By: Alexander Bjørnsrud                 #
+#   For: Noroff                             #
+#############################################
+
+Usage:
+---------------------------------------------
+StudentTracker <flags> <arguments>
+
+Example:
+    To list all students in the "NSA" class use:
+        
+        StudetnTracker -ls -c 1 
+
+
+FLAGS:
+    DATABASE:
+        -cd <db_file_name>
+            Create a New Databse
+        
+        -rd <db_file_name>
+            Remove Database
+        -ld
+            List database files
+
+    LIST:
+        -lc
+            Lists All avalible classes.
+            If a moddifier is added it wil list a spesific class.
+
+        -ls 
+            Lists avalible students.
+            With no other arguments lists all students over all classes.
+        
+        -li
+            Lists information about a class or student.
+
+    MODIFIERS:
+        -c 
+            Defines what class to target.
+        
+        -s 
+            Defines what student to target.
+        
+        -d 
+            Defines what day to target.
+        
