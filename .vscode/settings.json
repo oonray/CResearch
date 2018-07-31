@@ -2,6 +2,12 @@
     "files.associations": {
         "typeinfo": "c",
         "structs.h": "c",
-        "*.inc": "c"
+        "*.inc": "c",
+        "debug.h": "c",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c"
     }
 }

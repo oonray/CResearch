@@ -1,6 +1,8 @@
-linux: 
+linux: main.o
+	tcc objects/main.o -o bin/Linux/StudentTracker
+	chmod +x bin/Linux/StudentTracker
 windows: main.o
-	tcc objects/main.o -o bin/windows/StudentTracker.exe
+	tcc objects/main.o -o bin/Windows/StudentTracker.exe
 apple:
 
 main.o: src/main.c src/inc/constants.h src/inc/debug.h src/argparser.c

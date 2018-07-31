@@ -2,23 +2,14 @@
 #include <stdint.h>
 
 #include "inc/debug.h"
-
 #include "inc/constants.h"
+#include "argparser.c"
 
+int LSUB;
 char *location;
+int length;
+int loc_size;
 
-typedef void (*function)(const char *inp);
-
-struct Arg1{
-    char *name;
-    int position;
-    function func;
-};
-
-struct Arg2{
-    char *name;
-    char *value;
-};
 
 void create_database(const char *inp){
 
@@ -26,19 +17,28 @@ void create_database(const char *inp){
     log_info("Folder: %s\n", location);
     
     FILE *file = fopen(location,"wb");
+    struct Database *db = alloc_db();
+    check_mem(db);
+    db->size = 0;
+    fwrite(db,sizeof(struct Database),1,file);
     fclose(file);
+    free_db(db);
+    error:
+        log_err("Database Error!");
+}
+
+void write_database(struct Class *the_new_class){
+    FILE *file = fopen(location, "rb");
     
-}
-
-int set_argument1(struct Arg1 *target,const char *name, int position, function func){
-    target->name = strdup(name);
-    target->position = position;
-    target->func = func;
-}
-
-int set_argument2(struct Arg2 *target,const char *name, const char *value){
-    target->name = strdup(name);
-    target->value = strdup(value);
+    struct Database *db = alloc_db();
+    check_mem(db);
+    fread(db,sizeof(struct Database),1,file);
+    memcpy(db->classes[db->size+1], the_new_class ,sizeof(struct Class));
+    db->size++;
+    fwrite(db,sizeof(db),1,file);
+    fclose(file);
+    error:
+        log_err("Write error!");
 }
 
 int main(int argc, char *argv[]){  
@@ -46,19 +46,15 @@ int main(int argc, char *argv[]){
         sentinel("To Few Arguments!");
     }
 
-    int lsub = 18;
-    int length = strlen(argv[0])-lsub;
-    int loc_size = (length * sizeof(char)) + (sizeof(DATABASE_FILE)/sizeof(char));
-    
+    if(argv[0][strlen(argv[0])-1] != 'e'){set_LSUB(4);}
+    length = strlen(argv[0])-LSUB;
+    loc_size = (length * sizeof(char)) + (sizeof(DATABASE_FILE)/sizeof(char));
     location = malloc(loc_size);
     
-    if(!location){
-        sentinel("Out Of Memory!");
-    }
+    check_mem(location);
 
-    memcpy(location, argv[0],length);
-    memcpy(location,strcat(location, DATABASE_FILE), loc_size);
-    
+    set_location(argv[0]);
+
     struct Arg1 *i_target[2] = 
         { 
             malloc(sizeof(struct Arg1)), 
@@ -71,7 +67,7 @@ int main(int argc, char *argv[]){
         };
 
     set_argument1(i_target[0], "-cd", 1, &create_database);
-    if(argc>2){
+    if(argc > 2){
         set_argument2(i_2_target[0], "-c", argv[3]);
     }
 
@@ -89,4 +85,5 @@ int main(int argc, char *argv[]){
     error:
         return 0;
 }
+
 
