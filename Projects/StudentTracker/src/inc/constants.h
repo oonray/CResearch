@@ -3,13 +3,41 @@
 #define MAX_STUDENTS 30
 #define MAX_MAME_LENGTH 50
 #define DATABASE_FILE "Database.db"
+#define LSUB 18
 
-extern int LSUB = 18;
-extern char *location;
-extern int length;
-extern int loc_size;
-extern char *argv0;
- 
+char *location;
+int length;
+int loc_size;
+char *argv0;
+int n;
+
+void create_database();
+void *open_database();
+int get_LSUB(int neg);
+
+void set_location();
+void print_database();
+
+void print_class();
+
+void add_class(const char *name);
+void set_arg0(const char *inp);
+
+typedef void (*function)(const char *name);
+
+
+struct Arg1{
+    char *name;
+    int position;
+    function func;
+};
+
+struct Arg2{
+    char *name;
+    char *value;
+};
+
+
 struct Day{
     int num;
     int attending;
@@ -36,28 +64,16 @@ struct Student{
 
 struct Class{
     int id;
-    char Name[MAX_MAME_LENGTH];
+    char name[MAX_MAME_LENGTH];
     struct Student *students[];
 };
 
 struct Database{
     int size;
+    FILE *f;
     struct Class *classes[];
 };
 
-char *get_location(){
-    return location;
-};
-
-void set_location(){
-    /*Cpy the location of the file name +db to create a file in the same directory*/
-    memcpy(location, argv0, length);
-    memcpy(location, strcat(location, DATABASE_FILE), loc_size);
-};
-
-void set_LSUB(int neg){
-    LSUB -= neg;
-}
 
 
 
