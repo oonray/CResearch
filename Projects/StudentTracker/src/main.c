@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+
 #include "inc/debug.h"
 #include "inc/constants.h"
 #include "argparser.c"
@@ -9,43 +10,15 @@ int LSUB;
 char *location;
 int length;
 int loc_size;
+char *argv0;
 
-
-void create_database(const char *inp){
-
-    log_info("Crating DB\n");
-    log_info("Folder: %s\n", location);
-    
-    FILE *file = fopen(location,"wb");
-    struct Database *db = alloc_db();
-    check_mem(db);
-    db->size = 0;
-    fwrite(db,sizeof(struct Database),1,file);
-    fclose(file);
-    free_db(db);
-    error:
-        log_err("Database Error!");
-}
-
-void write_database(struct Class *the_new_class){
-    FILE *file = fopen(location, "rb");
-    
-    struct Database *db = alloc_db();
-    check_mem(db);
-    fread(db,sizeof(struct Database),1,file);
-    memcpy(db->classes[db->size+1], the_new_class ,sizeof(struct Class));
-    db->size++;
-    fwrite(db,sizeof(db),1,file);
-    fclose(file);
-    error:
-        log_err("Write error!");
-}
 
 int main(int argc, char *argv[]){  
     if(argc <= 1){
         sentinel("To Few Arguments!");
     }
-
+    argv0 = strdup(argv[0]);
+    
     if(argv[0][strlen(argv[0])-1] != 'e'){set_LSUB(4);}
     length = strlen(argv[0])-LSUB;
     loc_size = (length * sizeof(char)) + (sizeof(DATABASE_FILE)/sizeof(char));
