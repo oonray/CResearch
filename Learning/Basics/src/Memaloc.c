@@ -7,6 +7,12 @@
 #define MAX_DATA 512
 #define MAX_ROWS 100
 
+char *location;
+int length;
+int loc_size;
+char *argv0;
+int n;
+
 struct Address {
     int id;
     int set;

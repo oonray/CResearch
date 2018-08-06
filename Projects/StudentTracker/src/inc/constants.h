@@ -5,6 +5,12 @@
 #define DATABASE_FILE "Database.db"
 #define LSUB 18
 
+extern char *location;
+extern int length;
+extern int loc_size;
+extern char *argv0;
+extern int n;
+
 char *location;
 int length;
 int loc_size;
