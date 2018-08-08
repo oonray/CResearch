@@ -9,13 +9,10 @@ char *get_location(){return location;};
 
 void set_location(){
     memcpy(location, argv0, length);
-    memcpy(location, strcat(location, DATABASE_FILE), loc_size);
-};
-
+    memcpy(location, strcat(location, DATABASE_FILE), loc_size);    
+    };
 int get_LSUB(int neg){return LSUB - neg;}
-
 void set_arg0(const char *inp){argv0 = strdup(inp);}
-
 char *get_arg0(){return argv0;}
 
 void *open_database(){
@@ -41,12 +38,12 @@ void *open_database(){
     memcpy(db,ptr,sizeof(n));
 
     db->classes = malloc(db->size*sizeof(struct Class *));
+
     for(int i = 0; i < db->size;i++){
         db->classes[i] = malloc(sizeof(struct Class));
         memcpy(db->classes[i]->name,"Example",sizeof("Example")/sizeof(char));
     }
-    p = p+1;
-    log_info("P pointer is:%d",(int)*p++);
+    log_info("P pointer is:%d",*p);
 
     return db;
     error:
@@ -77,19 +74,18 @@ void create_database(){
     error:
         set_location();
         create_database();
-}
-
+};
 void print_database(){
     struct Database *db = open_database();
     log_info("Number of classes is %d",db->size);
     if(db->size != 0){
         for(int i=0;i<db->size;i++){
-            log_info("Class %d : %s",i,db->classes[i]->name);
+            log_info("Class number %d:",i);
+            print_class(db->classes[i]);
         }
 
     }
-}
-
+};
 void add_class(const char *name){
     log_info("Adding Class %s",name);
     struct Database *db = open_database();
@@ -127,6 +123,7 @@ void add_class(const char *name){
 
     free(db);
     free(p);
+};
+void print_class(struct Class *c){
+    log_info("Class  %s",c->name);
 }
-
-void print_class(){}
