@@ -77,7 +77,7 @@ struct Class{
 struct Database{
     int size;
     FILE *f;
-    struct Class *classes[];
+    struct Class **classes;
 };
 
 

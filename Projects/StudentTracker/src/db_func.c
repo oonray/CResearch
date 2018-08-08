@@ -22,21 +22,31 @@ void *open_database(){
     log_info("Opening Database!");
     check(location,"Location not set. Setting location");
     struct Database *db = malloc(sizeof(struct Database));
+    
+    int *p = (int *)db;
+    
     db->f = fopen(location,"rb");
     if(!db->f) {log_err("Could not open Database File"); exit(0); }
 
-    int n = sizeof(struct Database)+(sizeof(struct Class)*db->size);
+    int n = sizeof(struct Database)+(db->size*sizeof(struct Class));
+
     void *ptr = malloc(n);
     fread(ptr,n,1,db->f);
-    ptr+=sizeof(struct Database);
 
-    *db->classes = malloc(n-sizeof(struct Database));
-    memcpy(db->classes,ptr,n-sizeof(struct Database));
+    int *ptr_int = (int *)ptr;
 
-    if(!db) {log_err("Memmory error"); exit(0);}
-    
-    fread(db,sizeof(db),1,db->f);
-    int size = db->size;
+    ptr_int = ptr_int + (sizeof(struct Database)/sizeof(int));
+    struct Class *cls_ptr = (struct Class *)ptr_int;
+
+    memcpy(db,ptr,sizeof(n));
+
+    db->classes = malloc(db->size*sizeof(struct Class *));
+    for(int i = 0; i < db->size;i++){
+        db->classes[i] = malloc(sizeof(struct Class));
+        memcpy(db->classes[i]->name,"Example",sizeof("Example")/sizeof(char));
+    }
+    p = p+1;
+    log_info("P pointer is:%d",(int)*p++);
 
     return db;
     error:
@@ -49,16 +59,19 @@ void *open_database(){
 void create_database(){
     log_info("Creating Database!");
     check(location,"Location not set. Setting location");
-    FILE *f = fopen(location,"wb");
-    if(!f) {log_err("Could not open Database File"); exit(0); }
-
     struct Database *db = malloc(sizeof(struct Database));
+
+    log_info("Creating databse %s", location);
+
+    db->f = fopen(location,"wb");
+    if(!db->f) {log_err("Could not open Database File"); exit(0); }
+
     if(!db){log_err("Memmory error"); exit(0);}
  
     db->size = 0;
 
-    fwrite(db, sizeof(db),1,f);
-    fclose(f);
+    fwrite(db, sizeof(*db),1,db->f);
+    fclose(db->f);
     free(db);
     exit(1);
     error:
@@ -105,12 +118,15 @@ void add_class(const char *name){
     memcpy(b,new,sizeof(struct Class));
 
     struct Class *c = (struct Class *)b;
-    log_info("%s",db->classes[0]->name);
-    log_info("%s",c->name);
+    log_info("DB class 0:%s",db->classes[0]->name);
+    log_info("Pointer Name:%s",c->name);
 
-    fwrite(p,n,1,fopen(location,"wb"));
-    //free(db);
-    //free(p);
+    fclose(db->f);
+    FILE *f = fopen(location,"wb");
+    fwrite(p1,sizeof(db),1,f);
+
+    free(db);
+    free(p);
 }
 
 void print_class(){}
