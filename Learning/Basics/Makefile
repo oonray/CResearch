@@ -10,6 +10,8 @@ forl.o: src/Forloops.c
 mapo.h: src\MathPointers.c
 	tcc -c .\src\MathPointers.c -o objects/mapo.o
 
+io.o: src/IOFiles.c
+	tcc -c ./src/IOFiles.c -o objects/io.o
 
 Functionpointer: funcp.o
 	tcc objects/funcp.o -o bin/Functionpointer.exe
@@ -29,6 +31,8 @@ global.o: src/headders/debug.h src/headders/globals.h
 Globals: global.o
 	tcc src/globals_main.c objects/global1.o -o bin/global.exe
 
+IOFiles: io.o
+	tcc objects/io.o -o bin/IOFiles
 
 All: Forloops Functionpointer Debugmacros MathPointers
 	
