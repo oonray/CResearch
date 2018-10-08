@@ -17,10 +17,10 @@ int main(int argc, char *argv[ ]) {
     }
 
     /* get the host info */
-    if((h=gethostbyname(argv[1])) == NULL) {
-        herror("gethostbyname(): ");
-        exit(1);
-    }
+    if((h=gethostbyname(argv[1])) == NULL) {  //-----------------------+
+        herror("gethostbyname(): ");          // LOOOOOK               |
+        exit(1);                              //       HERE!!!!!!!     |
+    }                                         //-----------------------+
     else     
         printf("Hostname: %s\n", h->h_name);
 

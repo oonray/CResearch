@@ -145,7 +145,7 @@ void Database_delete(struct Connection *conn, int id){
 
 int main(int argc, char *argv[]){
     if(argc < 3)
-        die("USAGE:" + argv[0] + "<dbfile> <action> [params]");
+        die("[To Few Argumentrs]");
     
     char *filename = argv[1];
     char action = argv[2][0];
