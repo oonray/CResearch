@@ -13,6 +13,9 @@ mapo.h: src\MathPointers.c
 io.o: src/IOFiles.c
 	tcc -c ./src/IOFiles.c -o objects/io.o
 
+files.o: src/Files.c
+	gcc -c -o objects/files.o src/files.c
+
 Functionpointer: funcp.o
 	tcc objects/funcp.o -o bin/Functionpointer.exe
 
@@ -33,6 +36,9 @@ Globals: global.o
 
 IOFiles: io.o
 	tcc objects/io.o -o bin/IOFiles
+
+Files: files.o
+	gcc -o bin/Files objects/files.o
 
 All: Forloops Functionpointer Debugmacros MathPointers
 	
