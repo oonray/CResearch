@@ -11,20 +11,24 @@
 #define FREQ 10
 
 
-volatile char  secret[SECRET_S*16] = 
+volatile char  secret[SECRET_S*16] = // The part we are trying to leak from.
 "\0\0\0\0" "\0\0\0\0"
 "\0\0\0\0" "\0\0\0\0"
 "Secret Sauce";
 
-volatile uint8_t detector[256 * CACHE_PAGE];
-volatile uint32_t secret_s = SECRET_S;
-volatile uint32_t detector_s = 256 * CACHE_PAGE;
+volatile uint8_t detector[256 * CACHE_PAGE]; //The detector array
+volatile uint32_t secret_s = SECRET_S; //The makro defined as a volatile uint.
+volatile uint32_t detector_s = 256 * CACHE_PAGE; // The length of the detector array.
 
 void sink(uint32_t x){
     (void)x;
 } 
  
 void delay(){
+    /*
+        The function that creates a delay.
+        This function makes it possible to detect the time difference in cashe and memory fetched values.
+    */
     uint32_t x = 0x1234;
     for(int i = 0; i < 1000; i++){
         x *= i;

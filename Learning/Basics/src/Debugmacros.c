@@ -1,4 +1,4 @@
-#include "headders/debug.h"
+#include "headders/debug.h" //The headder that we are including
 #include <stdio.h>
 #include <stdlib.h>
 
