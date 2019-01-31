@@ -23,7 +23,7 @@
 #define MAX_DATA 256
 
 struct Options {
-    char *name;
+    char *name; 
     char *explenation;
 };
 
@@ -107,7 +107,7 @@ int main(int argc, char *argv[]){
         print_usage(argv[0]);
         return 0;
     }
-
+    
     dir = malloc(sizeof(struct Names));
     subdir = malloc(sizeof(struct Names) * MAX_DATA);
     files = malloc(sizeof(struct FILES) * MAX_DATA);
