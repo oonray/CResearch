@@ -15,22 +15,25 @@
 #define FILEPATH "/etc/mot"
 #define BUFF_SIZE 1024
 
-struct socket {
+struct socket_connextion {
       int previous;
       int next;
+      
+      struct socket;
       int *clientsock;
+
       char *readBuff;
       char *writeBuff;
 } 
 
-FILE *storage;
+struct file *storage;
 
  static int __int mothership__init(void){
         /*
         The init Function.
         */
         
-        // struct sockaddr_in *server_addr;
+        //struct sockaddr_in *server_addr;
         //server_addr = malloc(sizeof(struct sockaddr_in));
         printk(KERN_LOG "Bomb has been Planted!\n");
         printk(KERN_LOG "Mothership is live!\n");

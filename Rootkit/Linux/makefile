@@ -1,7 +1,7 @@
 obj-m += mothership.o
 
 all:
-	make -c bin/`uname -r`/build M=`pwd` modules  
+	make -C `pwd`bin/`uname -r`/build M=`pwd`/src modules  
 
 clean:
-	make -c bin/`uname -r`/build M=`pwd` clean
+	make -C `pwd`bin/`uname -r`/build M=`pwd`/src clean
