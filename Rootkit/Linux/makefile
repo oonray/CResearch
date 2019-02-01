@@ -1,11 +1,7 @@
-
-mothership.o: src/main.c
-	gcc -c src/main.c -o objects/main.o
-
-obj-m += objects/mothership.o
+obj-m += src/main.o
 
 all:
-	make -C `pwd`/bin/`uname -r`/build M=`pwd`/src modules  
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
-	make -C `pwd`/bin/`uname -r`/build M=`pwd`/src clean
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
