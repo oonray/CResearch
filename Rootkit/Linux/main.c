@@ -14,7 +14,6 @@ static int __init mothership_init(void)
 static void __exit mothership_exit(void)
 {
 	printk(KERN_INFO "Goodbye world 1.\n");
-	return 0;
 }
 
 
