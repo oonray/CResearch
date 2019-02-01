@@ -1,4 +1,4 @@
-obj-m += main.o
+obj-m += src/main.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
@@ -6,4 +6,3 @@ all:
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
-	
