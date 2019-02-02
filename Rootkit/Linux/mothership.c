@@ -10,9 +10,10 @@
 #include <linux/uaccess.h>
 
 //std
-#include <stdint.h>
-#include <strings.h>
-#include <stdlib.h>
+#include <linux/stdio.h>
+#include <linux/stdint.h>
+#include <linux/strings.h>
+#include <linux/stdlib.h>
 
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
