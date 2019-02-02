@@ -10,7 +10,6 @@
 #include <linux/uaccess.h>
 
 //std
-#include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
