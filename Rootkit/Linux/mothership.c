@@ -34,7 +34,7 @@ static struct connection {
 	char *filename;		
 }
 
-static struct file_operations fops = {
+struct file_operations fops = {
 	.open = dev_open,
 	.release = dev_close,
 	.read = dev_read,
