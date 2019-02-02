@@ -19,7 +19,6 @@ COLORS
 */
 #include "headders/colors.h"
 
-
 #define DEVICE_NAME "Mothership"
 
 static int dev_open(struct inode*,struct file*);
@@ -33,7 +32,7 @@ static struct connection {
 	char *addr;
 	int type;
 	char *filename;		
-}
+};
 
 static struct file_operations fops = {
 	.open = dev_open,
