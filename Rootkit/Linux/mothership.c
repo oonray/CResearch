@@ -27,14 +27,14 @@ static ssize_t dev_read(struct file*,char*,size_t,loff_t*);
 static ssize_t dev_write(struct file*,const char*,size_t,loff_t*);
 
 
-static struct connection {
+static struct connection{
 	int port;
 	char *addr;
 	int type;
 	char *filename;		
-}
+};
 
-struct file_operations fops = {
+static struct file_operations fops = {
 	.open = dev_open,
 	.release = dev_close,
 	.read = dev_read,
