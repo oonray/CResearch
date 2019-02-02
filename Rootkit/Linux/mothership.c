@@ -24,8 +24,8 @@ COLORS
 
 static int dev_open(struct inode*,struct file*);
 static int dev_close(struct inode*,struct file*);
-static size_t dev_read(struct file*,char*,size_t,loff_t);
-static size_t dev_write(struct file*,const char*,size_t,loff_t);
+static size_t dev_read(struct file*,char*,size_t,loff_t*);
+static size_t dev_write(struct file*,const char*,size_t,loff_t*);
 
 
 static struct connection {
@@ -65,16 +65,16 @@ static void __exit mothership_exit(void)
 
 }
 
-static int dev_open(struct inode*,struct file*){
+static int dev_open(struct inode* inodep,struct file* file){
 	printk("%s[+]%s Filehandle opened: %s",KGRN,KNRM,file->filename);
 	return 0;
 }
-static int dev_close(struct inode*,struct file*){
+static int dev_close(struct inode* inodep,struct file* file){
 	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,file->filename);
 	return 0;
 }
-static size_t dev_read(struct file*,char*,size_t,loff_t){return 0;}
-static size_t dev_write(struct file*,const char*,size_t,loff_t){return 0;}
+static size_t dev_read(struct file* fils,char* buff,size_t size,loff_t *offsett){return 0;}
+static size_t dev_write(struct file* file,const char* buff,size_t size ,loff_t *offsett){return 0;}
 
 module_init(mothership_init);
 module_exit(mothership_exit);
