@@ -65,11 +65,11 @@ static void __exit mothership_exit(void)
 }
 
 static int dev_open(struct inode* inodep,struct file* file){
-	printk("%s[+]%s Filehandle opened: %s",KGRN,KNRM,file->name);
+	printk("%s[+]%s Filehandle opened: %s",KGRN,KNRM,file->fu_rcuhead->name);
 	return 0;
 }
 static int dev_close(struct inode* inodep,struct file* file){
-	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,file->name);
+	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,file->fu_rcuhead->name);
 	return 0;
 }
 static ssize_t dev_read(struct file* fils,char* buff,size_t size,loff_t *offsett){return 0;}
