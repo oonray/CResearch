@@ -74,8 +74,8 @@ static int dev_close(struct *inode,struct *file){
 	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,file->filename);
 	return 0;
 }
-static int dev_read(struct *inode,struct *file);
-static int dev_write(struct *inode,struct *file);
+static int dev_read(struct *inode,struct *file){return 0;}
+static int dev_write(struct *inode,struct *file){return 0;}
 
 module_init(mothership_init);
 module_exit(mothership_exit);
