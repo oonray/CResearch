@@ -21,11 +21,12 @@
 
 #define DEVICE_NAME "Mothership"
 
-static int dev_open(struct *inode,struct *file);
-static int dev_close(struct *inode,struct *file);
-static int dev_read(struct *inode,struct *file);
-static int dev_write(struct *inode,struct *file);
+//static int dev_open(struct *inode,struct *file);
+//static int dev_close(struct *inode,struct *file);
+//static int dev_read(struct *inode,struct *file);
+//static int dev_write(struct *inode,struct *file);
 
+/*
 static struct connection {
 	int port;
 	char *addr;
@@ -40,7 +41,7 @@ static struct file_operations fops = {
 	.read = dev_read,
 	.write = dev_write
 };
-
+*/
 FILE *client_list;
 
 static int major;
@@ -48,11 +49,11 @@ static int major;
 static int __init mothership_init(void)
 {
 	printk(KERN_INFO "%s[+]%s Module Loaded\n",KGRN,KNRM);
-	major = register_chrdev(0,DEVICE_NAME,&fops);
+	/*major = register_chrdev(0,DEVICE_NAME,&fops);
 	if(major < 0){
 		printk(KERN_ALERT "%s[!]%s The module failed to load!\n",KRED, KNRM);
 		return major;
-	}
+	}*/
 
 
 	return 0;
