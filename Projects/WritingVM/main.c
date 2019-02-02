@@ -3,6 +3,12 @@
 #include <string.h>
 #include <stdlib.h>
 
+/*
+FROM:
+https://justinmeiners.github.io/lc3-vm/
+*/
+
+
 uint16_t memory[UINT16_MAX];
 uint16_t reg[R_COUNT];
 

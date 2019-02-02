@@ -9,24 +9,25 @@
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 
+/*
+DEBUG
+*/
+#include "headders/kerndebug.h"
 
-#define KNRM  "\x1B[0m"
-#define KRED  "\x1B[31m"
-#define KGRN  "\x1B[32m"
-#define KYEL  "\x1B[33m"
-#define KBLU  "\x1B[34m"
-#define KMAG  "\x1B[35m"
-#define KCYN  "\x1B[36m"
-#define KWHT  "\x1B[37m"
+/*
+COLORS
+*/
+#include "headders/colors.h"
+
 
 #define DEVICE_NAME "Mothership"
 
-//static int dev_open(struct *inode,struct *file);
-//static int dev_close(struct *inode,struct *file);
-//static int dev_read(struct *inode,struct *file);
-//static int dev_write(struct *inode,struct *file);
+static int dev_open(struct *inode,struct *file);
+static int dev_close(struct *inode,struct *file);
+static int dev_read(struct *inode,struct *file);
+static int dev_write(struct *inode,struct *file);
 
-/*
+
 static struct connection {
 	int port;
 	char *addr;
@@ -41,18 +42,19 @@ static struct file_operations fops = {
 	.read = dev_read,
 	.write = dev_write
 };
-*/
 
-//static int major;
+
+static int major;
 
 static int __init mothership_init(void)
 {
 	printk(KERN_INFO "%s[+]%s Module Loaded\n",KGRN,KNRM);
-	/*major = register_chrdev(0,DEVICE_NAME,&fops);
+	
+	major = register_chrdev(0,DEVICE_NAME,&fops);
 	if(major < 0){
 		printk(KERN_ALERT "%s[!]%s The module failed to load!\n",KRED, KNRM);
 		return major;
-	}*/
+	}
 
 
 	return 0;
@@ -60,9 +62,20 @@ static int __init mothership_init(void)
 
 static void __exit mothership_exit(void)
 {
-	printk(KERN_INFO "Goodbye world 1.\n");
+	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
+
 }
 
+static int dev_open(struct *inode,struct *file){
+	printk("%s[+]%s Filehandle opened: %s",KGRN,KNRM,file->filename);
+	return 0;
+}
+static int dev_close(struct *inode,struct *file){
+	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,file->filename);
+	return 0;
+}
+static int dev_read(struct *inode,struct *file);
+static int dev_write(struct *inode,struct *file);
 
 module_init(mothership_init);
 module_exit(mothership_exit);
