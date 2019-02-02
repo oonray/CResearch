@@ -42,9 +42,8 @@ static struct file_operations fops = {
 	.write = dev_write
 };
 */
-FILE *client_list;
 
-static int major;
+//static int major;
 
 static int __init mothership_init(void)
 {
