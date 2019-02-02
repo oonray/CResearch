@@ -11,7 +11,7 @@
 
 //std
 #include <stdint.h>
-#include <string.h>
+#include <strings.h>
 #include <stdlib.h>
 
 #define KNRM  "\x1B[0m"
