@@ -32,7 +32,7 @@ static struct connection{
 	char *addr;
 	int type;
 	char *filename;		
-};
+} connection;
 
 static struct file_operations fops = {
 	.open = dev_open,
