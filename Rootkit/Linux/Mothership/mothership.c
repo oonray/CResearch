@@ -32,7 +32,7 @@ static struct file_operations fops = {
 	.write = dev_write
 };
 
-static struct device_out dev{
+struct device_out dev{
 	.name = "mothership_01",
 	.type = "c",
 	.envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
