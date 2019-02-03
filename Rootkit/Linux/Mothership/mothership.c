@@ -45,7 +45,7 @@ static int __init mothership_init(void)
 	log_success("Module Loaded");
 	
 	dev.major = register_chrdev(0, dev.name, &fops);
-	dev.args = { &dev.name, &dev.type, &dev.major };
+	dev.args = [ &dev.name, &dev.type, &dev.major ];
 
 	//call_usermodehelper("/bin/mknod", args , dev.envp, UMH_NO_WAIT);
 
