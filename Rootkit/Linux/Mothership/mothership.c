@@ -12,27 +12,18 @@
 /*
 DEBUG
 */
-#include "headders/kerndebug.h"
+#include "../headders/kerndebug.h"
 
 /*
 COLORS
 */
-#include "headders/colors.h"
+#include "../headders/colors.h"
 
-#define DEVICE_NAME "Mothership"
+/*
+Struct Definitions
+*/
+#include "definitions.h"
 
-static int dev_open(struct inode*,struct file*);
-static int dev_close(struct inode*,struct file*);
-static ssize_t dev_read(struct file*,char*,size_t,loff_t*);
-static ssize_t dev_write(struct file*,const char*,size_t,loff_t*);
-
-
-struct connection{
-	int port;
-	char *addr;
-	int type;
-	char *filename;		
-};
 
 static struct file_operations fops = {
 	.open = dev_open,
@@ -49,15 +40,15 @@ static int __init mothership_init(void)
 {
 
 	
-	printk(KERN_INFO "%s[+]%s Module Loaded\n",KGRN,KNRM);
+	log_success("Module Loaded");
+	
 	major = register_chrdev(0, DEVICE_NAME, &fops);
 
-	static char *envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
-	char *args[] = { DEVICE_NAME, 'c', (char)major};
+	char *args[] = { DEVICE_NAME, &"c", &(char)major};
 
-	call_usermodehelper("/bin/mknod", args , envp, UMH_NO_WAIT);
+	//call_usermodehelper("/bin/mknod", args , envp, UMH_NO_WAIT);
 	if(major < 0){
-		printk(KERN_ALERT "%s[!]%s The module failed to load!\n",KRED, KNRM);
+		log_err("The module failed to load!");
 		return major;
 	}
 
@@ -67,7 +58,7 @@ static int __init mothership_init(void)
 
 static void __exit mothership_exit(void)
 {  
-	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
+	log_success("Module Unloaded");
 	unregister_chrdev(major, DEVICE_NAME);
 }
 
