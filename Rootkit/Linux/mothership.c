@@ -64,7 +64,7 @@ static void __exit mothership_exit(void)
 	static char *envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
 	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
 	register_chrdev(major,DEVICE_NAME);
-	call_usermodehelper("/bin/mknod", { DEVICE_NAME, "c", major }, envp, UMH_NO_WAIT);
+	call_usermodehelper("/bin/mknod", [DEVICE_NAME, "c", major] , envp, UMH_NO_WAIT);
 }
 
 static int dev_open(struct inode* inodep,struct file *file){
