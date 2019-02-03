@@ -49,7 +49,7 @@ static int __init mothership_init(void)
 {
 	printk(KERN_INFO "%s[+]%s Module Loaded\n",KGRN,KNRM);
 	
-	major = register_chrdev(0,DEVICE_NAME,&fops);
+	major = register_chrdev(0, DEVICE_NAME, &fops);
 	if(major < 0){
 		printk(KERN_ALERT "%s[!]%s The module failed to load!\n",KRED, KNRM);
 		return major;
@@ -65,7 +65,7 @@ static void __exit mothership_exit(void)
 	static char *args[] = { DEVICE_NAME, "c", major };
 
 	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
-	register_chrdev(major, DEVICE_NAME, &fops);
+	unregister_chrdev(major, DEVICE_NAME);
 	call_usermodehelper("/bin/mknod", args , envp, UMH_NO_WAIT);
 }
 
