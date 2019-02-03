@@ -39,8 +39,6 @@ static struct device_out dev{
 
 //call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT)  //Shell Stuff
 
-static int major;
-
 static int __init mothership_init(void)
 {
 
