@@ -45,8 +45,6 @@ static struct file_operations fops = {
 
 static int major;
 
-static char *envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
-
 static int __init mothership_init(void)
 {
 	printk(KERN_INFO "%s[+]%s Module Loaded\n",KGRN,KNRM);
@@ -63,6 +61,7 @@ static int __init mothership_init(void)
 
 static void __exit mothership_exit(void)
 {  
+	static char *envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
 	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
 	register_chrdev(major,DEVICE_NAME);
 	call_usermodehelper("/bin/mknod", { DEVICE_NAME, "c", major }, envp, UMH_NO_WAIT);
