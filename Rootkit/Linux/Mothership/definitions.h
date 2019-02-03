@@ -27,6 +27,6 @@ struct device_out {
     char *name;
     char *type;
     int major;
-    char envp[4];
-    char args[3];
+    char *envp[4];
+    char *args[3];
 };
