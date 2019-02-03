@@ -7,6 +7,14 @@
 #include <linux/init.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
+#include <sys/types.h>      
+#include <sys/socket.h>
+
+
+/*
+Struct Definitions
+*/
+#include "definitions.h"
 
 /*
 DEBUG
@@ -18,10 +26,7 @@ COLORS
 */
 #include "../headders/colors.h"
 
-/*
-Struct Definitions
-*/
-#include "definitions.h"
+
 
 
 static struct file_operations fops = {

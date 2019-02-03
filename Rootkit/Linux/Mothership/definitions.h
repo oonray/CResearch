@@ -7,6 +7,7 @@ All the different struct and function definitions.
 For cleanlyness.
 
 */
+#define VERBOSE 1
 #define MODULE_NAME "mothership"
 
 static int dev_open(struct inode*,struct file*);

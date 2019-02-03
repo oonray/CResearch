@@ -18,19 +18,23 @@ Debug Functions for the kernel.
     #include "colors.h"
 #endif
 
+#ifndef VERBOSE
+    #define VERBOSE 0
+#endif
+
 #ifdef NDEBUG
 #define debug(M, ...)
 #else 
-#define debug(M, ...) printk(KERN_INFO "\n(%s:%d:%s) %s[.]%s DEBUG, " M "\n", __FILE__, __LINE__, __func__,KCYN,KNRM, ##__VA_ARGS__) 
+#define debug(M, ...) if(VERBOSE){ printk(KERN_INFO "(%s:%d:%s) %s[.]%s DEBUG, " M "\n", __FILE__, __LINE__, __func__,KCYN,KNRM, ##__VA_ARGS__) } 
 #endif
+ 
+#define log_err(M, ...) if(VERBOSE){ printk(KERN_ALERT "(%s:%d:%s) %s[-]%s ERROR, " M "\n",__FILE__, __LINE__, __func__,KRED,KNRM, ##__VA_ARGS__) } 
 
-#define log_err(M, ...) printk(KERN_ALERT "\n(%s:%d:%s) %s[-]%s ERROR, " M "\n",__FILE__, __LINE__, __func__,KRED,KNRM, ##__VA_ARGS__) 
+#define log_warn(M, ...) if(VERBOSE){ printk(KERN_ALERT "(%s:%d:%s) %s[!]%s WARNING, " M "\n",__FILE__, __LINE__, __func__,KMAG,KNRM, ##__VA_ARGS__) }
 
-#define log_warn(M, ...) printk(KERN_ALERT "\n(%s:%d:%s) %s[!]%s WARNING, " M "\n",__FILE__, __LINE__, __func__,KMAG,KNRM, ##__VA_ARGS__) 
+#define log_info(M, ...) if(VERBOSE){ printk(KERN_INFO "(%s:%d:%s) %s[.]%s INFO, " M "\n", __FILE__, __LINE__, __func__,KCYN,KNRM, ##__VA_ARGS__) }
 
-#define log_info(M, ...) printk(KERN_INFO "\n(%s:%d:%s) %s[.]%s INFO, " M "\n", __FILE__, __LINE__, __func__,KCYN,KNRM, ##__VA_ARGS__) 
-
-#define log_success(M, ...) printk(KERN_INFO "\n(%s:%d:%s) %s[+]%s SUCCESS, " M "\n", __FILE__, __LINE__, __func__,KGRN,KNRM, ##__VA_ARGS__)
+#define log_success(M, ...) if(VERBOSE){ printk(KERN_INFO "(%s:%d:%s) %s[+]%s SUCCESS, " M "\n", __FILE__, __LINE__, __func__,KGRN,KNRM, ##__VA_ARGS__) }
 
 /*
 #define check(A, M, ...) if(!(A)) { log_err(M, ##__VA_ARGS__); errno=0; goto error; } 
