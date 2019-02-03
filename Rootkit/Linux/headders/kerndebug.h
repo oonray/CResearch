@@ -1,3 +1,15 @@
+/*
+
+.. author:: Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
+.. name:: kerneldbug.h
+
+Debug Functions for the kernel.
+  *  Uses Colors.
+
+*/
+
+#include <linux/kernel.h>
+
 #ifndef __dbg_h__
 #define __dbg_h__
 #endif

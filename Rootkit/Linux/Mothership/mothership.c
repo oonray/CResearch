@@ -3,7 +3,6 @@
  *  hello-1.c - The simplest kernel module.
  */
 #include <linux/module.h>	/* Needed by all modules */
-#include <linux/kernel.h>	/* Needed for KERN_INFO */
 #include <linux/socket.h>
 #include <linux/init.h>
 #include <linux/fs.h>
@@ -45,7 +44,9 @@ static int __init mothership_init(void)
 	log_success("Module Loaded");
 	
 	dev.major = register_chrdev(0, dev.name, &fops);
-	dev.args = { (char *)&dev.name, (char *)&dev.type, (char *)&dev.major }
+	dev.args[0] = (char *)&dev.name;
+	dev.args[1] = (char *)&dev.type;
+	dev.args[2] = (char *)&dev.major;
 
 	//call_usermodehelper("/bin/mknod", args , dev.envp, UMH_NO_WAIT);
 
