@@ -35,19 +35,18 @@ static struct file_operations fops = {
 static struct device_out dev{
 	.name = "mothership_01",
 	.type = "c",
+	.envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
 }
 
 //call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT)  //Shell Stuff
 
 static int __init mothership_init(void)
 {
-
-	
 	log_success("Module Loaded");
 	
 	dev.major = register_chrdev(0, dev.name, &fops);
+	dev.args = { dev.name, dev.type, dev.major};
 
-	char *args[] = { dev.name, dev.type, dev.major};
 	//call_usermodehelper("/bin/mknod", args , dev.envp, UMH_NO_WAIT);
 
 	if(dev.major < 0){
@@ -62,7 +61,7 @@ static int __init mothership_init(void)
 static void __exit mothership_exit(void)
 {  
 	log_success("Module Unloaded");
-	unregister_chrdev(major, DEVICE_NAME);
+	unregister_chrdev(dev.major, dev.name);
 }
 
 static int dev_open(struct inode* inodep,struct file *file){

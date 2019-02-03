@@ -25,7 +25,8 @@ struct connection{
 
 struct device_out {
     char *name;
-    const char *type;
+    char *type;
     int major;
-    const char *envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
+    char *envp[];
+    char *args[];
 };
