@@ -32,6 +32,11 @@ static struct file_operations fops = {
 	.write = dev_write
 };
 
+static struct device_out dev{
+	.name = "mothership_01",
+	.type = "c",
+}
+
 //call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT)  //Shell Stuff
 
 static int major;
@@ -42,14 +47,14 @@ static int __init mothership_init(void)
 	
 	log_success("Module Loaded");
 	
-	major = register_chrdev(0, DEVICE_NAME, &fops);
+	dev.major = register_chrdev(0, dev.name, &fops);
 
-	char *args[] = { DEVICE_NAME, &"c", &(char)major};
+	char *args[] = { dev.name, dev.type, dev.major};
+	//call_usermodehelper("/bin/mknod", args , dev.envp, UMH_NO_WAIT);
 
-	//call_usermodehelper("/bin/mknod", args , envp, UMH_NO_WAIT);
-	if(major < 0){
+	if(dev.major < 0){
 		log_err("The module failed to load!");
-		return major;
+		return dev.major;
 	}
 
 

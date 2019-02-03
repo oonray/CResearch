@@ -23,8 +23,8 @@ struct connection{
 	char *filename;		
 };
 
-struct device {
-    char *device_name;
+struct device_out {
+    char *name;
     const char *type;
     int major;
     const char *envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
