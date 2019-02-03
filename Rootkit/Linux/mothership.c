@@ -53,7 +53,7 @@ static int __init mothership_init(void)
 	major = register_chrdev(0, DEVICE_NAME, &fops);
 
 	static char *envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
-	char *args[] = { DEVICE_NAME, 'c', major+'0' };
+	char *args[] = { DEVICE_NAME, 'c', (char)major};
 
 	call_usermodehelper("/bin/mknod", args , envp, UMH_NO_WAIT);
 	if(major < 0){
