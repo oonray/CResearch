@@ -18,7 +18,7 @@
 
 #define log_info(M, ...) printk(KERN_INFO, "%s[.]%s INFO (%s:%d:%s) " M "\n",KCYN,KNRM, __FILE__, __LINE__, __func__, ##__VA_ARGS__) 
 
-#define log_success(M, ...) printk(KERN_INFO, "%s[+]%s Sucess %s:%d:%s: " M "\n",KGRN,KNRM __FILE__, __LINE__, __func__, ##__VA_ARGS__)
+#define log_success(M, ...) printk(KERN_INFO, "%s[+]%s Sucess (%s:%d:%s) " M "\n",KGRN,KNRM __FILE__, __LINE__, __func__, ##__VA_ARGS__)
 
 /*
 #define check(A, M, ...) if(!(A)) { log_err(M, ##__VA_ARGS__); errno=0; goto error; } 

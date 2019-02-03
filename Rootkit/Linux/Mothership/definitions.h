@@ -6,13 +6,13 @@
 All the different struct and function definitions.
 For cleanlyness.
 */
-#define MODULE "mothership"
+#define MODULE_NAME "mothership"
 
 static int dev_open(struct inode*,struct file*);
 static int dev_close(struct inode*,struct file*);
 static ssize_t dev_read(struct file*,char*,size_t,loff_t*);
 static ssize_t dev_write(struct file*,const char*,size_t,loff_t*);
-static int create_device(struct device);
+//static int create_device(struct device);
 
 
 
@@ -25,7 +25,7 @@ struct connection{
 
 struct device {
     char *device_name;
-    const char *type = 'c';
+    const char *type;
     int major;
     const char *envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
 };
