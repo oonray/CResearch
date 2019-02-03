@@ -65,7 +65,7 @@ static void __exit mothership_exit(void)
 	static char *args[] = { DEVICE_NAME, "c", major };
 
 	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
-	register_chrdev(major,DEVICE_NAME);
+	register_chrdev(major, DEVICE_NAME, &fops);
 	call_usermodehelper("/bin/mknod", args , envp, UMH_NO_WAIT);
 }
 
