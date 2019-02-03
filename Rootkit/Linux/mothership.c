@@ -47,12 +47,14 @@ static int major;
 
 static int __init mothership_init(void)
 {
-	static char *envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
-	char *args[] = { DEVICE_NAME, "c", major };
 
-	printk(KERN_INFO "%s[+]%s Module Loaded\n",KGRN,KNRM);
 	
+	printk(KERN_INFO "%s[+]%s Module Loaded\n",KGRN,KNRM);
 	major = register_chrdev(0, DEVICE_NAME, &fops);
+
+	static char *envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
+	char *args[] = { DEVICE_NAME, 'c', major+'0' };
+
 	call_usermodehelper("/bin/mknod", args , envp, UMH_NO_WAIT);
 	if(major < 0){
 		printk(KERN_ALERT "%s[!]%s The module failed to load!\n",KRED, KNRM);
