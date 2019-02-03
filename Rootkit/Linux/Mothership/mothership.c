@@ -32,11 +32,11 @@ static struct file_operations fops = {
 	.write = dev_write
 };
 
-struct device_out dev{
+struct device_out dev = {
 	.name = "mothership_01",
 	.type = "c",
 	.envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
-}
+};
 
 //call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT)  //Shell Stuff
 
