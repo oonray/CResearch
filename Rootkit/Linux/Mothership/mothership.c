@@ -36,7 +36,7 @@ struct device_out dev = {
 	.name = "mothership_01",
 	.type = "c",
 	.envp = {"HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", 0},
-	.args = { &(.name), &(.type), &(.major) }
+	.args = { &dev.name, &dev.type, &dev.major }
 };
 
 //call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT)  //Shell Stuff
