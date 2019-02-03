@@ -45,7 +45,7 @@ static struct file_operations fops = {
 
 static int major;
 
-static char* envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
+static char *envp = { "HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
 
 static int __init mothership_init(void)
 {
@@ -62,20 +62,21 @@ static int __init mothership_init(void)
 }
 
 static void __exit mothership_exit(void)
-{
+{  
 	printk(KERN_INFO "%s[-]%s Module Unloaded.\n",KRED,KNRM);
 	register_chrdev(major,DEVICE_NAME);
-	call_usermodehelper("/bin/mknod",{DEVICE_NAME,"c",major},envp,UMH_NO_WAIT);
+	call_usermodehelper("/bin/mknod", { DEVICE_NAME, "c", major }, envp, UMH_NO_WAIT);
 }
 
 static int dev_open(struct inode* inodep,struct file *file){
 	printk("%s[+]%s Filehandle opened: %s",KGRN,KNRM,"");
 	return 0;
 }
-static int dev_close(struct inode* inodep,struct file *file){
+static int dev_close(struct inode *inodep,struct file *file){
 	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,"");
 	return 0;
 }
+
 static ssize_t dev_read(struct file* fils,char* buff,size_t size,loff_t *offset){return 0;}
 static ssize_t dev_write(struct file* file,const char* buff,size_t size ,loff_t *offset){return 0;}
 
