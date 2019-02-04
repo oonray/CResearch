@@ -1,11 +1,13 @@
 /*
 
-.. author:: Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
-.. name:: kerneldbug.h
+@author Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
+@file kerneldbug.h
 
 Debug Functions for the kernel.
-  *  Uses Colors.
-
+@note require colors.h.
+It currently includes log_err, log_warn, log_info and log_success.
+Each follows a standard logging pattern and has its own color.
+They can be used like printf and printk because they use the ##__VA_ARGS__ input.
 */
 
 #include <linux/kernel.h>

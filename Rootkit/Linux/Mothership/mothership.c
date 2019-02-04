@@ -1,33 +1,29 @@
 
-/*  
- *  hello-1.c - The simplest kernel module.
+/*
+ @author Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
+ @file mothership.c
+ @brief A Kernel Module c&c mothership.
+
+This is a kernel module used for command and controll in a botnet like maner.
+It will only work in a testing enviroment and is not ment to be used outside the lab.
+This module creates filhandles for communication with the bots.
+
  */
-#include <linux/module.h>	/* Needed by all modules */
+
+#include <linux/module.h>	
 #include <linux/socket.h>
 #include <linux/init.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 
-  
-#include <sys/socket.h>
-
-
 /*
-Struct Definitions
+Definitions 	definitions.h
+Colors			colors.h
+Debug			kerndebug.h
 */
 #include "definitions.h"
-
-/*
-DEBUG
-*/
 #include "../headders/kerndebug.h"
-
-/*
-COLORS
-*/
 #include "../headders/colors.h"
-
-
 
 
 static struct file_operations fops = {
@@ -37,45 +33,75 @@ static struct file_operations fops = {
 	.write = dev_write
 };
 
+
 struct device_out dev = {
 	.name = "mothership_01",
-	.type = "c",
-	.envp = {"HOME=/", "TERM=linux", "PATH=/sbin:/bin:/usr/sbin:/usr/bin", 0},
 };
 
-//call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT)  //Shell Stuff
 
-static int __init mothership_init(void)
-{
-	log_success("Module Loaded");
+static int create_device(struct device_out dev, struct file_operations *fops){
+	/**
+	@brief Creates an IO Device.
+	@param dev A device structure.
+	@param fops The file operations stucture pointing to functions.
+	@return returns 0 for success and -1 for failure.
+
+	Creates an IO device that the user can interface with via /dev/
+	*/
+
+	dev.major = register_chrdev(0, dev.name, fops);
 	
-	dev.major = register_chrdev(0, dev.name, &fops);
-	dev.args[0] = (char *)&dev.name;
-	dev.args[1] = (char *)&dev.type;
-	dev.args[2] = (char *)&dev.major;
-
-	//call_usermodehelper("/bin/mknod", args , dev.envp, UMH_NO_WAIT);
-
 	if(dev.major < 0){
 		log_err("The module failed to load!");
 		return dev.major;
 	}
 
+	dev._class = class_create(dev.name, "chardrv");
+    device_create(dev._class, NULL, dev.device, NULL, dev.name);
+	return 0;
+};
 
+static int __init mothership_init(void)
+{
+	/**
+	 @brief Initializes the mothership. 
+	 @return 0 for success -1 for error.
+	 */
+
+	log_success("Module Loaded");
 	return 0;
 }
 
 static void __exit mothership_exit(void)
 {  
+	/**
+	 @brief UnInitializes the mothership. 
+	 @return 0 for success -1 for error.
+	 */
+
 	log_success("Module Unloaded");
 	unregister_chrdev(dev.major, dev.name);
 }
 
 static int dev_open(struct inode* inodep,struct file *file){
+	/**
+	 @brief Called when a device is opened.
+	 @param inodep Structure that contains the inode.
+	 @param file The file structure tgat is opened.
+	 @return 0 for succes -1 for failure
+	 */
+
 	printk("%s[+]%s Filehandle opened: %s",KGRN,KNRM,"");
 	return 0;
 }
 static int dev_close(struct inode *inodep,struct file *file){
+	/**
+	 @brief Called when a device is closed.
+	 @param inodep Structure that contains the inode.
+	 @param file The file structure tgat is closed.
+	 @return 0 for succes -1 for failure
+	 */
+
 	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,"");
 	return 0;
 }

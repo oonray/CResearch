@@ -1,7 +1,7 @@
 /*
 
-.. author:: Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
-.. name:: definitions.h
+@author Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
+@file definitions.h
 
 All the different struct and function definitions.
 For cleanlyness.
@@ -26,8 +26,7 @@ struct connection{
 
 struct device_out {
     char *name;
-    char *type;
     int major;
-    char *envp[4];
-    char *args[3];
+    struct class *_class;
+    dev_t device;
 };
