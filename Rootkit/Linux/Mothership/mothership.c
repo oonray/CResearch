@@ -51,10 +51,9 @@ static int create_device(struct device_out *dev){
 	*/
 
 	cdev_init(&dev->cdev,&dev->fops);
-	dev->cdev.owner = THIS_MODULE;
-	dev->cdev.ops = dev->fops;
-	dev->cdev.name = dev->name;
-
+	dev->cdev->owner = THIS_MODULE;
+	dev->cdev->ops = dev->fops;
+	dev->cdev->name = dev->name;
 
 	int add = cdev_add(dev->cdev, dev->device, 1);
 	if(add==0){
