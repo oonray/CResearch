@@ -50,17 +50,23 @@ static int create_device(struct device_out *dev){
 	Creates an IO device that the user can interface with via /dev/
 	*/
 
-	_class = class_create(THIS_MODULE,"chardrv");
+	//_class = class_create(THIS_MODULE,"chardrv");
 
 	//alloc_chrdev_region(dev_t first, unsigned int count,char *name);
 
-	log_info("Creating Device");
-	int success = alloc_chrdev_region(dev->device,0,1,dev->name);
-	if(success==0){
-		log_success("Chardev registered with major Number: %d", MAJOR(dev->device)));
-	}else{return success;}
+	//log_info("Creating Device");
+	//int success = alloc_chrdev_region(dev->device,0,1,dev->name);
+	//if(success==0){
+	//	log_success("Chardev registered with major Number: %d", MAJOR(dev->device)));
+	//}else{return success;}
+	
+	cdev_init(&dev->cdev,&dev->fops);
+	dev->cdev.owner = THIS_MODULE;
+	dev->cdev.ops = dev->fops;
+	if(cdev_add(dev->cdev, dev->device, 1)==0){
+		log_success("Device Created");
+	}
 
-    device_create(_class,NULL,dev->device, NULL,"mothership_%s", dev->name);
 	log_success("Device Created");
 	return 0;
 };
@@ -74,7 +80,7 @@ static int destroy_device(struct device_out *dev){
 	Destroys an IO device that then is removed from  /dev/
 	*/
 	log_info("Destroying Device");
-	device_destroy(dev->_class,dev->device);
+	cdev_del(dev->device);
 	class_destroy(_class);
 	unregister_chrdev_region(dev->device,1);
 	log_success("Device Destryed");
