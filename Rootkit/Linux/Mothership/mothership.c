@@ -25,7 +25,6 @@ This software serves no convetnionally usefull purpouse and is continouasly devl
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 #include <linux/device.h>
-#include <linux/cdev.h>
 
 /*
 Definitions 	definitions.h
@@ -57,7 +56,7 @@ static int create_device(struct device_out *dev){
 		return dev->major;
 	}
 
-	dev->_class = class_create("TEST", "chardrv");
+	dev->_class = class_create(MODULE_NAME, "chardrv");
     device_create(dev->_class, NULL, dev->device, NULL, dev->name);
 	log_success("Device Created");
 	return 0;
