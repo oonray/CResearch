@@ -21,12 +21,11 @@ This software serves no convetnionally usefull purpouse and is continouasly devl
 
 #include <linux/module.h>	
 #include <linux/socket.h>
-#include <linux/types.h>
 #include <linux/init.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 #include <linux/device.h>
-#include <linux/kdev_t.h>
+#include <linux/cdev.h>
 
 /*
 Definitions 	definitions.h
