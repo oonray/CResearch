@@ -71,7 +71,7 @@ static int create_device(struct device_out *dev){
 
 		add = cdev_add(dev->cdev, dev->device, 0);
 		if(add==0){
-			dev_crt = device_create(_class,Null,dev->device,dev->name)
+			dev_crt = device_create(_class,NULL,dev->device,dev->name)
 			if(dev_crt == 0){
 				log_success("Device Created with major:%d",MAJOR(dev->device));
 				return dev_crt;
