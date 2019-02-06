@@ -37,7 +37,6 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
-static struct class *_class; 
 
 static int create_device(struct device_out *dev){
 	/**
@@ -51,7 +50,7 @@ static int create_device(struct device_out *dev){
 
 	int add;
 
-	cdev_init(&dev->cdev,&dev->fops);
+	cdev_init(dev->cdev,&dev->fops);
 	dev->cdev->owner = THIS_MODULE;
 
 	add = cdev_add(dev->cdev, dev->device, 1);
