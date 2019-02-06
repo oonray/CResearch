@@ -56,7 +56,7 @@ static int create_device(struct device_out *dev){
 		return dev->major;
 	}
 
-	dev->_class = class_create(*(*dev).name, "chardrv");
+	dev->_class = class_create(dev->name, "chardrv");
     device_create(dev->_class, NULL, dev->device, NULL, dev->name);
 	log_success("Device Created");
 	return 0;
