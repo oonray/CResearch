@@ -52,12 +52,12 @@ static int create_device(struct device_out *dev, struct file_operations *fops){
 
 	dev->major = register_chrdev(0, dev->name, fops);
 	
-	if(dev.major < 0){
+	if(dev->major < 0){
 		log_err("The module failed to load!");
 		return dev->major;
 	}
 
-	dev->_class = class_create(dev.name, "chardrv");
+	dev->_class = class_create(0, dev->name, "chardrv");
     device_create(dev->_class, NULL, dev->device, NULL, dev->name);
 	return 0;
 };
