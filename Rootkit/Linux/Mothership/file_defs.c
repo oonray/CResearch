@@ -25,6 +25,7 @@ struct device_out all = {
 			.read = dev_read_all,
 			.write = dev_write_all
 		}
+	._class = class_create(THIS_MODULE, "chardriver");
 };
 
 

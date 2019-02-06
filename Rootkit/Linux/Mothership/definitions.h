@@ -43,4 +43,5 @@ struct device_out {
 	int minor;
     struct cdev *cdev; 
     struct file_operations fops;
+	static struct _class;
 };
