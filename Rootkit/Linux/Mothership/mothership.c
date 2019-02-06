@@ -72,7 +72,7 @@ static int destroy_device(struct device_out *dev){
 	*/
 	log_info("Destroying Device");
 	device_destroy(dev->_class,dev->device);
-	class_destroy(dev->_class);
+	class_destroy(_class);
 	unregister_chrdev(dev->major,dev->name);
 	log_success("Device Destryed");
 	return 0;
