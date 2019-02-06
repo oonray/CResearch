@@ -15,6 +15,7 @@ This module creates filhandles for communication with the bots.
 #include <linux/init.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
+#include <linux/device.h>
 
 /*
 Definitions 	definitions.h
@@ -70,6 +71,7 @@ static int destroy_device(struct device_out *dev){
 	Destroys an IO device that then is removed from  /dev/
 	*/
 	device_destroy(dev->_class,dev->device);
+	class_destroy(dec->class);
 	unregister_chrdev(dev->major,dev->name);
 	return 0;
 }
