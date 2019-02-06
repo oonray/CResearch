@@ -121,7 +121,6 @@ static void __exit mothership_exit(void)
 	 */
 
 	destroy_device(&all);
-	class_destroy(the_class);
 	log_success("Module Unloaded");
 }
 
