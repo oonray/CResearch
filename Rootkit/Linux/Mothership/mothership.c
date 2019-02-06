@@ -50,6 +50,7 @@ static int create_device(struct device_out *dev){
 
 	int add;
 	int dev_crt;
+	extern struct the_class;
 	
 
 
@@ -94,6 +95,8 @@ static int destroy_device(struct device_out *dev){
 
 	Destroys an IO device that then is removed from  /dev/
 	*/
+	extern struct the_class;
+
 	log_info("Destroying Device");
 	device_destroy(the_class,dev->device);
 	cdev_del(dev->cdev);
