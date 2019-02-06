@@ -1,3 +1,10 @@
+/**  
+@author Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
+@file file_defs.h
+@brief All the file handler definitions with their functions.
+ */
+
+
 #ifndef __define_h__
     #include "definitions.h"
     #include <linux/module.h>	

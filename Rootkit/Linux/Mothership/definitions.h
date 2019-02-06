@@ -2,11 +2,10 @@
 
 @author Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
 @file definitions.h
-
-All the different struct and function definitions.
-For cleanlyness.
+@brief All the different struct and function definitions. For cleanlyness.
 
 */
+
 #ifndef __define_h__
     #define __define_h__
 #endif
