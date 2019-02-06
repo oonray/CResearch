@@ -18,7 +18,7 @@
 
 
 struct device_out all = {
-	.name = "all",
+	.name = "mothership_all",
 	.fops = {
 			.open = dev_open_all,
 			.release = dev_close_all,

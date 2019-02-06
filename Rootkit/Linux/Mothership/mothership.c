@@ -37,6 +37,7 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
+static struct _class;
 
 static int create_device(struct device_out *dev){
 	/**
@@ -49,18 +50,41 @@ static int create_device(struct device_out *dev){
 	*/
 
 	int add;
+	int dev_crt;
+
+    alloc_chrdev_region(dev->device, 0, 1, dev->name);
+	if(dev->device != NULL){
+		dev->major = MAJOR(dev->device);
+		dev->minor = MINOR(dev->device);
+	}else{
+		log_err("Could not get Chardev Region!");
+		return -1;
+	}
+
+    _class = class_create(THIS_MODULE, "chardriver");
 
 	cdev_init(dev->cdev,&dev->fops);
-	dev->cdev->owner = THIS_MODULE;
 
-	add = cdev_add(dev->cdev, dev->device, 1);
-	if(add==0){
-		log_success("Device Created with major:%d",MAJOR(dev->device));
-	}else{
-		log_err("Device Creation failed with error %d",add);
-		return add;
+	if(dev->cdev != NULL){
+		dev->cdev->owner = THIS_MODULE;
+		dev->device = MKDEV(dev->major,dev->minor);
+
+		add = cdev_add(dev->cdev, dev->device, 0);
+		if(add==0){
+			dev_crt = device_create(_class,Null,dev->device,dev->name)
+			if(dev_crt == 0){
+				log_success("Device Created with major:%d",MAJOR(dev->device));
+				return dev_crt;
+			}else{
+				log_err("Device Creation failed with error %d",dev_crt);
+				return dev_crt;
+			}z
+		}else{
+			log_err("Device Creation failed with error %d",add);
+			return add;
+		}
 	}
-	return 0;
+	return -1;
 };
 
 static int destroy_device(struct device_out *dev){
@@ -83,7 +107,7 @@ static int __init mothership_init(void)
 	 @brief Initializes the mothership. 
 	 @return 0 for success -1 for error.
 	 */
-	
+	log_success("-----------------------------");
 	log_success("Module Loaded");
 	create_device(&all);
 	return 0;

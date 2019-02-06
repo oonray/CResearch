@@ -39,6 +39,8 @@ struct connection{
 struct device_out {
     char *name;
     dev_t device;
+	int major;
+	int minor;
     struct cdev *cdev; 
     struct file_operations fops;
 };
