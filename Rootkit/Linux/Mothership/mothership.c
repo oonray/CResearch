@@ -49,7 +49,7 @@ static int create_device(struct device_out *dev){
 
 	log_info("Creating Device");
 	dev->major = register_chrdev(0, dev->name, &dev->fops);
-	log_info("Major Number: %s", dev->major);
+	log_info("Major Number: %d", dev->major);
 
 	if(dev->major < 0){
 		log_err("The module failed to load!");
