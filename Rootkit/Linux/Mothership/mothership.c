@@ -37,7 +37,6 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
-struct the_class;
 
 static int create_device(struct device_out *dev){
 	/**

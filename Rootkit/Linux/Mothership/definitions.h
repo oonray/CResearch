@@ -26,8 +26,8 @@ static int dev_open_all(struct inode*,struct file*);
 static int dev_close_all(struct inode*,struct file*);
 static ssize_t dev_read_all(struct file*,char*,size_t,loff_t*);
 static ssize_t dev_write_all(struct file*,const char*,size_t,loff_t*);
-//static int create_device(struct device);
 
+extern struct the_class;
 
 struct connection{
 	int port;
