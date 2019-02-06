@@ -37,7 +37,7 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
-static struct _class;
+static struct the_class;
 
 static int create_device(struct device_out *dev){
 	/**
@@ -60,7 +60,7 @@ static int create_device(struct device_out *dev){
 		log_err("Could not get Chardev Region!");
 		return -1;
 	}
-
+	the_class = class_create(THIS_MODULE, "chardriver");
 	cdev_init(&dev->cdev,&dev->fops);
 
 	if(dev->cdev != NULL){
@@ -69,7 +69,7 @@ static int create_device(struct device_out *dev){
 
 		add = cdev_add(dev->cdev, dev->device, 0);
 		if(add==0){
-			dev_crt = device_create(dev->_class,NULL,dev->device,dev->name);
+			dev_crt = device_create(the_class,NULL,dev->device,dev->name);
 			if(dev_crt == 0){
 				log_success("Device Created with major:%d",MAJOR(dev->device));
 				return dev_crt;
@@ -96,7 +96,7 @@ static int destroy_device(struct device_out *dev){
 	log_info("Destroying Device");
 	device_destroy(dev->_class,dev->device);
 	cdev_del(dev->cdev);
-	class_destroy(dev->_class);
+	class_destroy(the_class);
 	log_success("Device Destryed");
 	return 0;
 }
