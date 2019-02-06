@@ -39,7 +39,7 @@ struct device_out dev = {
 };
 
 
-static int create_device(struct device_out dev, struct file_operations *fops){
+static int create_device(struct device_out *dev, struct file_operations *fops){
 	/**
 	@brief Creates an IO Device.
 	@param dev A device structure.
@@ -61,13 +61,26 @@ static int create_device(struct device_out dev, struct file_operations *fops){
 	return 0;
 };
 
+static int destroy_device(struct device_out *dev){
+	/**
+	@brief Destroys an IO Device.
+	@param dev A device structure.
+	@return returns 0 for success and -1 for failure.
+
+	Destroys an IO device that then is removed from  /dev/
+	*/
+	device_destroy(dev._class,dev.device);
+	unregister_chrdev(dev.major,dev.name);
+	return 0;
+}
+
 static int __init mothership_init(void)
 {
 	/**
 	 @brief Initializes the mothership. 
 	 @return 0 for success -1 for error.
 	 */
-
+	
 	log_success("Module Loaded");
 	return 0;
 }
