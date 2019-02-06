@@ -1,6 +1,6 @@
 /**
  * @author Alexander Bjornsrud
- * @brief color codes
+ * @brief color codes for terminals and logfiles
  * 
  * Defines BLANK,
  *         RED
@@ -10,8 +10,15 @@
  *         MAGENTA
  *         CYAN
  *         WHITE
+ * 
+ * Partially sourced from stack overflow.
+ * Credit to user karlphillip
+ * [StackOverflow] https://stackoverflow.com/questions/3585846/color-text-in-terminal-applications-in-unix
  */
 
+#ifndef __colors_h__
+    #define __colors_h__
+#endif
 
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"

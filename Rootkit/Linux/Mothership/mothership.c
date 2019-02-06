@@ -25,22 +25,10 @@ Debug			kerndebug.h
 #include "definitions.h"
 #include "../headders/kerndebug.h"
 #include "../headders/colors.h"
+#include "file_defs.c"
 
 
-static struct file_operations fops = {
-	.open = dev_open,
-	.release = dev_close,
-	.read = dev_read,
-	.write = dev_write
-};
-
-
-struct device_out dev = {
-	.name = "mothership_01",
-};
-
-
-static int create_device(struct device_out *dev, struct file_operations *fops){
+static int create_device(struct device_out *dev){
 	/**
 	@brief Creates an IO Device.
 	@param dev A device structure.
@@ -50,14 +38,14 @@ static int create_device(struct device_out *dev, struct file_operations *fops){
 	Creates an IO device that the user can interface with via /dev/
 	*/
 
-	dev->major = register_chrdev(0, dev->name, fops);
+	dev->major = register_chrdev(0, dev->name, dev->fops);
 	
 	if(dev->major < 0){
 		log_err("The module failed to load!");
 		return dev->major;
 	}
 
-	dev->_class = class_create(0, dev->name, "chardrv");
+	dev->_class = class_create(dev->name, "chardrv");
     device_create(dev->_class, NULL, dev->device, NULL, dev->name);
 	return 0;
 };
@@ -84,6 +72,7 @@ static int __init mothership_init(void)
 	 */
 	
 	log_success("Module Loaded");
+	create_device(all);
 	return 0;
 }
 
@@ -95,34 +84,6 @@ static void __exit mothership_exit(void)
 	 */
 
 	log_success("Module Unloaded");
-	unregister_chrdev(dev.major, dev.name);
+	destroy_device(all);
 }
 
-static int dev_open(struct inode* inodep,struct file *file){
-	/**
-	 @brief Called when a device is opened.
-	 @param inodep Structure that contains the inode.
-	 @param file The file structure tgat is opened.
-	 @return 0 for succes -1 for failure
-	 */
-
-	printk("%s[+]%s Filehandle opened: %s",KGRN,KNRM,"");
-	return 0;
-}
-static int dev_close(struct inode *inodep,struct file *file){
-	/**
-	 @brief Called when a device is closed.
-	 @param inodep Structure that contains the inode.
-	 @param file The file structure tgat is closed.
-	 @return 0 for succes -1 for failure
-	 */
-
-	printk("%s[+]%s Filehandle closed: %s",KRED,KNRM,"");
-	return 0;
-}
-
-static ssize_t dev_read(struct file* fils,char* buff,size_t size,loff_t *offset){return 0;}
-static ssize_t dev_write(struct file* file,const char* buff,size_t size ,loff_t *offset){return 0;}
-
-module_init(mothership_init);
-module_exit(mothership_exit);

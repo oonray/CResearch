@@ -16,7 +16,7 @@ They can be used like printf and printk because they use the ##__VA_ARGS__ input
 #define __dbg_h__
 #endif
 
-#ifndef KNRM
+#ifndef __colors_h__
     #include "colors.h"
 #endif
 

@@ -7,13 +7,17 @@ All the different struct and function definitions.
 For cleanlyness.
 
 */
+#ifndef __define_h__
+    #define __define_h__
+#endif
+
 #define VERBOSE 1
 #define MODULE_NAME "mothership"
 
-static int dev_open(struct inode*,struct file*);
-static int dev_close(struct inode*,struct file*);
-static ssize_t dev_read(struct file*,char*,size_t,loff_t*);
-static ssize_t dev_write(struct file*,const char*,size_t,loff_t*);
+static int dev_open_all(struct inode*,struct file*);
+static int dev_close_all(struct inode*,struct file*);
+static ssize_t dev_read_all(struct file*,char*,size_t,loff_t*);
+static ssize_t dev_write_all(struct file*,const char*,size_t,loff_t*);
 //static int create_device(struct device);
 
 
@@ -29,4 +33,5 @@ struct device_out {
     int major;
     struct class *_class;
     dev_t device;
+    struct file_operations *fops;
 };
