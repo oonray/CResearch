@@ -42,5 +42,5 @@ struct device_out {
     int major;
     struct class *_class;
     dev_t device;
-    struct file_operations *fops;
+    struct file_operations fops;
 };

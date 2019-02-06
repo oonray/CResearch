@@ -12,10 +12,10 @@
 struct device_out all = {
 	.name = "mothership_all",
 	.fops = {
-			.open = dev_open,
-			.release = dev_close,
-			.read = dev_read,
-			.write = dev_write
+			.open = dev_open_all,
+			.release = dev_close_all,
+			.read = dev_read_all,
+			.write = dev_write_all
 		}
 };
 
@@ -47,10 +47,7 @@ static int dev_close_all(struct inode *inodep,struct file *file){
 static ssize_t dev_read_all(struct file* fils,char* buff,size_t size,loff_t *offset){
     return 0;
     }
-    
+
 static ssize_t dev_write_all(struct file* file,const char* buff,size_t size ,loff_t *offset){
     return 0;
     }
-
-module_init(mothership_init);
-module_exit(mothership_exit);

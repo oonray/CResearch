@@ -96,3 +96,6 @@ static void __exit mothership_exit(void)
 	destroy_device(&all);
 }
 
+
+module_init(mothership_init);
+module_exit(mothership_exit);
