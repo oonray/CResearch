@@ -47,14 +47,14 @@ static int create_device(struct device_out *dev){
 	Creates an IO device that the user can interface with via /dev/
 	*/
 
-	dev->major = register_chrdev(0, dev->name, dev->fops);
+	dev->major = register_chrdev(0, &dev->name, &dev->fops);
 	
 	if(dev->major < 0){
 		log_err("The module failed to load!");
 		return dev->major;
 	}
 
-	dev->_class = class_create(dev->name, "chardrv");
+	dev->_class = class_create(&dev->name, "chardrv");
     device_create(dev->_class, NULL, dev->device, NULL, dev->name);
 	return 0;
 };

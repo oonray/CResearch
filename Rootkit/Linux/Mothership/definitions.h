@@ -13,7 +13,7 @@
 #define VERBOSE 1
 #define MODULE_NAME "mothership"
 
-MODULE_LICENSE("MIT");        
+MODULE_LICENSE("GPL");        
 MODULE_AUTHOR("Alexander Bjørnsrud");   
 MODULE_DESCRIPTION("This is an experimental program intentionally designed to do evil things.\n"
 				   "It is not designed to be outside a lab\n"
