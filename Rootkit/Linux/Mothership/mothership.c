@@ -49,12 +49,12 @@ static int create_device(struct device_out *dev){
 	Creates an IO device that the user can interface with via /dev/
 	*/
 
+	int add;
+
 	cdev_init(&dev->cdev,&dev->fops);
 	dev->cdev->owner = THIS_MODULE;
-	dev->cdev->ops = dev->fops;
-	dev->cdev->name = dev->name;
 
-	int add = cdev_add(dev->cdev, dev->device, 1);
+	add = cdev_add(dev->cdev, dev->device, 1);
 	if(add==0){
 		log_success("Device Created with major:%d",MAJOR(dev->device));
 	}else{
@@ -73,9 +73,7 @@ static int destroy_device(struct device_out *dev){
 	Destroys an IO device that then is removed from  /dev/
 	*/
 	log_info("Destroying Device");
-	cdev_del(dev->device);
-	class_destroy(_class);
-	unregister_chrdev_region(dev->device,1);
+	cdev_del(dev->cdev);
 	log_success("Device Destryed");
 	return 0;
 }
