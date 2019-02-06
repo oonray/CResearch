@@ -61,7 +61,7 @@ static int create_device(struct device_out *dev){
 		log_err("Could not get Chardev Region!");
 		return -1;
 	}
-	the_class = class_create(THIS_MODULE, "chardriver");
+	
 	cdev_init(dev->cdev,&dev->fops);
 
 	if(dev->cdev != NULL){
@@ -109,6 +109,7 @@ static int __init mothership_init(void)
 	 */
 	log_success("-----------------------------");
 	log_success("Module Loaded");
+	the_class = class_create(THIS_MODULE, "chardriver");
 	create_device(&all);
 	return 0;
 }
@@ -121,6 +122,7 @@ static void __exit mothership_exit(void)
 	 */
 
 	destroy_device(&all);
+	class_destroy(the_class);
 	log_success("Module Unloaded");
 }
 
