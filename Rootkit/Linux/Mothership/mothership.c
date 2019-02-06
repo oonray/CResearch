@@ -96,7 +96,7 @@ static int destroy_device(struct device_out *dev){
 	Destroys an IO device that then is removed from  /dev/
 	*/
 	log_info("Destroying Device");
-	device_destroy(dev->device);
+	device_destroy(_class,dev->device);
 	cdev_del(dev->cdev);
 	class_destroy(_class);
 	log_success("Device Destryed");
