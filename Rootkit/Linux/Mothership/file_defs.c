@@ -15,7 +15,7 @@
     #include <linux/device.h>
 #endif
 
-struct class *_class = class_create(THIS_MODULE,"chardrv");
+
 
 struct device_out all = {
 	.name = "all",

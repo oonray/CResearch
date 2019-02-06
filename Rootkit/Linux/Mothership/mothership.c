@@ -50,24 +50,19 @@ static int create_device(struct device_out *dev){
 	Creates an IO device that the user can interface with via /dev/
 	*/
 
-	//_class = class_create(THIS_MODULE,"chardrv");
-
-	//alloc_chrdev_region(dev_t first, unsigned int count,char *name);
-
-	//log_info("Creating Device");
-	//int success = alloc_chrdev_region(dev->device,0,1,dev->name);
-	//if(success==0){
-	//	log_success("Chardev registered with major Number: %d", MAJOR(dev->device)));
-	//}else{return success;}
-	
 	cdev_init(&dev->cdev,&dev->fops);
 	dev->cdev.owner = THIS_MODULE;
 	dev->cdev.ops = dev->fops;
-	if(cdev_add(dev->cdev, dev->device, 1)==0){
-		log_success("Device Created");
-	}
+	dev->cdev.name = dev->name;
 
-	log_success("Device Created");
+
+	int add = cdev_add(dev->cdev, dev->device, 1);
+	if(add==0){
+		log_success("Device Created with major:%d",MAJOR(dev->device));
+	}else{
+		log_err("Device Creation failed with error %d",add);
+		return add;
+	}
 	return 0;
 };
 
