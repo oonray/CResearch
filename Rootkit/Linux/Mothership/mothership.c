@@ -47,15 +47,18 @@ static int create_device(struct device_out *dev){
 	Creates an IO device that the user can interface with via /dev/
 	*/
 
+	log_info("Creating Device");
 	dev->major = register_chrdev(0, dev->name, &dev->fops);
-	
+	log_info("Major Number: %s", dev->major);
+
 	if(dev->major < 0){
 		log_err("The module failed to load!");
 		return dev->major;
 	}
 
-	dev->_class = class_create(0,dev->name, "chardrv");
+	dev->_class = class_create(*(*dev).name, "chardrv");
     device_create(dev->_class, NULL, dev->device, NULL, dev->name);
+	log_success("Device Created");
 	return 0;
 };
 
@@ -67,9 +70,11 @@ static int destroy_device(struct device_out *dev){
 
 	Destroys an IO device that then is removed from  /dev/
 	*/
+	log_info("Destroying Device");
 	device_destroy(dev->_class,dev->device);
 	class_destroy(dev->_class);
 	unregister_chrdev(dev->major,dev->name);
+	log_success("Device Destryed");
 	return 0;
 }
 
@@ -92,8 +97,8 @@ static void __exit mothership_exit(void)
 	 @return 0 for success -1 for error.
 	 */
 
-	log_success("Module Unloaded");
 	destroy_device(&all);
+	log_success("Module Unloaded");
 }
 
 
