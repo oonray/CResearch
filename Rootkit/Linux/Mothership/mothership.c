@@ -37,7 +37,7 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
-static struct the_class;
+struct the_class;
 
 static int create_device(struct device_out *dev){
 	/**
@@ -51,6 +51,8 @@ static int create_device(struct device_out *dev){
 
 	int add;
 	int dev_crt;
+	
+
 
     alloc_chrdev_region(&dev->device, 0, 1, dev->name);
 	if(dev->device != NULL){
@@ -76,7 +78,7 @@ static int create_device(struct device_out *dev){
 			}else{
 				log_err("Device Creation failed with error %d",dev_crt);
 				return dev_crt;
-			}z
+			}
 		}else{
 			log_err("Device Creation failed with error %d",add);
 			return add;
@@ -96,7 +98,6 @@ static int destroy_device(struct device_out *dev){
 	log_info("Destroying Device");
 	device_destroy(the_class,dev->device);
 	cdev_del(dev->cdev);
-	class_destroy(the_class);
 	log_success("Device Destryed");
 	return 0;
 }
