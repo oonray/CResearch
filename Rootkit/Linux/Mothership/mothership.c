@@ -50,7 +50,6 @@ static int create_device(struct device_out *dev){
 
 	int add;
 	int dev_crt;
-	extern struct the_class;
 	
 
 
@@ -62,7 +61,7 @@ static int create_device(struct device_out *dev){
 		log_err("Could not get Chardev Region!");
 		return -1;
 	}
-	
+	dev->class = class_create(THIS_MODULE, "chardriver");
 	cdev_init(dev->cdev,&dev->fops);
 
 	if(dev->cdev != NULL){
@@ -71,23 +70,23 @@ static int create_device(struct device_out *dev){
 
 		add = cdev_add(dev->cdev, dev->device, 0);
 		if(add==0){
-			dev_crt = device_create(the_class,NULL,dev->device,NULL,dev->name);
+			dev_crt = device_create(dev->class,NULL,dev->device,NULL,dev->name);
 			if(dev_crt == 0){
-				log_success("Device Created with major:%d",MAJOR(dev->device));
+				log_success("Device Created with major:%d", MAJOR(dev->device));
 				return dev_crt;
 			}else{
-				log_err("Device Creation failed with error %d",dev_crt);
+				log_err("Device Creation failed with error %d", dev_crt);
 				return dev_crt;
 			}
 		}else{
-			log_err("Device Creation failed with error %d",add);
+			log_err("Device Creation failed with error %d", add);
 			return add;
 		}
 	}
 	return -1;
 };
 
-static int destroy_device(struct device_out *dev){
+void int destroy_device(struct device_out *dev){
 	/**
 	@brief Destroys an IO Device.
 	@param dev A device structure.
@@ -95,13 +94,11 @@ static int destroy_device(struct device_out *dev){
 
 	Destroys an IO device that then is removed from  /dev/
 	*/
-	extern struct the_class;
 
 	log_info("Destroying Device");
-	device_destroy(the_class,dev->device);
 	cdev_del(dev->cdev);
+	class_destroy(dev->class);
 	log_success("Device Destryed");
-	return 0;
 }
 
 static int __init mothership_init(void)
@@ -112,7 +109,6 @@ static int __init mothership_init(void)
 	 */
 	log_success("-----------------------------");
 	log_success("Module Loaded");
-	the_class = class_create(THIS_MODULE, "chardriver");
 	create_device(&all);
 	return 0;
 }
