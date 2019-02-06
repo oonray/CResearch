@@ -14,6 +14,15 @@ For cleanlyness.
 #define VERBOSE 1
 #define MODULE_NAME "mothership"
 
+MODULE_LICENSE("MIT");        
+MODULE_AUTHOR("Alexander Bjørnsrud");   
+MODULE_DESCRIPTION("This is an experimental program intentionally designed to do evil things.\n"
+				   "It is not designed to be outside a lab\n"
+				   "If the folder name Rootkit did not tip you of please google the term.\n"
+				   "This module should not be used by anyone for any purpouse exept controlled labratory experiments."); 
+
+MODULE_VERSION("0.1");    
+
 static int dev_open_all(struct inode*,struct file*);
 static int dev_close_all(struct inode*,struct file*);
 static ssize_t dev_read_all(struct file*,char*,size_t,loff_t*);

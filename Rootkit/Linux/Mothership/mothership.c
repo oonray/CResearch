@@ -36,10 +36,6 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
-MODULE_LICENSE("MIT");        
-MODULE_AUTHOR("Alexander Bjørnsrud");   
-MODULE_DESCRIPTION("This is an experiment ment to do evil stuff.\n If the folder name Rootkit did not tip you of please google the term.\n This module should not be used by anyone for any purpouse exept controlled labratory experiments."); 
-MODULE_VERSION("0.1");    
 
 static int create_device(struct device_out *dev){
 	/**
