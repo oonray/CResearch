@@ -21,10 +21,12 @@ This software serves no convetnionally usefull purpouse and is continouasly devl
 
 #include <linux/module.h>	
 #include <linux/socket.h>
+#include <linux/types.h>
 #include <linux/init.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 #include <linux/device.h>
+#include <linux/kdev_t.h>
 
 /*
 Definitions 	definitions.h
@@ -36,6 +38,7 @@ Debug			kerndebug.h
 #include "../headders/colors.h"
 #include "file_defs.c"
 
+static struct class *_class; 
 
 static int create_device(struct device_out *dev){
 	/**
@@ -47,17 +50,17 @@ static int create_device(struct device_out *dev){
 	Creates an IO device that the user can interface with via /dev/
 	*/
 
-	log_info("Creating Device");
-	dev->major = register_chrdev(0, dev->name, &dev->fops);
-	log_info("Major Number: %d", dev->major);
+	_class = class_create(THIS_MODULE,"chardrv");
 
-	if(dev->major < 0){
-		log_err("The module failed to load!");
-		return dev->major;
-	}
+	//alloc_chrdev_region(dev_t first, unsigned int count,char *name);
+
+	log_info("Creating Device");
+	int success = alloc_chrdev_region(dev->device,0,1,dev->name);
+	if(success==0){
+		log_success("Chardev registered with major Number: %d", MAJOR(dev->device)));
+	}else{return success;}
 
     device_create(_class,NULL,dev->device, NULL,"mothership_%s", dev->name);
-	log_info("%d",dev->device);
 	log_success("Device Created");
 	return 0;
 };
@@ -73,7 +76,7 @@ static int destroy_device(struct device_out *dev){
 	log_info("Destroying Device");
 	device_destroy(dev->_class,dev->device);
 	class_destroy(_class);
-	unregister_chrdev(dev->major,dev->name);
+	unregister_chrdev_region(dev->device,1);
 	log_success("Device Destryed");
 	return 0;
 }
