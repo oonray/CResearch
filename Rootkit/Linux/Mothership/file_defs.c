@@ -18,7 +18,7 @@
 struct class *_class = class_create(THIS_MODULE,"chardrv");
 
 struct device_out all = {
-	.name = "mothership_all",
+	.name = "all",
 	.fops = {
 			.open = dev_open_all,
 			.release = dev_close_all,
