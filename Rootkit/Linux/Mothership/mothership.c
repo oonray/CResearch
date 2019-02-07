@@ -62,12 +62,12 @@ static int create_device(struct device_out *dev){
 	dev->_class = class_create(THIS_MODULE, "chardriver");
 	cdev_init(dev->cdev,&dev->fops);
 
-	if(dev->cdev != NULL){
-		dev->cdev->owner = THIS_MODULE;
-		dev->device = MKDEV(dev->major,dev->minor);
+	dev->cdev->owner = THIS_MODULE;
+	dev->device = MKDEV(dev->major,dev->minor);
 
-		add = cdev_add(dev->cdev, dev->device, 0);
-		if(add==0){
+	add = cdev_add(dev->cdev, dev->device, 0);
+	
+	if(add==0){
 			dev->dev = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
 			if(dev->dev != NULL){
 				log_success("Device Created with major:%d", MAJOR(dev->device));
@@ -76,10 +76,9 @@ static int create_device(struct device_out *dev){
 				log_err("Device Creation failed");
 				return -1;
 			}
-		}else{
+	}else{
 			log_err("Device Creation failed with error %d", add);
 			return add;
-		}
 	}
 	return -1;
 };
