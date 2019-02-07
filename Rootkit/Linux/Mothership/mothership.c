@@ -71,7 +71,7 @@ static int create_device(struct device_out *dev){
 	dev->device = MKDEV(dev->major,dev->minor);
 
 	log_info("Adding Device");
-	add = cdev_add(dev->cdev, dev->device, 1);
+	add = cdev_add(&dev->cdev, dev->device, 1);
 	
 	if(add==0){
 			log_info("Creating Device");
