@@ -72,7 +72,7 @@ static int create_device(struct device_out *dev){
 				log_success("Device Created with major:%d", MAJOR(dev->device));
 				return 0;
 			}else{
-				log_err("Device Creation failed with error %d", dev_crt);
+				log_err("Device Creation failed");
 				return -1;
 			}
 		}else{
