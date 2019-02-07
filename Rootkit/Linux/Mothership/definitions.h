@@ -40,7 +40,7 @@ struct device_out {
     dev_t device;
 	int major;
 	int minor;
-    struct cdev *cdev; 
+    struct cdev cdev; 
     struct file_operations fops;
 	struct class *_class;
 	struct device *dev;
