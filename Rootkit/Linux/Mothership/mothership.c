@@ -71,11 +71,11 @@ static int create_device(struct device_out *dev){
 	dev->device = MKDEV(dev->major,dev->minor);
 
 	log_info("Adding Device");
-	add = cdev_add(dev->cdev, dev->device, 0);
+	add = cdev_add(dev->cdev, dev->device, 1);
 	
 	if(add==0){
 			log_info("Creating Device");
-			dev->dev = device_create(dev->_class,0,dev->device,0,dev->name);
+			dev->dev = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
 			log_success("Device Created with major:%d", MAJOR(dev->device));
 			return 0;
 	}else{
