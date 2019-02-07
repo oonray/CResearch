@@ -54,7 +54,7 @@ static int create_device(struct device_out *dev){
 
 
     alloc_chrdev_region(&dev->device, 0, 1, dev->name);
-	if(dev->device != NULL){
+	if(&dev->device != NULL){
 		dev->major = MAJOR(dev->device);
 		dev->minor = MINOR(dev->device);
 	}else{
