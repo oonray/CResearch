@@ -54,7 +54,7 @@ static int create_device(struct device_out *dev){
 	if(alloc_chrdev_region(&dev->device, 0, 1, dev->name)==0){
 		dev->major = MAJOR(dev->device);
 		dev->minor = MINOR(dev->device);
-		log_info("Device Allocated! with MAJOR:%s",dev->major);
+		log_info("Device Allocated! with MAJOR:%d",dev->major);
 	}else{
 		log_err("Could not get Chardev Region!");
 		return -1;
