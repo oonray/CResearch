@@ -83,7 +83,7 @@ static int create_device(struct device_out *dev){
 	return -1;
 };
 
-void int destroy_device(struct device_out *dev){
+void destroy_device(struct device_out *dev){
 	/**
 	@brief Destroys an IO Device.
 	@param dev A device structure.
