@@ -49,8 +49,10 @@ static int create_device(struct device_out *dev){
 	*/
 
 	int add;
-
+	log_info("Starting Device Creation");
     alloc_chrdev_region(&dev->device, 0, 1, dev->name);
+	log_info("Device Allocated!");
+	
 	if(&dev->device != NULL){
 		dev->major = MAJOR(dev->device);
 		dev->minor = MINOR(dev->device);
