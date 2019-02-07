@@ -65,7 +65,7 @@ static int create_device(struct device_out *dev){
 	cdev_init(&dev->cdev,&dev->fops);
 
 	log_info("Setting Owner");
-	dev->cdev->owner = THIS_MODULE;
+	dev->cdev.owner = THIS_MODULE;
 
 	log_info("Making Device");
 	dev->device = MKDEV(dev->major,dev->minor);
