@@ -95,7 +95,7 @@ void destroy_device(struct device_out *dev){
 	*/
 
 	log_info("Destroying Device");
-	cdev_del(dev->cdev);
+	cdev_del(&dev->cdev);
 	class_destroy(dev->_class);
 	log_success("Device Destryed");
 }
