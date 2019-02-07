@@ -43,4 +43,5 @@ struct device_out {
     struct cdev *cdev; 
     struct file_operations fops;
 	struct class *_class;
+	struct device *dev;
 };

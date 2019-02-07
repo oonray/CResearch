@@ -49,9 +49,6 @@ static int create_device(struct device_out *dev){
 	*/
 
 	int add;
-	int dev_crt;
-	
-
 
     alloc_chrdev_region(&dev->device, 0, 1, dev->name);
 	if(&dev->device != NULL){
@@ -70,8 +67,8 @@ static int create_device(struct device_out *dev){
 
 		add = cdev_add(dev->cdev, dev->device, 0);
 		if(add==0){
-			dev_crt = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
-			if(dev_crt == 0){
+			dev->dev = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
+			if(dev->dev == NULL){
 				log_success("Device Created with major:%d", MAJOR(dev->device));
 				return dev_crt;
 			}else{
