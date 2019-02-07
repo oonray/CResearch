@@ -59,23 +59,25 @@ static int create_device(struct device_out *dev){
 		log_err("Could not get Chardev Region!");
 		return -1;
 	}
+	log_info("Creating Class");
 	dev->_class = class_create(THIS_MODULE, "chardriver");
+	log_info("Initializes cdev");
 	cdev_init(dev->cdev,&dev->fops);
 
+	log_info("Setting Owner");
 	dev->cdev->owner = THIS_MODULE;
+
+	log_info("Making Device");
 	dev->device = MKDEV(dev->major,dev->minor);
 
+	log_info("Adding Device");
 	add = cdev_add(dev->cdev, dev->device, 0);
 	
 	if(add==0){
-			dev->dev = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
-			if(dev->dev != NULL){
-				log_success("Device Created with major:%d", MAJOR(dev->device));
-				return 0;
-			}else{
-				log_err("Device Creation failed");
-				return -1;
-			}
+			log_info("Creating Device");
+			dev->dev = device_create(dev->_class,0,dev->device,0,dev->name);
+			log_success("Device Created with major:%d", MAJOR(dev->device));
+			return 0;
 	}else{
 			log_err("Device Creation failed with error %d", add);
 			return add;
