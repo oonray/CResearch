@@ -62,7 +62,7 @@ static int create_device(struct device_out *dev){
 	log_info("Creating Class");
 	dev->_class = class_create(THIS_MODULE, "chardriver");
 	log_info("Initializes cdev");
-	
+
 	cdev_init(&dev->cdev,&dev->fops);
 
 	log_info("Setting Owner");
