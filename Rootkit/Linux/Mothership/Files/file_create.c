@@ -75,10 +75,9 @@ void destroy_device(struct device_out *dev){
 
 	log_info("Destroying Device");
 	cdev_del(&dev->cdev);
-	device_destroy(dev->_class,dev->device);
+	device_destroy(dev->_class, dev->device);
 	class_destroy(dev->_class);
 	unregister_chrdev_region(dev->device,1);
 	log_success("Device Destryed");
     
-
 }
