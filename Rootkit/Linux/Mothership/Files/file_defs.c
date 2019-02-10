@@ -27,7 +27,6 @@ struct device_out all = {
 		}
 };
 
-
 static int dev_open_all(struct inode* inodep,struct file *file){
 	/**
 	 @brief Called when a device is opened.

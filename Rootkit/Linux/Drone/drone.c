@@ -1,8 +1,8 @@
 
 /*
  @author Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
- @file mothership.c
- @brief A Kernel Module c&c mothership.
+ @file deonw.c
+ @brief A Kernel Module c&c worker.
 
 This is a kernel module used for command and controll in a botnet like maner.
 It will only work in a testing enviroment and is not ment to be used outside the lab.
@@ -35,44 +35,35 @@ This software serves no convetnionally usefull purpouse and is continouasly devl
 
 
 /*
-Definitions 		definitions.h
 Colors				colors.h
 Debug				kerndebug.h
-File Definitions	file_defs.c
-File Createions		file_create.c
-Config File			file_config.c
 */
-#include "definitions.h"
+
 #include "../headders/kerndebug.h"
 #include "../headders/colors.h"
-#include "Files/file_defs.c"
-#include "Files/file_create.c"
-#include "Files/file_config.c"
 
 
-static int __init mothership_init(void)
+
+static int __init drone_init(void)
 {
 	/**
-	 @brief Initializes the mothership. 
+	 @brief Initializes the drone. 
 	 @return 0 for success -1 for error.
 	 */
 	log_success("-----------------------------");
 	log_success("Module Loaded");
-	create_device(&all);
 	return 0;
 }
 
-static void __exit mothership_exit(void)
+static void __exit drone_exit(void)
 {  
 	/**
-	 @brief UnInitializes the mothership. 
+	 @brief UnInitializes the drone. 
 	 @return 0 for success -1 for error.
 	 */
-
-	destroy_device(&all);
 	log_success("Module Unloaded");
 }
 
 
-module_init(mothership_init);
-module_exit(mothership_exit);
+module_init(drone_init);
+module_exit(drone_exit);
