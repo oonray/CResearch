@@ -23,9 +23,15 @@ This software serves no convetnionally usefull purpouse and is continouasly devl
 #include <linux/socket.h>
 #include <linux/init.h>
 #include <linux/fs.h>
+
 #include <linux/uaccess.h>
 #include <linux/device.h>
 #include <linux/cdev.h>
+
+#include <asm/segment.h>
+#include <asm/uaccess.h>
+#include <linux/buffer_head.h>
+
 
 /*
 Definitions 		definitions.h
@@ -33,12 +39,14 @@ Colors				colors.h
 Debug				kerndebug.h
 File Definitions	file_defs.c
 File Createions		file_create.c
+Config File			file_config.c
 */
 #include "definitions.h"
 #include "../headders/kerndebug.h"
 #include "../headders/colors.h"
 #include "Files/file_defs.c"
 #include "Files/file_create.c"
+#include "Files/file_config.c"
 
 
 static int __init mothership_init(void)
