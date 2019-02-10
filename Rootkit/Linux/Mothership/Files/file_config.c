@@ -48,6 +48,11 @@ mm_segment_t get_fs(){
 
 int file_open(struct configFile *conf) 
 {
+        /**
+     * @brief Opens the config file
+     * @param conf The config file struct
+     * @return 0 for success or erroe
+     * */
     mm_segment_t oldfs = get_fs();
     int err = 0;
   
@@ -62,11 +67,20 @@ int file_open(struct configFile *conf)
 
 void file_close(struct configFile *conf) 
 {
+            /**
+     * @brief Closes the config file
+     * @param conf The config file struct
+     * */
     filp_close(conf->filep, NULL);
 }
 
 int file_read(struct configFile *conf) 
 {
+    /**
+     * @brief Reads the content of the config file
+     * @param conf The config file struct
+     * @return bytes read
+     * */
     mm_segment_t oldfs = get_fs();
 
     int read = vfs_read(conf->filep,conf->content,sizeof(struct drones));
@@ -78,6 +92,11 @@ int file_read(struct configFile *conf)
 
 int file_write(struct configFile *conf) 
 {
+    /**
+     * @brief Writes the content of the config file
+     * @param conf The config file struct
+     * @return bytes written
+     * */
     mm_segment_t oldfs = get_fs();
 
     int written = vfs_write(conf->filep,conf->content, sizeof(struct drones));
