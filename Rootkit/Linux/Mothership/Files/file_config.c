@@ -41,7 +41,7 @@ mm_segment_t get_fs(){
      * */
 
     mm_segment_t oldfs;
-    pldfs = get_fs();
+    oldfs = get_fs();
     set_fs(get_ds());
     return oldfs;
 }

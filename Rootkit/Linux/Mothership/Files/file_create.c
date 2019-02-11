@@ -29,39 +29,29 @@ static int create_device(struct device_out *dev){
 	int add;
 	log_info("Starting Device Creation");
 
-	if(alloc_chrdev_region(&dev->device, 0, 1, dev->name)==0){
-		dev->major = MAJOR(dev->device);
-		dev->minor = MINOR(dev->device);
-		log_info("Device Allocated! with MAJOR:%d",dev->major);
-	}else{
+	if(alloc_chrdev_region(&dev->device, 0, 1, dev->name)!=0){
 		log_err("Could not get Chardev Region!");
 		return -1;
 	}
-	log_info("Creating Class");
+	
+	dev->major = MAJOR(dev->device);
+	dev->minor = MINOR(dev->device);
+
 	dev->_class = class_create(THIS_MODULE, "chardriver");
-	log_info("Initializes cdev");
 
 	cdev_init(&dev->cdev,&dev->fops);
-
-	log_info("Setting Owner");
 	dev->cdev.owner = THIS_MODULE;
-
-	log_info("Making Device");
 	dev->device = MKDEV(dev->major,dev->minor);
-
-	log_info("Adding Device");
 	add = cdev_add(&dev->cdev, dev->device, 1);
 	
-	if(add==0){
-			log_info("Creating Device");
-			dev->dev = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
-			log_success("Device Created with major:%d and name %s", dev->major,dev->name);
-			return 0;
-	}else{
-			log_err("Device Creation failed with error %d", add);
-			return add;
+	if(add < 0){
+		log_err("Device Creation failed with error %d", add);
+		return add;
 	}
-	return -1;
+	
+	dev->dev = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
+	log_success("Device Created with major:%d and name %s", dev->major,dev->name);
+	return 0;
 };
 
 void destroy_device(struct device_out *dev){
