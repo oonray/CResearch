@@ -57,7 +57,8 @@ static ssize_t dev_read_all(struct file* fils,char* buff,size_t size,loff_t *off
 	int len = strlen(msg);
 	err = copy_to_user(buffer,msg,len);
     return err == 0 ? len : -EFAULT;
-    }
+
+}
 
 static ssize_t dev_write_all(struct file* file,const char* buff,size_t size ,loff_t *offset){
     return 0;

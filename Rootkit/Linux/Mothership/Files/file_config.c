@@ -58,6 +58,7 @@ int file_open(struct configFile *conf)
   
     conf->filp = filp_open(conf->path, conf->flags, conf->rights);
     set_fs(oldfs);
+    
     if (IS_ERR(conf->filp)) {
         err = PTR_ERR(conf->filp);
         return err

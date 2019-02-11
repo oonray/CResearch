@@ -50,7 +50,7 @@ static int create_device(struct device_out *dev){
 	}
 	
 	dev->dev = device_create(dev->_class,NULL,dev->device,NULL,dev->name);
-	log_success("Device Created with major:%d and name %s", dev->major,dev->name);
+	log_success("Device Created with major:%d and name %s", dev->major, dev->name);
 	return 0;
 };
 
