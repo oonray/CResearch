@@ -1,10 +1,3 @@
-/**  
-@author Alexander Bjornsrud <alexanderbjornsrud@gmail.com>
-@file file_create.h
-@brief Contains the file creation functions
- */
-
-
 #ifndef __define_h__
     #include "definitions.h"
     #include <linux/module.h>	
@@ -15,7 +8,8 @@
     #include <linux/device.h>
 #endif
 
-struct server server = {
-    .dev = all;
-};
+struct drone me = {};
 
+struct socket create_socket(){
+
+}

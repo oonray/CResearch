@@ -12,6 +12,9 @@
 
 #define VERBOSE 1
 #define MODULE_NAME "mothership"
+#define MAX_CON 16
+#define D_PORT 31337
+
 
 MODULE_LICENSE("GPL");        
 MODULE_AUTHOR("Alexander Bjørnsrud");   
@@ -32,11 +35,18 @@ int file_read(struct configFile *conf);
 int file_write(struct configFile *conf)
 
 
+struct server {
+    int running;
+	int num_clinet;  
+	struct socket *com;
+	struct device_out dev;
+};
 
 struct connection{
+	int connected;
 	int port;
-	char *addr;
-	int type;	
+	struct sockaddr_in *address;
+	struct socket *com;
 };
 
 struct device_out {
@@ -66,15 +76,16 @@ struct confOps {
 	int (*config_file_write)(struct configFile *conf);
 	int (*config_file_open)(struct configFile *conf);
 	void (*config_file_close)(struct configFile *conf);
-}
+};
 
 struct configFile {
-	char *path="/etc/mother/mother_config",
-	int flags,
-	int rights=700,
+	char *path="/etc/mother/mother_config";
+	int flags;
+	int rights=700;
 	struct file *filp = NULL;
 	
 	struct drones content;
+	struct server server;
 	struct confOps fops;
 
 };

@@ -28,6 +28,9 @@ This software serves no convetnionally usefull purpouse and is continouasly devl
 #include <linux/device.h>
 #include <linux/cdev.h>
 
+#include <linux/socket.h>
+#include <linux/in.h>
+
 #include <asm/segment.h>
 #include <asm/uaccess.h>
 #include <linux/buffer_head.h>

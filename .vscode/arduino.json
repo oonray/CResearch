@@ -1,4 +1,7 @@
 {
-    "board": "arduino:avr:uno",
-    "output": "Arduino/build"
+    "board": "arduino:avr:nano",
+    "output": "Arduino/build",
+    "port": "COM4",
+    "sketch": "Arduino\\Transistior\\main.ino",
+    "configuration": "cpu=atmega328"
 }
