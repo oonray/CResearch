@@ -1,7 +1,6 @@
 {
+    "sketch": "Projects\\Arduino\\Transistior\\main.ino",
     "board": "arduino:avr:nano",
-    "output": "Arduino/build",
-    "port": "COM4",
-    "sketch": "Arduino\\Transistior\\main.ino",
-    "configuration": "cpu=atmega328"
+    "configuration": "cpu=atmega328",
+    "port": "COM3"
 }
