@@ -63,3 +63,19 @@ static ssize_t dev_read_all(struct file* fils,char* buff,size_t size,loff_t *off
 static ssize_t dev_write_all(struct file* file,const char* buff,size_t size ,loff_t *offset){
     return 0;
     }
+
+
+static ssize_t dev_write(struct file* file,const char* buff,size_t size ,loff_t *offset){
+    int pos = get_drone(file->f_path.dentry->d_iname);
+	send(conf->content.drones[pos].con.socket,buff,size);
+	return 0;
+    }
+
+
+int get_drone(char *name){
+	for(int i = 0;i<conf.content.count+1;i++){
+		if(strcmp(conf.content.drones[i].name,name)){
+			return i;
+		}
+	}
+}

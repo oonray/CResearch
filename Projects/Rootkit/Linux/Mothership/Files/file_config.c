@@ -34,6 +34,15 @@ struct configFile config = {
     }
 };
 
+struct history hist = {
+    .fops{
+        .config_file_open = history_open,
+        .config_file_close = history_close,
+        .config_file_read = history_read,
+        .config_file_write = history_write
+    }
+};
+
 mm_segment_t get_fs(){
     /**
      * @brief gets the old filesystem and sets ds
@@ -65,6 +74,7 @@ int file_open(struct configFile *conf)
     }
     return 0
 }
+
 
 void file_close(struct configFile *conf) 
 {
@@ -105,4 +115,14 @@ int file_write(struct configFile *conf)
 
     set_fs(oldfs);
     return ret+written;
+}
+
+
+int append_drone(struct drone *dr){
+    struct drone *buff = malloc(sizeof(struct drone)*conf.content.count+1);
+    memcpy(buff,conf.content.drones,sizeof(struct drone)*conf.content.count);
+    free(buff,conf.content.drones);
+    conf.content.count += 1;
+    conf.contetn.drones = buff; 
+    return 0;
 }

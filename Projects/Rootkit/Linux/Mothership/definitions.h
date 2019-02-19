@@ -29,11 +29,23 @@ static int dev_open_all(struct inode*,struct file*);
 static int dev_close_all(struct inode*,struct file*);
 static ssize_t dev_read_all(struct file*,char*,size_t,loff_t*);
 static ssize_t dev_write_all(struct file*,const char*,size_t,loff_t*);
+static ssize_t dev_write(struct file* file,const char* buff,size_t size ,loff_t *offset);
+
 int file_open(struct configFile *conf);
 void file_close(struct file *file);
 int file_read(struct configFile *conf);
-int file_write(struct configFile *conf)
+int file_write(struct configFile *conf);
+int history_open(struct history *hist);
+int history_close(struct history *hist);
+int history_read(struct history *hist);
+int history_write(struct history *hist);
 
+
+struct history {
+	char *cmd[];
+	char *response[];
+	struct confOps ops;
+};
 
 struct server {
     int running;
@@ -61,7 +73,7 @@ struct device_out {
 
 struct drones {
 	int count;
-	struct drone *drones[];
+	struct drone *drones;
 };
 
 struct drone {
@@ -88,4 +100,5 @@ struct configFile {
 	struct confOps fops;
 
 } conf;
+
 

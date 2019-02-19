@@ -17,7 +17,6 @@
 
 conf.server = {
     .dev = all,
-    .num_client = 0,
     .con.addr.sin_family = AF_INET,
     .con.addr.sin_port = 31337,
     .con.address = "0.0.0.0"
@@ -25,6 +24,21 @@ conf.server = {
 
 int create_socket(struct connection *con){
     con.socket = socket(con->sin_family,SOCK_STREAM,0);
-    inet_aton(con.address,&con.addr)
+    inet_aton(con.address,&con.addr);
+    return 0;
+}
+
+int bind_to_addr(struct connection *con){
     bind(con.socket,(struct sockaddr *)&con.addr, sizeof(con.addr));
+    return 0;
+}
+
+int accept_drone(struct connection *con){
+    struct drone dr = malloc(sizeof(struct drone));
+    dr.name = "Drone_"+conf.content.count+1;
+    dr.con.socket = accept(con.socket,(struct sockaddr *)&dr.con.addr, sizeof(struct sockadsddr));
+
+    create_device(&dr.dev);
+    append_drone(&dr);
+    return 0;
 }

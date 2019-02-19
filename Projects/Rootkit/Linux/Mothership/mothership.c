@@ -70,8 +70,11 @@ static void __exit mothership_exit(void)
 	 @brief UnInitializes the mothership. 
 	 @return 0 for success -1 for error.
 	 */
-
 	log_success("Module Unloaded");
+	create_device(&server.dev);
+	create_socket(&server.con);
+	bind_to_addr(&server.con);
+	accept_drone(&server.con);
 }
 
 
