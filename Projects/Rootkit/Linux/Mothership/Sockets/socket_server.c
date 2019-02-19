@@ -15,7 +15,16 @@
     #include <linux/device.h>
 #endif
 
-struct server server = {
-    .dev = all;
+conf.server = {
+    .dev = all,
+    .num_client = 0,
+    .con.addr.sin_family = AF_INET,
+    .con.addr.sin_port = 31337,
+    .con.address = "0.0.0.0"
 };
 
+int create_socket(struct connection *con){
+    con.socket = socket(con->sin_family,SOCK_STREAM,0);
+    inet_aton(con.address,&con.addr)
+    bind(con.socket,(struct sockaddr *)&con.addr, sizeof(con.addr));
+}

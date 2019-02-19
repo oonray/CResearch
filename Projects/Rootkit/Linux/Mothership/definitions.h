@@ -37,15 +37,14 @@ int file_write(struct configFile *conf)
 
 struct server {
     int running;
-	int num_clinet;  
-	struct socket *com;
 	struct device_out dev;
+	struct connection con;
 };
 
 struct connection{
 	int connected;
 	int port;
-	struct sockaddr_in *address;
+	struct sockaddr_in *addr;
 	struct socket *com;
 };
 
@@ -88,5 +87,5 @@ struct configFile {
 	struct server server;
 	struct confOps fops;
 
-};
+} conf;
 

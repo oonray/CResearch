@@ -61,7 +61,6 @@ static int __init mothership_init(void)
 	 */
 	log_success("-----------------------------");
 	log_success("Module Loaded");
-	create_device(&all);
 	return 0;
 }
 
@@ -72,7 +71,6 @@ static void __exit mothership_exit(void)
 	 @return 0 for success -1 for error.
 	 */
 
-	destroy_device(&all);
 	log_success("Module Unloaded");
 }
 
