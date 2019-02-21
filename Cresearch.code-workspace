@@ -1,0 +1,45 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "G:\\OneDrive - Noroff Education AS\\R&D\\AsmResearch"
+		},
+		{
+			"path": "Learning"
+		},
+		{
+			"path": "Projects\\NTP Server"
+		},
+		{
+			"path": "Projects\\Rootkit"
+		},
+		{
+			"path": "Projects\\WritingVM"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"typeinfo": "c",
+			"structs.h": "c",
+			"*.inc": "c",
+			"debug.h": "c",
+			"array": "c",
+			"bitset": "c",
+			"string_view": "c",
+			"initializer_list": "c",
+			"utility": "c",
+			"typeindex": "c",
+			"kerndebug.h\u0000kerndebug.h": "c",
+			"kerndebug.h": "c",
+			"colors.h": "c",
+			"definitions.h": "c",
+			"signal.h": "c",
+			"rope": "c",
+			"slist": "c",
+			"valarray": "c",
+			"gyro.h": "c"
+		}
+	}
+}
