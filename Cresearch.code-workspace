@@ -39,7 +39,9 @@
 			"rope": "c",
 			"slist": "c",
 			"valarray": "c",
-			"gyro.h": "c"
+			"gyro.h": "c",
+			"stdio.h": "c",
+			"sources": "cpp"
 		}
 	}
 }
