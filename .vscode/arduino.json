@@ -1,7 +1,8 @@
 {
-    "sketch": "Projects\\Arduino\\Quadcopter\\gyro.c",
+    "sketch": "Projects\\Arduino\\Transistior\\main\\main.ino",
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328",
-    "port": "COM3",
-    "libraries": "Projects\\Arduino\\Quadcopter\\libraries"
+    "port": "COM5",
+    "libraries": "Projects\\Arduino\\Quadcopter\\libraries",
+    "programmer": "USBtinyISP"
 }

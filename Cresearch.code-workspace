@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "Projects\\WritingVM"
+		},
+		{
+			"path": "Projects\\Arduino"
 		}
 	],
 	"settings": {

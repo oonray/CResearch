@@ -1,4 +1,6 @@
 /*
+DLL injector based on the one found in the opensecuty training course.
+
 
  */
 
@@ -13,45 +15,48 @@ BOOL Inject(LPSTR dllPath, DWORD pID)
 	LPVOID mRegion;
 	BOOL status;
 	FARPROC loadLibrary;
-	
+	char *action;
+
 	info("Target Process ID: %d\n", pID);
 	info("DLL Path: %s\n\n", dllPath);
 
+	action = "Opening proccess";
+
 	hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pID);
 	if (hProcess == NULL) {
-		error("[failure]\n");
+		error("%s Failed\n",action);
 		return FALSE;
 	}
-	success("[success]\n");
+	success("%s Suceeded\n", AccessCheck);
 
 
-	info("[-] Allocating memory in the target process ... ");
+	action = "Allocating memmory in target proccess";
 	mRegion = VirtualAllocEx(hProcess, NULL, strlen(dllPath), MEM_COMMIT|MEM_RESERVE, PAGE_READWRITE); 
 	
 	if (mRegion == NULL) {
-		error("[failure]\n");
+		error("%s Failed\n",action);
 		return FALSE;
 	}
-	success("[success]\n");
+	success("%s Succeeded\n",action);
 
 
-	info("[-] Writing to the allocated memory in the target process ... ");
+	action = "Writing to the allocated memory in the target process";
 	status = WriteProcessMemory(hProcess, mRegion, (LPCVOID)dllPath, strlen(dllPath), NULL);
 	if (!status) {
-		error("[failure]\n");
+		error("%s Failed\n",action);
 		return FALSE;
 	}
-	success("[success]\n");
+	success("%s Succeeded\n",action);
 
 
 	loadLibrary = GetProcAddress(GetModuleHandle("Kernel32"), "LoadLibraryA");
-	info("[-] Creating a remote thread in the target process ... ");
+	action = "Creating a remote thread in the target process";
 	hThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)loadLibrary, mRegion, 0, NULL);
 	if (hThread == NULL) {
-		error("[failure]\n");
+		error("%s Failed\n",action);
 		return FALSE;
 	}
-	success("[success]\n");
+	success("%s Succeeded\n",action);
 
 
 	WaitForSingleObject(hThread, INFINITE);
