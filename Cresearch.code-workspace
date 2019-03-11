@@ -4,9 +4,6 @@
 			"path": "."
 		},
 		{
-			"path": "G:\\OneDrive - Noroff Education AS\\R&D\\AsmResearch"
-		},
-		{
 			"path": "Learning"
 		},
 		{
@@ -20,6 +17,12 @@
 		},
 		{
 			"path": "Projects\\Arduino"
+		},
+		{
+			"path": "E:\\Git\\ExploitResearch"
+		},
+		{
+			"path": "E:\\Git\\AsmResearch"
 		}
 	],
 	"settings": {
