@@ -8,7 +8,7 @@ OBJECTS=$(patsubst %.c,%.o, $(SOURCES))
 TEST_SRC=$(wildcard tests/*_test.c)
 TESTS=$(patsubst %.c,%,$(TEST_SRC))
 
-TARGET=build/libYOUR_LIBRARY.s
+TARGET=build/BitShift.s
 SO_TARGET=$(patsubst %.a,%.so,$(TAGGET))
 
 all: $(TARGET) $(SO_TSRGET) tests
