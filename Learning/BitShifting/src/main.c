@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
     }
 
     int number = 65; //0x01000001
-    int shift = atoi(argv[1])
+    int shift = atoi(argv[1]);
     int num_shift = nuber << shift;
     printf("The number %d shifted by %d is:\n",number,shift);    
 }
