@@ -11,6 +11,10 @@ They may bee buggy and have inefficient and broken code.
 # Bit Shifting
 Its for testing out Bit Shifting.
 
+#DLL
+Most of the content here has been created following the book [Learn C The hard way](https://learncodethehardway.org/c/).
+Its sort of not basics anymore?
+
 # Inline ASM
 Used for runnign __asm __asm__ and asm() calls and experimenting with how they work in c
 
