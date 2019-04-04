@@ -2,7 +2,7 @@
     "sketch": "Projects\\Arduino\\Transistior\\main\\main.ino",
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328",
-    "port": "COM5",
+    "port": "COM6",
     "libraries": "Projects\\Arduino\\Quadcopter\\libraries",
     "programmer": "USBtinyISP"
 }

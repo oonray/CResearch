@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "I:\\OneDrive\\Documents\\Arduino\\libraries\\DHT_sensor_library",
+                "E:\\Program Files (x86)\\Arduino\\tools\\**",
+                "E:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**"
+            ],
+            "forcedInclude": [
+                "E:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "F:\\cygwin64\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

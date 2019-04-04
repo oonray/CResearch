@@ -1,0 +1,7 @@
+{
+    "sketch": "crestie\\main.ino",
+    "board": "arduino:avr:nano",
+    "configuration": "cpu=atmega328",
+    "port": "COM3",
+    "programmer": "USBtinyISP"
+}
