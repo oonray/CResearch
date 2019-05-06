@@ -32,7 +32,7 @@ int uppercase(const char *msg){
 }
 
 int lowercase(const char *msg){     
-    for(int i = 0; msg[i] != "\0"; i++){
+    for(int i = 0; msg[i] != '\0'; i++){
         printf("%c",tolower(msg[i]));
     }
     printf("\n");
