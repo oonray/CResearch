@@ -11,9 +11,8 @@
  * Modified form Learn C the Hard Way code.
  */
 #include <stdio.h>
-#include "headders/debug.h"
-#include <dlfen.h>
-#include "headders/color.h"
+#include <dlfcn.h>
+#include "headders/colors.h"
 #include "headders/debug.h"
 
 typedef int (*lib_function)(const char *data); //Function Definition
@@ -33,9 +32,9 @@ int main(int argc, char *argv[]){
     char *func_to_run = argv[2];
     char *data = argv[3];
 
-    void *lib = dlopen(lib_file, RTDL_NOW); //loads DLL
+    void *lib = dlopen(lib_file, RTLD_NOW); //loads DLL
     if(lib == NULL){
-        error("Faled To open %s : %s",lib_file,dlerror())
+        error("Faled To open %s : %s",lib_file,dlerror());
         return 1;
     }
     lib_function func = dlsym(lib,func_to_run); //loads Function
