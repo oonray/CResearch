@@ -11,11 +11,10 @@
 
 #include <DHT.h>          //DHT Libary
 #include <stdio.h>        // Standard Lib
-#define DHTTYPE DHT11     // The sensor is a DHT 11
+#define DHTTYPE DHT11     // The sensor is a DHT 11S
 
 #define TEMPERATURE 8     // The temperature sensor pin
-#define RELE 7            // The Relay pin
-#define MOSFET 11          // The pin of the mosfet
+#define MOSFET 3          // The pin of the mosfet
 
 DHT dht(TEMPERATURE, DHTTYPE); // Init
 
@@ -26,17 +25,6 @@ struct DHTData{
   float humid;
 } data{0.0,0.0}; //stores the data from the sensor
 
-int toggle_relay(int state){
-  /**
-   * @brief toggles relay state and sets relay
-   * 
-   */
-   if(state != NULL){ if(state == relay){ return 1; } }
-   if(relay==LOW){  relay=HIGH; }
-   if(relay==HIGH){ relay=LOW; }
-   digitalWrite(RELE,relay);
-   return 0;
-}
 
 int check_data_temp(){
   /**
@@ -46,10 +34,8 @@ int check_data_temp(){
    */
     int temp_range = data.temp-25;
     if(temp_range <= 0.0){
-      toggle_relay(LOW);
       return 0.0;
       }
-    toggle_relay(HIGH);
     return (255/5)*temp_range;  
 }
 
@@ -96,9 +82,7 @@ void setup() {
   Serial.begin(9600); 
   Serial.println("Starting!");
   dht.begin();
-  pinMode(RELE,OUTPUT);
   pinMode(MOSFET,OUTPUT);
-  toggle_relay(LOW);
 }
 
 void loop() {
