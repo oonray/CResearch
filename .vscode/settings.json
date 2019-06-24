@@ -9,6 +9,8 @@
         "string_view": "c",
         "initializer_list": "c",
         "utility": "c",
-        "typeindex": "c"
+        "typeindex": "c",
+        "unistd.h": "c",
+        "stdio.h": "c"
     }
 }
