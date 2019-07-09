@@ -36,4 +36,20 @@ class Capuchino: public Coffe{
 
 };
 
+class CoffeFactory{
+	private:
+		Coffe *_coffe;
+	public:
+		Coffe *getCoffe(){
+			int choice;	
+			printf("Select coffe to make:\n");
+			printf("\t1. Espresso \n");
+			printf("\t2. Capuchino \n");
+			printf("Selection:\t");
+			scanf("%d",choice);
+			
+		}
+
+}
+
 
