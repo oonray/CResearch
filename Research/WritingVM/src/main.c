@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "colors.h"
+#include "dbg.h"
 /*
 FROM:
 https://justinmeiners.github.io/lc3-vm/
@@ -44,16 +46,14 @@ enum
     FL_NEG = 1 << 2,    // Negative
 };
 
-uint16_t sign_extend(uint16_t x, int bit_count)
-{
+uint16_t sign_extend(uint16_t x, int bit_count){
     if ((x >> (bit_count - 1)) & 1) {
         x |= (0xFFFF << bit_count);
     }
     return x;
 }
 
-void update_flags(uint16_t r)
-{
+void update_flags(uint16_t r){
     if (reg[r] == 0)
     {
         reg[R_COND] = FL_ZRO;

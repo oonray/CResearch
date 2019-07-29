@@ -1,0 +1,74 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CFLAGS	Makefile	/^CFLAGS= -g -02 -Wall -Wextra -Isrc rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
+CFLAGS	Makefile	/^dev: CFLAGS=-g -Wall -Isrc -Wall -Wextra $(OPTFLAGS)$/;"	m
+FL_NEG	src/main.c	/^    FL_NEG = 1 << 2,    \/\/ Negative$/;"	e	enum:__anon3	file:
+FL_POS	src/main.c	/^    FL_POS = 1 << 0,    \/\/ Position $/;"	e	enum:__anon3	file:
+FL_ZRO	src/main.c	/^    FL_ZRO = 1 << 1,    \/\/ Zero$/;"	e	enum:__anon3	file:
+KBLU	src/colors.h	9;"	d
+KCYN	src/colors.h	11;"	d
+KGRN	src/colors.h	7;"	d
+KINF	src/colors.h	15;"	d
+KMAG	src/colors.h	10;"	d
+KNOK	src/colors.h	14;"	d
+KNRM	src/colors.h	5;"	d
+KRED	src/colors.h	6;"	d
+KWAR	src/colors.h	16;"	d
+KWHT	src/colors.h	12;"	d
+KYEL	src/colors.h	8;"	d
+LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o, $(SOURCES))$/;"	m
+OP_ADD	src/main.c	/^    OP_ADD,         \/\/ add  $/;"	e	enum:__anon2	file:
+OP_AND	src/main.c	/^    OP_AND,         \/\/ bitwise and $/;"	e	enum:__anon2	file:
+OP_BR	src/main.c	/^    OP_BR = 0,      \/\/ branch $/;"	e	enum:__anon2	file:
+OP_JMP	src/main.c	/^    OP_JMP,         \/\/ jump $/;"	e	enum:__anon2	file:
+OP_JSR	src/main.c	/^    OP_JSR,         \/\/ jump register $/;"	e	enum:__anon2	file:
+OP_LD	src/main.c	/^    OP_LD,          \/\/ load $/;"	e	enum:__anon2	file:
+OP_LDI	src/main.c	/^    OP_LDI,         \/\/ load indirect $/;"	e	enum:__anon2	file:
+OP_LDR	src/main.c	/^    OP_LDR,         \/\/ load register $/;"	e	enum:__anon2	file:
+OP_LEA	src/main.c	/^    OP_LEA,         \/\/ load effective address $/;"	e	enum:__anon2	file:
+OP_NOT	src/main.c	/^    OP_NOT,         \/\/ bitwise not $/;"	e	enum:__anon2	file:
+OP_RES	src/main.c	/^    OP_RES,         \/\/ reserved (unused) $/;"	e	enum:__anon2	file:
+OP_RTI	src/main.c	/^    OP_RTI,         \/\/ unused $/;"	e	enum:__anon2	file:
+OP_ST	src/main.c	/^    OP_ST,          \/\/ store $/;"	e	enum:__anon2	file:
+OP_STI	src/main.c	/^    OP_STI,         \/\/ store indirect $/;"	e	enum:__anon2	file:
+OP_STR	src/main.c	/^    OP_STR,         \/\/ store register $/;"	e	enum:__anon2	file:
+OP_TRAP	src/main.c	/^    OP_TRAP         \/\/ execute trap $/;"	e	enum:__anon2	file:
+PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
+R_COND	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_COUNT	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_PC	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R0	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R1	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R2	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R3	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R4	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R5	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R6	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+R_R7	src/main.c	/^enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };$/;"	e	enum:__anon1	file:
+SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+SO_TARGET	Makefile	/^SO_TARGET=$(patsubst %.a,%.so,$(TAGGET))$/;"	m
+TARGET	Makefile	/^TARGET=build\/libYOUR_LIBRARY.s$/;"	m
+TESTS	Makefile	/^TESTS=$(patsubst %.c,%,$(TEST_SRC))$/;"	m
+TEST_SRC	Makefile	/^TEST_SRC=$(wildcard tests\/*_test.c)$/;"	m
+__color_h	src/colors.h	2;"	d
+__dbg_h__	src/dbg.h	2;"	d
+check	src/dbg.h	26;"	d
+check_debug	src/dbg.h	32;"	d
+check_mem	src/dbg.h	30;"	d
+clean_errno	src/dbg.h	18;"	d
+debug	src/dbg.h	13;"	d
+debug	src/dbg.h	15;"	d
+log_err	src/dbg.h	20;"	d
+log_info	src/dbg.h	24;"	d
+log_warn	src/dbg.h	22;"	d
+main	src/main.c	/^int main(int argc, char *argv[]){$/;"	f
+memory	src/main.c	/^uint16_t memory[UINT16_MAX];$/;"	v
+reg	src/main.c	/^uint16_t reg[R_COUNT];$/;"	v
+sentinel	src/dbg.h	28;"	d
+sign_extend	src/main.c	/^uint16_t sign_extend(uint16_t x, int bit_count)$/;"	f
+update_flags	src/main.c	/^void update_flags(uint16_t r)$/;"	f
