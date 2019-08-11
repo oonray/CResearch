@@ -8,9 +8,9 @@ struct REGISTERS{
 
 int register_write(int reg,int val){
 	    Wire.beginTransmission(MPU);
-		wire.write(reg);
-		wire.write(val);
-		wire.endTransmission();
+		Wire.write(reg);
+		Wire.write(val);
+		Wire.endTransmission();
 		return 0;
 }
 
@@ -19,8 +19,8 @@ int *read_register(int reg){
     Wire.beginTransmission(MPU);
 	Wire.write(reg);
 	Wire.endTransmission();
-	Wire.requestFrom(mpu.addr,6);
-	while(wire.avaliable() < 6){
+	Wire.requestFrom(MPU,6);
+	while(Wire.available() < 6){
 		regval[0] = Wire.read()<<8 | Wire.read();
 		regval[1] = Wire.read()<<8 | Wire.read();
 	    regval[2] = Wire.read()<<8 | Wire.read();

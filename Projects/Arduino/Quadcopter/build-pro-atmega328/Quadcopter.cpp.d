@@ -11,4 +11,4 @@ build-pro-atmega328/Quadcopter.cpp.o: Quadcopter.cpp \
  /usr/share/arduino/hardware/arduino//variants/standard/pins_arduino.h \
  /usr/share/arduino/libraries/Wire/Wire.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/Stream.h \
- headders/mp6050.h
+ headders/mpu.h headders/mp6050.h
