@@ -30,6 +30,11 @@ char *read_input_file(char *path){
 				return NULL;
 }
 
+int get_categories(struct json_object json){
+    
+
+}
+
 int main(int argc, char *argv[]){
 		char *file;
 		uint32_t n_categories;
@@ -46,7 +51,9 @@ int main(int argc, char *argv[]){
 		printf("%s\n",banner);
 		char *content = read_input_file(PATH);
 		check(content,"File not read");
-		printf("%s\n",content);
+		
+		struct json_object parsed = json_tokener_parse(content)
+		
 		return 0;
 		error:
 				return 1;
