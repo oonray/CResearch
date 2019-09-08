@@ -17,34 +17,12 @@ uint16_t reg[R_COUNT];
 //Registers
 enum{ R_R0 = 0, R_R1, R_R2, R_R3, R_R4, R_R5, R_R6, R_R7, R_PC, R_COND, R_COUNT };
 
-//OP Codes | Isntruction set
-enum
-{
-    OP_BR = 0,      // branch 
-    OP_ADD,         // add  
-    OP_LD,          // load 
-    OP_ST,          // store 
-    OP_JSR,         // jump register 
-    OP_AND,         // bitwise and 
-    OP_LDR,         // load register 
-    OP_STR,         // store register 
-    OP_RTI,         // unused 
-    OP_NOT,         // bitwise not 
-    OP_LDI,         // load indirect 
-    OP_STI,         // store indirect 
-    OP_JMP,         // jump 
-    OP_RES,         // reserved (unused) 
-    OP_LEA,         // load effective address 
-    OP_TRAP         // execute trap 
-};
+//OP cpdes
+enum{OP_BR = 0, OP_ADD, OP_LD, OP_ST, OP_JSR,OP_AND,OP_LDR, OP_STR, OP_RTI, OP_NOT, OP_LDI, OP_STI,OP_JMP,OP_RES, OP_LEA,OP_TRAP };
 
 //Condition Flags
-enum
-{
-    FL_POS = 1 << 0,    // Position 
-    FL_ZRO = 1 << 1,    // Zero
-    FL_NEG = 1 << 2,    // Negative
-};
+enum{FL_POS = 1 << 0, FL_ZRO = 1 << 1, FL_NEG = 1 << 2};
+
 
 uint16_t sign_extend(uint16_t x, int bit_count){
     if ((x >> (bit_count - 1)) & 1) {
@@ -85,7 +63,7 @@ int main(int argc, char *argv[]){
             case OP_ADD:
             {
                 /* destination register (DR) */
-                uint16_t r0 = (instr >> 9) & 0x7;
+                uint16_t r0 = (instr >> 9) & 0x7; // 0x7 = 1001
                 /* first operand (SR1) */
                 uint16_t r1 = (instr >> 6) & 0x7;
                 /* whether we are in immediate mode */
@@ -104,9 +82,14 @@ int main(int argc, char *argv[]){
 
                 update_flags(r0);
             }
-                break;        
-            case OP_AND:
-                break;
+		            break;        
+	
+			case OP_AND:
+				{
+				
+				
+				
+				}
             case OP_NOT:
                 break;
             case OP_BR:
