@@ -1,9 +1,9 @@
 file = main
 libs = json-c
 
-all: dirs
+all:
 	gcc -c src/$(file).c -l $(libs) -o objects/$(file).o
-	gcc objects/$(file).o -o bin/memorizer 
+	gcc objects/$(file).o -l $(libs) -o bin/memorizer 
 
 dep:
 	sudo apt-get install libjson-c-dev
