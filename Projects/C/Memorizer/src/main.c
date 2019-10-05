@@ -20,9 +20,10 @@ int main(int argc, char *argv[]){
 		char *content;
 		struct json_object *parsed;
 	   
-		
 		init();
-		while(ch != 27){ 
+		main_win();
+		while(ch != 27){		
+				debug("lol");
 				ch = getch();
 		}
 		endwin();
