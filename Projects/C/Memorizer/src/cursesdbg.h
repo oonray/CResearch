@@ -8,6 +8,21 @@
 #include <stdio.h>
 #include <errno.h> 
 #include <string.h>
+#include <ncurses.h>
+
+struct error_window{
+		WINDOW w;
+		int width;
+		int height;
+		int start;
+		int stop;
+}werr={(LINES-20)/2,(COLS-20/2),0,0};
+
+
+int errwin(char * msg){
+		
+}
+
 
 #ifdef NDEBUG
 #define debug(M, ...)

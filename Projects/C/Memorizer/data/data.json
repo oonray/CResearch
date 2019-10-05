@@ -1,11 +1,12 @@
 {
 "ncategories":1,
 "categories":["computerScience"],
-"data":[
+"data":{
 		"computerScience":{
 				"nquestions":0,
 				"questions":[],
 				"answers":[]
-				}
-]
+
+		}
+}
 }
