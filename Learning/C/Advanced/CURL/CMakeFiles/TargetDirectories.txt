@@ -1,0 +1,3 @@
+/opt/GIT/CResearch/Learning/C/Advanced/CURL/CMakeFiles/rebuild_cache.dir
+/opt/GIT/CResearch/Learning/C/Advanced/CURL/CMakeFiles/basiccurl.dir
+/opt/GIT/CResearch/Learning/C/Advanced/CURL/CMakeFiles/edit_cache.dir

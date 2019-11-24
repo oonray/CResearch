@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/reverse_tcp_client.dir/src/client.c.o  -o bin/reverse_tcp_client -lcurses /usr/lib/x86_64-linux-gnu/libform.so 

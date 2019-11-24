@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="reverse_tcp_client"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/opt/GIT/CResearch/Learning/C/Advanced/Sockets"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/opt/GIT/CResearch/Learning/C/Advanced/Sockets"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reverse_tcp_server">
+				<Option output="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin/reverse_tcp_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 reverse_tcp_server"/>
+					<CompileFile command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reverse_tcp_server/fast">
+				<Option output="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin/reverse_tcp_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 reverse_tcp_server/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/opt/GIT/CResearch/Learning/C/Advanced/Sockets"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reverse_tcp_client">
+				<Option output="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin/reverse_tcp_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 reverse_tcp_client"/>
+					<CompileFile command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reverse_tcp_client/fast">
+				<Option output="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin/reverse_tcp_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 reverse_tcp_client/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/opt/GIT/CResearch/Learning/C/Advanced/Sockets/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/src/client.c">
+			<Option target="reverse_tcp_client"/>
+		</Unit>
+		<Unit filename="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/src/colors.h">
+			<Option target="reverse_tcp_server"/>
+		</Unit>
+		<Unit filename="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/src/curdbg.h">
+			<Option target="reverse_tcp_server"/>
+		</Unit>
+		<Unit filename="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/src/menu.h">
+			<Option target="reverse_tcp_server"/>
+		</Unit>
+		<Unit filename="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/src/server.c">
+			<Option target="reverse_tcp_server"/>
+		</Unit>
+		<Unit filename="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/src/win.h">
+			<Option target="reverse_tcp_server"/>
+		</Unit>
+		<Unit filename="/opt/GIT/CResearch/Learning/C/Advanced/Sockets/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

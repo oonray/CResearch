@@ -1,0 +1,4 @@
+/opt/GIT/CResearch/Learning/C/Advanced/Sockets/CMakeFiles/edit_cache.dir
+/opt/GIT/CResearch/Learning/C/Advanced/Sockets/CMakeFiles/reverse_tcp_server.dir
+/opt/GIT/CResearch/Learning/C/Advanced/Sockets/CMakeFiles/rebuild_cache.dir
+/opt/GIT/CResearch/Learning/C/Advanced/Sockets/CMakeFiles/reverse_tcp_client.dir
