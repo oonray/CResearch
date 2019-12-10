@@ -4,8 +4,7 @@
 typedef int (*lib_function)(const char *data);
 
 char *lib_file = "bin/mylib.so";
-
-void *lib =NULL;
+void *lib = NULL;
 
 int check_function(const char *func_to_run, const char *data, int excpected){
 		lib_function func = dlsym(lib, func_to_run);
