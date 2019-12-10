@@ -1,3 +1,6 @@
 [submodule "Research/virii"]
 	path = Research/virii
 	url = https://github.com/guitmz/virii.git
+[submodule "Projects/C++/Checlister"]
+	path = Projects/C++/Checlister
+	url = https://github.com/oonray/Checlister
