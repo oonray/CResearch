@@ -12,7 +12,7 @@ OBJECTS=$(SOURCES:%.c=%.o)
 TEST_SOURCES=$(wildcard $(TESTS_DIR)/*_tests.c)
 TESTS=$(patsubst %.c, %,$(TEST_SOURCES))
 
-SLIB_TARGET=$(BUILD_DIR)/libex29.a
+SLIB_TARGET=$(BUILD_DIR)/liblcthw.a
 DLIB_TARGET=$(patsubst %.a,%.so,$(SLIB_TARGET))
 
 all: target tests
