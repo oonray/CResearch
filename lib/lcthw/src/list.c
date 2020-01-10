@@ -71,4 +71,30 @@ void *List_shift(List *list){
     return node != NULL ? List_remove(list,node) : NULL;
 }
 
-
+void *List_remove(List *list,ListNode *node){
+    void *result = NULL;
+    check(list->first && list->last, "Empty List");
+    check(node,"node cant't be NULL");
+    if(node == list->first && node == list->last){
+        list->first->NULL;
+        list->first = NULL;
+    }else if (node == list->first){
+        list->first = node->next;
+        check(list->first != NULL,"Invalid List");
+        list->first->prev=NULL;
+    }else if(node == list->last){
+        list->last = node->prev;
+        check(list->last != NULL,"Invalid List");
+        list->last->next = NULL;
+    }else{
+        ListNode *after = node->next;
+        ListNode *before = node->prev;
+        after->prev = before;
+        before->next = after;
+    }
+    list->count --;
+    result = node->value;
+    free(node);
+    error:
+        return result;
+}
