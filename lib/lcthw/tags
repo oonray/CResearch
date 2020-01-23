@@ -1,0 +1,80 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILD_DIR	makefile	/^BUILD_DIR=.\/build$/;"	m
+CC	makefile	/^CC=gcc$/;"	m
+CFLAGS	makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Werror -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
+DLIB_TARGET	makefile	/^DLIB_TARGET=$(patsubst %.a,%.so,$(SLIB_TARGET))$/;"	m
+KBLU	src/colors.h	9;"	d
+KCYN	src/colors.h	11;"	d
+KGRN	src/colors.h	7;"	d
+KINF	src/colors.h	15;"	d
+KMAG	src/colors.h	10;"	d
+KNOK	src/colors.h	14;"	d
+KNRM	src/colors.h	5;"	d
+KRED	src/colors.h	6;"	d
+KWAR	src/colors.h	16;"	d
+KWHT	src/colors.h	12;"	d
+KYEL	src/colors.h	8;"	d
+LIBS	makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+LIST_FOREACH	src/list.h	32;"	d
+List	src/list.h	/^typedef struct List{$/;"	s
+List	src/list.h	/^} List;$/;"	t	typeref:struct:List
+ListNode	src/list.h	/^typedef struct ListNode{$/;"	s
+ListNode	src/list.h	/^} ListNode;$/;"	t	typeref:struct:ListNode
+List_clear	src/list.c	/^void List_clear(List *list){$/;"	f
+List_clear_destroy	src/list.c	/^void List_clear_destroy(List *list){$/;"	f
+List_count	src/list.h	21;"	d
+List_create	src/list.c	/^List *List_create(){$/;"	f
+List_destroy	src/list.c	/^void List_destroy(List *list){$/;"	f
+List_fisrst	src/list.h	22;"	d
+List_last	src/list.h	23;"	d
+List_pop	src/list.c	/^void *List_pop(List *list){$/;"	f
+List_push	src/list.c	/^void List_push(List *list,void *value){$/;"	f
+List_remove	src/list.c	/^void *List_remove(List *list,ListNode *node){$/;"	f
+List_shift	src/list.c	/^void *List_shift(List *list){$/;"	f
+List_unshift	src/list.c	/^void List_unshift(List *list,void *value){$/;"	f
+NDEBUG	tests/minunit.h	3;"	d
+OBJECTS	makefile	/^OBJECTS=$(SOURCES:%.c=%.o)$/;"	m
+RUN_TESTS	tests/minunit.h	14;"	d
+SLIB_TARGET	makefile	/^SLIB_TARGET=$(BUILD_DIR)\/liblcthw.a$/;"	m
+SOURCES	makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+SRC_DIR	makefile	/^SRC_DIR=.\/src$/;"	m
+TESTS	makefile	/^TESTS=$(patsubst %.c, %,$(TEST_SOURCES))$/;"	m
+TESTS_DIR	makefile	/^TESTS_DIR=.\/tests$/;"	m
+TEST_SOURCES	makefile	/^TEST_SOURCES=$(wildcard $(TESTS_DIR)\/*_tests.c)$/;"	m
+__color_h	src/colors.h	2;"	d
+__dbg_h__	src/dbg.h	2;"	d
+_minuit_h	tests/minunit.h	5;"	d
+check	src/dbg.h	26;"	d
+check_debug	src/dbg.h	32;"	d
+check_mem	src/dbg.h	30;"	d
+clean_errno	src/dbg.h	18;"	d
+count	src/list.h	/^    int count;$/;"	m	struct:List
+debug	src/dbg.h	13;"	d
+debug	src/dbg.h	15;"	d
+first	src/list.h	/^    ListNode *first;$/;"	m	struct:List
+last	src/list.h	/^    ListNode *last;$/;"	m	struct:List
+lcthw_List_h	src/list.h	2;"	d
+list	tests/list_tests.c	/^static List *list = NULL;$/;"	v	file:
+log_err	src/dbg.h	20;"	d
+log_info	src/dbg.h	24;"	d
+log_warn	src/dbg.h	22;"	d
+mu_assert	tests/minunit.h	12;"	d
+mu_run_test	tests/minunit.h	13;"	d
+mu_suite_start	tests/minunit.h	11;"	d
+next	src/list.h	/^    struct ListNode *next;$/;"	m	struct:ListNode	typeref:struct:ListNode::ListNode
+prev	src/list.h	/^    struct ListNode *prev;$/;"	m	struct:ListNode	typeref:struct:ListNode::ListNode
+sentinel	src/dbg.h	28;"	d
+test1	tests/list_tests.c	/^char *test1 = "test1 data";$/;"	v
+test2	tests/list_tests.c	/^char *test2 = "test2 data";$/;"	v
+test3	tests/list_tests.c	/^char *test3 = "test3 data";$/;"	v
+test_create	tests/list_tests.c	/^char *test_create(){$/;"	f
+test_destroy	tests/list_tests.c	/^char *test_destroy(){$/;"	f
+test_push_pop	tests/list_tests.c	/^char *test_push_pop(){$/;"	f
+test_unshift	tests/list_tests.c	/^char *test_unshift(){$/;"	f
+tests_run	tests/minunit.h	/^int tests_run;$/;"	v
+value	src/list.h	/^    void *value;$/;"	m	struct:ListNode

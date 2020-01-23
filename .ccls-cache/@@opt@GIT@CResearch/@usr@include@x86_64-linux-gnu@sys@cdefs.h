@@ -1,4 +1,4 @@
-/* Copyright (C) 1992-2019 Free Software Foundation, Inc.
+/* Copyright (C) 1992-2018 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -72,12 +72,7 @@
 
 #else	/* Not GCC.  */
 
-# if (defined __cplusplus						\
-      || (defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L))
-#  define __inline	inline
-# else
-#  define __inline		/* No inline functions.  */
-# endif
+# define __inline		/* No inline functions.  */
 
 # define __THROW
 # define __THROWNL
@@ -337,7 +332,7 @@
    semantics.
 
    clang++ identifies itself as gcc-4.2, but has support for GNU inlining
-   semantics, that can be checked for by using the __GNUC_STDC_INLINE_ and
+   semantics, that can be checked fot by using the __GNUC_STDC_INLINE_ and
    __GNUC_GNU_INLINE__ macro definitions.  */
 #if (!defined __cplusplus || __GNUC_PREREQ (4,3) \
      || (defined __clang__ && (defined __GNUC_STDC_INLINE__ \
@@ -373,11 +368,7 @@
 
 /* __restrict is known in EGCS 1.2 and above. */
 #if !__GNUC_PREREQ (2,92)
-# if defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L
-#  define __restrict	restrict
-# else
-#  define __restrict	/* Ignore */
-# endif
+# define __restrict	/* Ignore */
 #endif
 
 /* ISO C99 also allows to declare arrays as non-overlapping.  The syntax is
@@ -406,12 +397,6 @@
 # define __glibc_likely(cond)	(cond)
 #endif
 
-#ifdef __has_attribute
-# define __glibc_has_attribute(attr)	__has_attribute (attr)
-#else
-# define __glibc_has_attribute(attr)	0
-#endif
-
 #if (!defined _Noreturn \
      && (defined __STDC_VERSION__ ? __STDC_VERSION__ : 0) < 201112 \
      &&  !__GNUC_PREREQ (4,7))
@@ -429,16 +414,6 @@
 # define __attribute_nonstring__ __attribute__ ((__nonstring__))
 #else
 # define __attribute_nonstring__
-#endif
-
-/* Undefine (also defined in libc-symbols.h).  */
-#undef __attribute_copy__
-#if __GNUC_PREREQ (9, 0)
-/* Copies attributes from the declaration or type referenced by
-   the argument.  */
-# define __attribute_copy__(arg) __attribute__ ((__copy__ (arg)))
-#else
-# define __attribute_copy__(arg)
 #endif
 
 #if (!defined _Static_assert && !defined __cplusplus \

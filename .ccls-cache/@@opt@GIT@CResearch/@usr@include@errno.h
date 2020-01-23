@@ -1,4 +1,4 @@
-/* Copyright (C) 1991-2019 Free Software Foundation, Inc.
+/* Copyright (C) 1991-2018 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -45,7 +45,12 @@ extern int *__errno_location (void) __THROW __attribute_const__;
 extern char *program_invocation_name;
 extern char *program_invocation_short_name;
 
-#include <bits/types/error_t.h>
+/* bits/errno.h may have defined this type.  If it didn't, provide a
+   fallback definition.  */
+#  ifndef __error_t_defined
+#   define __error_t_defined 1
+typedef int error_t;
+#  endif
 
 # endif /* __USE_GNU */
 

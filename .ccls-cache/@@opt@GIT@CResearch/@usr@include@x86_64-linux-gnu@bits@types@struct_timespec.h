@@ -1,6 +1,5 @@
-/* NB: Include guard matches what <linux/time.h> uses.  */
-#ifndef _STRUCT_TIMESPEC
-#define _STRUCT_TIMESPEC 1
+#ifndef __timespec_defined
+#define __timespec_defined 1
 
 #include <bits/types.h>
 

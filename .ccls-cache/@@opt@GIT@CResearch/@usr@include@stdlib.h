@@ -1,4 +1,4 @@
-/* Copyright (C) 1991-2019 Free Software Foundation, Inc.
+/* Copyright (C) 1991-2018 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -549,7 +549,7 @@ extern void *calloc (size_t __nmemb, size_t __size)
 extern void *realloc (void *__ptr, size_t __size)
      __THROW __attribute_warn_unused_result__;
 
-#ifdef __USE_MISC
+#ifdef __USE_GNU
 /* Re-allocate the previously allocated block in PTR, making the new
    block large enough for NMEMB elements of SIZE bytes each.  */
 /* __attribute_malloc__ is not used, because if reallocarray returns
@@ -955,6 +955,12 @@ extern int getsubopt (char **__restrict __optionp,
 		      char *const *__restrict __tokens,
 		      char **__restrict __valuep)
      __THROW __nonnull ((1, 2, 3)) __wur;
+#endif
+
+
+#ifdef __USE_XOPEN
+/* Setup DES tables according KEY.  */
+extern void setkey (const char *__key) __THROW __nonnull ((1));
 #endif
 
 
