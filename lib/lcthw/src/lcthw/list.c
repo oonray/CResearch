@@ -76,7 +76,7 @@ void *List_remove(List *list,ListNode *node){
     check(list->first && list->last, "Empty List");
     check(node,"node cant't be NULL");
     if(node == list->first && node == list->last){
-        list->first->NULL;
+        list->last = NULL;
         list->first = NULL;
     }else if (node == list->first){
         list->first = node->next;

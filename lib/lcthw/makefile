@@ -1,47 +1,48 @@
-CC=gcc
-CFLAGS=-g -O2 -Wall -Wextra -Werror -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
+CFLAGS= -g -02 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
-
-SRC_DIR=./src
-BUILD_DIR=./build
-TESTS_DIR=./tests
+PREFIX?=/usr/local
 
 SOURCES=$(wildcard src/**/*.c src/*.c)
-OBJECTS=$(SOURCES:%.c=%.o)
+OBJECTS=$(pathsubst %.c,%.o, $(SOURCES))
 
-TEST_SOURCES=$(wildcard $(TESTS_DIR)/*_tests.c)
-TESTS=$(patsubst %.c, %,$(TEST_SOURCES))
+TEST_SRC=$(wildcard tests/*_tests.c)
+TESTS=$(pathsubst %.c,%, $(TEST_SRC))
 
-SLIB_TARGET=$(BUILD_DIR)/liblcthw.a
-DLIB_TARGET=$(patsubst %.a,%.so,$(SLIB_TARGET))
+TARGET=build/liblcthw.a
+SO_TARGET=$(pathsubst %.a,%.so, $(TARGET))
 
-all: target tests
+all: $(TARGET) $(SO_TARGET) tests
 
-target: build $(SLIB_TARGET) $(DLIB_TARGET)
+dev: CFLAGS=-g -Wall -Isrc -W all -Wextra $(OPTFLAGS)
+dev: all
 
-$(SLIB_TARGET): CFLAGS += -fPIC
-$(SLIB_TARGET): $(OBJECTS)
+$(TARGET): CFLAGS += -fPIC
+$(TARGET): build $(OBJECTS)
 	ar rcs $@ $(OBJECTS)
 	ranlib $@
 
-$(DLIB_TARGET): $(OBJECTS)
+$(SO_TARGET): $(TARGET) $(OBJECTS)
 	$(CC) -shared -o $@ $(OBJECTS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(LIBS)
-
-$(TESTS_DIR)/%: $(TESTS_DIR)/%.c
-	$(CC) $(CFLAGS) $< -o $@ $(LIBS)
+build:
+	@mkdir -p build
+	@mkdir -p bin
 
 .PHONY: tests
-tests: $(TESTS) 
+tests: CFALGS += $(TARGET)
+tests: $(TESTS)
 	sh ./tests/runtests.sh
 
-build:
-	mkdir -p $(BUILD_DIR)
-	mkdir -p $(TESTS_DIR)
-
 clean:
-	rm -rf $(BUILD_DIR) || true
-	rm $(OBJECTS) || true
-	rm $(TESTS) || true
+	rm -rf build $(OBJECTS) $(TESTS)
+	rm -rf tests/tests.log
+	find . -name "*.gc*" -exec rm {}\;
+	rm -rf `find . -name "*.dSYM" -print`
+
+install: all
+	install -d $(DESTDIR)/$(PREFIX)/lib/
+	install $(TARGET) $(DESTDIR)/$(PREFIX)/lib
+
+check:
+	@echo Files with potentially dangerous functions.
+	@egrep '[^_.>a-zA-Z0-9](str(n?cpy|n?cat|xfrm|n?dup|str|pbrk|tok|_)|stpn?cpy|a?sn?printf|byte_)' $(SOURCES) || true
