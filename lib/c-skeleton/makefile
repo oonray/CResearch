@@ -1,22 +1,22 @@
-CFLAGS= -g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
+CFLAGS= -g -02 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
 
 SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o, $(SOURCES))
 
-TEST_SRC=$(wildcard tests/*tests.c)
+TEST_SRC=$(wildcard tests/*_tests.c)
 TESTS=$(patsubst %.c,%, $(TEST_SRC))
 
-TARGET=build/liblcthw.a
+TARGET=build/<lib>.a
 SO_TARGET=$(pathsubst %.a,%.so, $(TARGET))
 
 all: $(TARGET) $(SO_TARGET) tests
 
-dev: CFLAGS= -g -Wall -Isrc -W all -Wextra $(OPTFLAGS)
+dev: CFLAGS=-g -Wall -Isrc -W all -Wextra $(OPTFLAGS)
 dev: all
 
-$(TARGET): CFLAGS += -fPIC
+$(TARGET): CFLAGS= -f PIC
 $(TARGET): build $(OBJECTS)
 	ar rcs $@ $(OBJECTS)
 	ranlib $@

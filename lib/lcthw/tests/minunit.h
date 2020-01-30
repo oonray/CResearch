@@ -4,7 +4,7 @@
 #ifndef _minuit_h
 #define _minuit_h
 #include <stdio.h>
-#include "dbg.h"
+#include "../src/dbg.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,8 +19,7 @@
 		if(result != 0){printf("FAILED: %s\n",result);}\
 		else{printf("ALL TESTS PASSED\n");}\
 		printf("Tests run: %d\n",tests_run);\
-		exit(result != 0);\
-}
+		exit(result != 0);}
 
 int tests_run;
 #endif
