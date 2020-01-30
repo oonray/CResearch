@@ -1,3 +1,4 @@
+$CC=gcc
 CFLAGS= -g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
@@ -5,11 +6,12 @@ PREFIX?=/usr/local
 SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o, $(SOURCES))
 
-TEST_SRC=$(wildcard tests/*tests.c)
+TEST_SRC=$(wildcard tests/*_tests.c)
 TESTS=$(patsubst %.c,%, $(TEST_SRC))
 
-TARGET=build/liblcthw.a
-SO_TARGET=$(pathsubst %.a,%.so, $(TARGET))
+NAME=lctw
+TARGET=build/lib$(NAME).a
+SO_TARGET=$(patsubst %.a,%.so, $(TARGET))
 
 all: $(TARGET) $(SO_TARGET) tests
 
@@ -29,14 +31,14 @@ build:
 	@mkdir -p bin
 
 .PHONY: tests
-tests: CFALGS += $(TARGET)
+tests: CFLAGS += -Lbuild -l$(NAME)
 tests: $(TESTS)
 	sh ./tests/runtests.sh
 
 clean:
 	rm -rf build $(OBJECTS) $(TESTS)
 	rm -rf tests/tests.log
-	find . -name "*.gc*" -exec rm {}\;
+	find . -name "*.gc*" -delete
 	rm -rf `find . -name "*.dSYM" -print`
 
 install: all

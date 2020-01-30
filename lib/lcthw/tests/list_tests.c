@@ -1,5 +1,5 @@
 #include "minunit.h"
-#include "../src/dbg.h"
+#include <lcthw/list.h>
 #include <assert.h>
 
 static List *list = NULL;
@@ -38,7 +38,7 @@ char *test_push_pop(){
     val=List_pop(list);
     mu_assert(val == test1,"Wrong Pop Value.");
 
-    mu_assert(List_count()==0, "Wrong count after pop.");
+    mu_assert(List_count(list) == 0, "Wrong count after pop.");
     return NULL;
 }
 
@@ -59,7 +59,7 @@ char *test_unshift(){
 
 char *test_remove(){
     char  *val = List_remove(list,list->first->next);
-    mu_assert(val == val2,"Wrong removed element.");
+    mu_assert(val == test2,"Wrong removed element.");
     mu_assert(List_count(list) == 2, "Wrong count after remove.");
     mu_assert(List_first(list) == test3, "Wrong first after remove.");
     mu_assert(List_last(list) == test1, "Wrong last after remove");
@@ -68,8 +68,6 @@ char *test_remove(){
 }
 
 char *test_shift(){
-    mu_assert(val == 0, "Wrong value on shift.");
-    
     char *val = List_shift(list);
     mu_assert(val == test3, "Wrong value on shift");
 

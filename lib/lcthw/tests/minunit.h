@@ -1,10 +1,10 @@
-#include "colors.h"
+#include <lcthw/colors.h>
 
 #undef NDEBUG
 #ifndef _minuit_h
 #define _minuit_h
 #include <stdio.h>
-#include "../src/dbg.h"
+#include <lcthw/dbg.h>
 #include <stdio.h>
 #include <stdlib.h>
 
