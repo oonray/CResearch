@@ -62,6 +62,7 @@ void List_unshift(List *list,void *value){
         list->first->prev = node;
         list->first = node;
     }
+    list->count++;
     error:
         return;
 }
