@@ -1,20 +1,24 @@
+$CC=gcc
 CFLAGS= -g -02 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
 
 SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o, $(SOURCES))
-
 TEST_SRC=$(wildcard tests/*_tests.c)
 TESTS=$(patsubst %.c,%, $(TEST_SRC))
 
-TARGET=build/<lib>.a
-SO_TARGET=$(pathsubst %.a,%.so, $(TARGET))
+$NAME=<yourname>
+TARGET=build/lib$(NAME).a
+SO_TARGET=$(patsubst %.a,%.so, $(TARGET))
 
-all: $(TARGET) $(SO_TARGET) tests
+all: flags $(TARGET) $(SO_TARGET) tests
 
 dev: CFLAGS=-g -Wall -Isrc -W all -Wextra $(OPTFLAGS)
 dev: all
+
+flags:
+	@echo "$(CFLAGS)" | sed -r "s: :\n:g" > compile_flags.txt
 
 $(TARGET): CFLAGS= -f PIC
 $(TARGET): build $(OBJECTS)
@@ -29,13 +33,14 @@ build:
 	@mkdir -p bin
 
 .PHONY: tests
-tests: CFALGS += $(TARGET)
+tests: CFALGS += $(SO_TARGET)
 tests: $(TESTS)
 	sh ./tests/runtests.sh
 
 clean:
 	rm -rf build $(OBJECTS) $(TESTS)
 	rm -rf tests/tests.log
+	rm -rf compile_flags.txt
 	find . -name "*.gc*" -exec rm {}\;
 	rm -rf `find . -name "*.dSYM" -print`
 
