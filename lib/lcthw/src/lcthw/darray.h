@@ -43,5 +43,19 @@ error:
     return NULL;
 }
 
+static inline void *Darray_remove(Darray *array,int i){ 
+    void *el = array->contents[i];
+    array->contents[i] = NULL;
+    return el;
+}
+
+static inline void *Darray_new(Darray *array){
+    check(array->elemen_size > 0,"Cant use Darray_new on 0 size darray");
+    return calloc(1, array->elemen_size);
+error:
+    return NULL;
+}
+
+#define Darray_free(E) free((E))
 
 #endif
