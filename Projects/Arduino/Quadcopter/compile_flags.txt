@@ -1,0 +1,6 @@
+-Isrc/quad
+-I usr/share/arduino/libraries/
+-I /usr/share/arduino/hardware/arduino/cores/arduino
+-flto
+-fno-fat-lto-objects
+-fdiagnostics-color=always

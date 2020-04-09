@@ -1,9 +1,8 @@
 $CC=gcc
-CFLAGS= -g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
-
-
-LIBS=-ldl $(OPTLIBS)
+CFLAGS= -g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS) 
 PREFIX?=/usr/local
+
+LDLIBS=-ldl -lbsd -lm $(OPTLIBS)
 
 SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o, $(SOURCES))
@@ -29,7 +28,7 @@ $(TARGET): build $(OBJECTS)
 	ranlib $@
 
 $(SO_TARGET): $(TARGET) $(OBJECTS)
-	$(CC) -shared -o $@ $(OBJECTS)
+	$(CC) -shared -o $@ $(OBJECTS) 
 
 build:
 	@mkdir -p build
