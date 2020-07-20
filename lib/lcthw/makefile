@@ -49,6 +49,7 @@ clean:
 install: all
 	install -d $(DESTDIR)/$(PREFIX)/lib/
 	install $(TARGET) $(DESTDIR)/$(PREFIX)/lib
+	cp $(shell pwd)/src/lcthw/*.h /usr/local/include/lcthw/
 
 check:
 	@echo Files with potentially dangerous functions.

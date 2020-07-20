@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <lcthw/bstrlib.h>
 
+
 static int default_compare(void *a,void *b){
     return bstrcmp((bstring)a,(bstring)b);
 }
@@ -153,6 +154,7 @@ static inline void Bstree_swap(BstreeNode *a,BstreeNode *b){
 
 static inline BstreeNode *Bstree_node_delete(Bstree *map,BstreeNode *node,void *key){
     int cmp = map->compare(node->key,key);
+
     if(cmp <0){
         if(node->left){
             return Bstree_node_delete(map,node->left,key);
