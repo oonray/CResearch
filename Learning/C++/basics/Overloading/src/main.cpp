@@ -7,16 +7,20 @@ private:
 
 public:
     Fraction(const Fraction& f) : _n(f._n), _d(f._d) {}
-    Fraction(int numerator, int denominator) : _n(numerator), _d(denominator) {}
+    Fraction(int numerator = 0, int denominator = 1)
+        : _n(numerator), _d(denominator)
+    {
+    }
     ~Fraction();
     int numerator() const { return _n; }
     int denominator() const { return _d; }
 
     Fraction& operator=(const Fraction&);
-    Fraction operator+(const Fraction&) const;
+    //    Fraction operator+(const Fraction&) const;
     Fraction operator-(const Fraction&) const;
     Fraction operator/(const Fraction&) const;
     Fraction operator*(const Fraction&)const;
+    int operator[](const int&);
 };
 
 Fraction::~Fraction()
@@ -34,10 +38,12 @@ Fraction& Fraction::operator=(const Fraction& frac)
     return *this;
 }
 
+/* Moved outside class to work with both lhs and rhs
 Fraction Fraction::operator+(const Fraction& frac) const
 {
-    return Fraction((_n * frac._n) + (_d * frac._n), _d * frac._d);
+    return Fraction((_n * frac._d) + (_d * frac._n), _d * frac._d);
 }
+*/
 
 Fraction Fraction::operator-(const Fraction& frac) const
 {
@@ -54,6 +60,14 @@ Fraction Fraction::operator/(const Fraction& frac) const
     return Fraction(_n * frac._d, _d * frac._d);
 }
 
+Fraction operator+(const Fraction& lhs, const Fraction& rhs)
+{
+    return Fraction((lhs.numerator() * rhs.denominator()) +
+                        (lhs.denominator() * rhs.numerator()),
+                    lhs.denominator() * rhs.denominator());
+}
+
+int Fraction::operator[](const int& n) { return n; };
 /*
  * __str__
  */
@@ -63,4 +77,13 @@ std::ostream& operator<<(std::ostream& o, const Fraction& frac)
     return o << frac.numerator() << '/' << frac.denominator();
 }
 
-int main() {}
+int main()
+{
+    Fraction a = 7;
+    Fraction b(2, 3);
+
+    std::cout << a << "+" << b << "=" << a + b << '\n';
+    std::cout << a << "+" << 14 << "=" << a + 14 << '\n';
+
+    std::cout << a[5] << '\n';
+}
