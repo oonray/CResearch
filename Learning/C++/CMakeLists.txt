@@ -29,13 +29,18 @@ project(transfors
         LANGUAGES CXX
         VERSION 1)
 
-include(build/conanbuildinfo.cmake)
+project(mapfilterreduce
+        LANGUAGES CXX
+        VERSION 1)
+
+include(cmake-build-debug/conanbuildinfo.cmake)
 conan_basic_setup()
 
 add_executable(overload basics/Overloading/src/main.cpp)
 add_executable(sockets sockets/src/main.cpp)
 add_executable(stl Tempaltes-STL/src/main.cpp)
 add_executable(transforms Transforms/src/main.cpp)
+add_executable(mapfilterreduce MapFilterReduce/src/main.cpp)
 
 target_link_libraries(overload ${CONAN_LIBS})
 target_link_libraries(sockets ${CONAN_LIBS})
