@@ -7,6 +7,7 @@
 #include <numeric>
 
 int main(){
+    // Neer use loops!
     // Data
     std::vector<int> data { 1,2,3,4,5 };
     std::vector<int> out;
