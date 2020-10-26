@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/oonray/git/CResearch/Learning/C++/MapFilterReduce/src/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+numeric
+-
+

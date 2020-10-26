@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/oonray/git/CResearch/Learning/C++/cmake-build-debug",
+  "command": "/usr/bin/c++   -I/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include -I/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include -I/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include  -Wall -Wextra   -g    -D_GLIBCXX_USE_CXX11_ABI=0 -std=gnu++2a -o CMakeFiles/mapfilterreduce.dir/MapFilterReduce/src/main.cpp.o -c /home/oonray/git/CResearch/Learning/C++/MapFilterReduce/src/main.cpp",
+  "file": "/home/oonray/git/CResearch/Learning/C++/MapFilterReduce/src/main.cpp"
+},
+{
+  "directory": "/home/oonray/git/CResearch/Learning/C++/cmake-build-debug",
+  "command": "/usr/bin/c++   -I/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include -I/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include -I/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include  -Wall -Wextra   -g    -D_GLIBCXX_USE_CXX11_ABI=0 -std=gnu++2a -o CMakeFiles/overload.dir/basics/Overloading/src/main.cpp.o -c /home/oonray/git/CResearch/Learning/C++/basics/Overloading/src/main.cpp",
+  "file": "/home/oonray/git/CResearch/Learning/C++/basics/Overloading/src/main.cpp"
+},
+{
+  "directory": "/home/oonray/git/CResearch/Learning/C++/cmake-build-debug",
+  "command": "/usr/bin/c++   -I/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include -I/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include -I/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include  -Wall -Wextra   -g    -D_GLIBCXX_USE_CXX11_ABI=0 -std=gnu++2a -o CMakeFiles/sockets.dir/sockets/src/main.cpp.o -c /home/oonray/git/CResearch/Learning/C++/sockets/src/main.cpp",
+  "file": "/home/oonray/git/CResearch/Learning/C++/sockets/src/main.cpp"
+},
+{
+  "directory": "/home/oonray/git/CResearch/Learning/C++/cmake-build-debug",
+  "command": "/usr/bin/c++   -I/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include -I/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include -I/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include  -Wall -Wextra   -g    -D_GLIBCXX_USE_CXX11_ABI=0 -std=gnu++2a -o CMakeFiles/stl.dir/Tempaltes-STL/src/main.cpp.o -c /home/oonray/git/CResearch/Learning/C++/Tempaltes-STL/src/main.cpp",
+  "file": "/home/oonray/git/CResearch/Learning/C++/Tempaltes-STL/src/main.cpp"
+},
+{
+  "directory": "/home/oonray/git/CResearch/Learning/C++/cmake-build-debug",
+  "command": "/usr/bin/c++   -I/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include -I/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include -I/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include  -Wall -Wextra   -g    -D_GLIBCXX_USE_CXX11_ABI=0 -std=gnu++2a -o CMakeFiles/transforms.dir/Transforms/src/main.cpp.o -c /home/oonray/git/CResearch/Learning/C++/Transforms/src/main.cpp",
+  "file": "/home/oonray/git/CResearch/Learning/C++/Transforms/src/main.cpp"
+}
+]

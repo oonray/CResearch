@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/oonray/git/CResearch/Learning/C++/Transforms/src/main.cpp
+algorithm
+-
+functional
+-
+iostream
+-
+map
+-
+sstream
+-
+string
+-
+vector
+-
+

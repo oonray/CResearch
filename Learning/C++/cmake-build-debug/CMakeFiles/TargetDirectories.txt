@@ -1,0 +1,7 @@
+/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/CMakeFiles/mapfilterreduce.dir
+/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/CMakeFiles/overload.dir
+/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/CMakeFiles/sockets.dir
+/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/CMakeFiles/stl.dir
+/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/CMakeFiles/transforms.dir

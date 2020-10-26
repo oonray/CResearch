@@ -1,0 +1,11 @@
+/home/oonray/.local/share/JetBrains/Toolbox/apps/CLion/ch-1/203.4818.55/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/oonray/git/CResearch/Learning/C++
+-- Conan: Adjusting output directories
+-- Conan: Using cmake global configuration
+-- Conan: Adjusting default RPATHs Conan policies
+-- Conan: Adjusting language standard
+-- Current conanbuildinfo.cmake directory: /home/oonray/git/CResearch/Learning/C++/cmake-build-debug
+-- Conan: Compiler GCC>=5, checking major version 8
+-- Conan: Checking correct version: 8
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/oonray/git/CResearch/Learning/C++/cmake-build-debug

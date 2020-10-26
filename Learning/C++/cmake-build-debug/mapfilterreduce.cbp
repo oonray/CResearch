@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="mapfilterreduce"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-debug\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mapfilterreduce">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/mapfilterreduce" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 mapfilterreduce"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mapfilterreduce/fast">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/mapfilterreduce" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 mapfilterreduce/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="overload">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/overload" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 overload"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="overload/fast">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/overload" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 overload/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sockets">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/sockets" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 sockets"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sockets/fast">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/sockets" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 sockets/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stl">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/stl" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 stl"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stl/fast">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/stl" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 stl/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="transforms">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/transforms" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 transforms"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="transforms/fast">
+				<Option output="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin/transforms" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/oonray/.conan/data/boost/1.73.0/_/_/package/71c01225e91c4f23651f7fba6f520b2d8c4fbac5/include"/>
+					<Add directory="/home/oonray/.conan/data/statsdclient/1.0.1/vthiery/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/oonray/.conan/data/zlib/1.2.11/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/oonray/.conan/data/bzip2/1.0.8/_/_/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 transforms/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/oonray/git/CResearch/Learning/C++/MapFilterReduce/src/main.cpp">
+			<Option target="mapfilterreduce"/>
+		</Unit>
+		<Unit filename="/home/oonray/git/CResearch/Learning/C++/Tempaltes-STL/src/main.cpp">
+			<Option target="stl"/>
+		</Unit>
+		<Unit filename="/home/oonray/git/CResearch/Learning/C++/Transforms/src/main.cpp">
+			<Option target="transforms"/>
+		</Unit>
+		<Unit filename="/home/oonray/git/CResearch/Learning/C++/basics/Overloading/src/main.cpp">
+			<Option target="overload"/>
+		</Unit>
+		<Unit filename="/home/oonray/git/CResearch/Learning/C++/sockets/src/main.cpp">
+			<Option target="sockets"/>
+		</Unit>
+		<Unit filename="/home/oonray/git/CResearch/Learning/C++/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/oonray/git/CResearch/Learning/C++/cmake-build-debug/conanbuildinfo.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
