@@ -1,0 +1,8 @@
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/rebuild_cache.dir
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/edit_cache.dir
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir
+C:/Users/alexa/git/CResearch/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir
