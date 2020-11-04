@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="mapfilterreduce" targetName="sockets" />
+      <config projectName="mapfilterreduce" targetName="mapfilterreduce" />
+      <config projectName="mapfilterreduce" targetName="transforms" />
+      <config projectName="mapfilterreduce" targetName="stl" />
+      <config projectName="mapfilterreduce" targetName="overload" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dcced44c-654c-41e4-8ad9-867b2a4faf5c" name="Default Changelist" comment="Threadding">
+      <change afterPath="$PROJECT_DIR$/.idea/transfors.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning/C++/MapFilterReduce/src/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning/C++/Threadding/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CResearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CResearch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C++/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C++/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C++/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/3.17.3/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/3.17.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/mutex.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/overload.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/sockets.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/stl.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/thread.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/CMakeFiles/transforms.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/compile_commands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/mutex.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C++/cmake-build-debug-visual-studio-clang/par_concur.cbp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jSNrsUAiOSs1dP7JICyViZzd8v" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WorkOps" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="CMake Application.mapfilterreduce">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mapfilterreduce" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mapfilterreduce" TARGET_NAME="mapfilterreduce" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mapfilterreduce" RUN_TARGET_NAME="mapfilterreduce">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="overload" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mapfilterreduce" TARGET_NAME="overload" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mapfilterreduce" RUN_TARGET_NAME="overload">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sockets" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mapfilterreduce" TARGET_NAME="sockets" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mapfilterreduce" RUN_TARGET_NAME="sockets">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="stl" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mapfilterreduce" TARGET_NAME="stl" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mapfilterreduce" RUN_TARGET_NAME="stl">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="transforms" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mapfilterreduce" TARGET_NAME="transforms" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mapfilterreduce" RUN_TARGET_NAME="transforms">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.mapfilterreduce" />
+      <item itemvalue="CMake Application.overload" />
+      <item itemvalue="CMake Application.sockets" />
+      <item itemvalue="CMake Application.stl" />
+      <item itemvalue="CMake Application.transforms" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dcced44c-654c-41e4-8ad9-867b2a4faf5c" name="Default Changelist" comment="" />
+      <created>1603793734807</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603793734807</updated>
+      <workItem from="1603793735922" duration="1865000" />
+      <workItem from="1603797317131" duration="609000" />
+      <workItem from="1603963366233" duration="1130000" />
+      <workItem from="1603980964937" duration="599000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1603797323668">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1603797323668" />
+  </component>
+</project>
