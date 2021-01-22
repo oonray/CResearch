@@ -34,11 +34,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcced44c-654c-41e4-8ad9-867b2a4faf5c" name="Default Changelist" comment="Threadding">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learning/C++/Boost/Asio/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learning/C++/Boost/Beast/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/minunit.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/testing.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C/Advanced/DesignPatterns/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C++/DesignPatterns/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C/Advanced/DesignPatterns/src/Composete.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C++/DesignPatterns/src/Composete.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C/Advanced/DesignPatterns/src/FactoryMethod.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C++/DesignPatterns/src/FactoryMethod.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C/Advanced/KernelModules/RaspberryPi/FlightModule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C/RaspberryPi/FlightModule/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C/Advanced/KernelModules/RaspberryPi/FlightModule/arduino/arduino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C/RaspberryPi/FlightModule/arduino/arduino.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C/Advanced/KernelModules/RaspberryPi/FlightModule/lisence.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C/RaspberryPi/FlightModule/lisence.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Learning/C/Advanced/KernelModules/RaspberryPi/FlightModule/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Learning/C/RaspberryPi/FlightModule/makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/c-skeleton/zlog" beforeDir="false" afterPath="$PROJECT_DIR$/lib/c-skeleton/zlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/c-skeleton/zlog/INSTALL" beforeDir="false" afterPath="$PROJECT_DIR$/lib/c-skeleton/zlog/INSTALL" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +72,7 @@
     <option name="namespace" value="default" />
   </component>
   <component name="ProjectId" id="1jSNrsUAiOSs1dP7JICyViZzd8v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -78,15 +86,17 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BlackForge" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alexa\git\CResearch\Learning\C" />
+      <recent name="C:\Users\alexa\git\CResearch\Learning\C++" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.mapfilterreduce">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="mapfilterreduce" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mapfilterreduce" TARGET_NAME="mapfilterreduce" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mapfilterreduce" RUN_TARGET_NAME="mapfilterreduce">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -110,11 +120,6 @@
     <configuration name="transforms" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mapfilterreduce" TARGET_NAME="transforms" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mapfilterreduce" RUN_TARGET_NAME="transforms">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -141,7 +146,11 @@
       <workItem from="1604599701573" duration="1195000" />
       <workItem from="1604646831900" duration="3047000" />
       <workItem from="1604742009859" duration="846000" />
-      <workItem from="1610612595843" duration="1145000" />
+      <workItem from="1610612595843" duration="2905000" />
+      <workItem from="1610694806531" duration="3693000" />
+      <workItem from="1610889677437" duration="593000" />
+      <workItem from="1610953449708" duration="942000" />
+      <workItem from="1611298558444" duration="595000" />
     </task>
     <servers />
   </component>
