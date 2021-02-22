@@ -11,10 +11,11 @@ jobs:
         with:
           repository: oonray/CResearch.wiki
           token: ${{ secrets.TOKEN }}   
-          ref: 'master'  
+          |
       - uses: actions/setup-node@v1
       - run: |
              #!/bin/bash
+              git pull
               git config --global user.email "alexanderbjornsrud@gmail.com"
               git config --global user.name "oonray"
               sudo npm install github-wiki-sidebar -g
