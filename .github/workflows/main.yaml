@@ -11,7 +11,7 @@ jobs:
         with:
           repository: oonray/CResearch.wiki
           token: ${{ secrets.TOKEN }}   
-          |
+
       - uses: actions/setup-node@v1
       - run: |
              #!/bin/bash
