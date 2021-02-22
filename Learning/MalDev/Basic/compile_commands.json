@@ -1,0 +1,16 @@
+[
+    {
+        "arguments": [
+            "x86_64-w64-mingw32-gcc-9",
+            "-c",
+            "-I",
+            "/mnt/c/TDM-GCC-64/x86_64-w64-mingw32/include/",
+            "-mconsole",
+            "-o",
+            "build/Windows/maldev01.exe",
+            "src/main.c"
+        ],
+        "directory": "/mnt/c/Users/alexa/git/CResearch/Learning/MalDev/Basic",
+        "file": "src/main.c"
+    }
+]

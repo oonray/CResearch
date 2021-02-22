@@ -1,0 +1,30 @@
+name: "Update Sidebar For Wiki"
+
+on:
+  gollum
+
+jobs:
+  update_sidebar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: oonray/CResearch.wiki
+          token: ${{ secrets.TOKEN }}   
+          ref: 'master'  
+      - uses: actions/setup-node@v1
+      - run: |
+             #!/bin/bash
+              git config --global user.email "alexanderbjornsrud@gmail.com"
+              git config --global user.name "oonray"
+              sudo npm install github-wiki-sidebar -g
+              github-wiki-sidebar --silent
+              git add _Sidebar.md
+              git commit -m "Updated Sidebar"
+              
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          repository: datanav/infrastructure.wiki
+          github_token: ${{ secrets.TOKEN }}
+          branch: 'master' 

@@ -1,19 +1,6 @@
 [
     {
         "arguments": [
-            "x86_64-w64-mingw32-gcc",
-            "-c",
-            "-I",
-            "/mnt/c/TDM-GCC-64/x86_64-w64-mingw32/include/",
-            "-o",
-            "build/windows/proxy.exe",
-            "src/main.c"
-        ],
-        "directory": "/mnt/c/Users/alexa/git/CResearch/Projects/Proxy",
-        "file": "src/main.c"
-    },
-    {
-        "arguments": [
             "gcc",
             "-c",
             "-o",

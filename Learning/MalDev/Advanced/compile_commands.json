@@ -1,0 +1,16 @@
+[
+    {
+        "arguments": [
+            "x86_64-w64-mingw32-gcc-9",
+            "-c",
+            "-I",
+            "/mnt/f/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/include",
+            "-mconsole",
+            "-o",
+            "build/Windows/maldev01.exe",
+            "src/main.c"
+        ],
+        "directory": "/mnt/c/Users/alexa/git/CResearch/Learning/MalDev/Advanced",
+        "file": "src/main.c"
+    }
+]
