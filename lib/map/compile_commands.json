@@ -1,0 +1,19 @@
+[
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-g",
+            "-O2",
+            "-Wall",
+            "-Isrc",
+            "-DNDEBUG",
+            "-fPIC",
+            "-o",
+            "src/map.o",
+            "src/map.c"
+        ],
+        "directory": "/mnt/c/Users/alexa/git/CResearch/lib/map",
+        "file": "src/map.c"
+    }
+]
