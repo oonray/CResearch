@@ -1,0 +1,19 @@
+[
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-g",
+            "-O2",
+            "-Wall",
+            "-Isrc",
+            "-DNDEBUG",
+            "build/libvector.so",
+            "-o",
+            "tests/vector_tests",
+            "tests/vector_tests.c"
+        ],
+        "directory": "/mnt/c/Users/alexa/git/CResearch/lib/vector",
+        "file": "tests/vector_tests.c"
+    }
+]

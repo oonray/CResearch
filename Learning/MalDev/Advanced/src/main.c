@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include "win.h"
+#include "winnt.h"
 
 int main(){
 }
