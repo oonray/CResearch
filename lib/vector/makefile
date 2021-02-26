@@ -1,11 +1,13 @@
 CC=gcc
-TEST_FLAGS=-lrt -lm -Isrc 
-
-$CC=gcc
-CFLAGS= -g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
 PREFIX?=/usr/local
 
-LDLIBS=-ldl -lm $(OPTLIBS)
+TEST_FLAGS=-lrt -L$(PREFIX)/lib/ -lm -Isrc 
+
+CFLAGS= -g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
+
+LIBS=-ldl -L$(PREFIX)/lib/ $(OPTLIBS)
+LDLIBS=-ldl -lm -L$(PREFIX)/lib/ $(OPTLIBS)
+
 
 SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o, $(SOURCES))
@@ -19,9 +21,9 @@ NAME=vector
 TARGET=build/lib$(NAME).a
 SO_TARGET=$(patsubst %.a,%.so, $(TARGET))
 
-all:$(TARGET) $(SO_TARGET) tests
+all:$(TARGET) $(SO_TARGET) unitests
 
-dev: CFLAGS= -g -Wall -Isrc -W all -Wextra $(OPTFLAGS)
+dev: CFLAGS=-g -Wall -Isrc -Wextra $(OPTFLAGS)
 dev: all
 
 $(TARGET): CFLAGS += -fPIC
@@ -34,22 +36,23 @@ $(SO_TARGET): $(TARGET) $(OBJECTS)
 
 build:
 	@mkdir -p build
+	@mkdir -p bin
 
 .PHONY: test
-tests:
-	$(CC) $(TEST_FLAGS) $(TEST_SRC $(SOURCES) -o build/$(name)_test
+unitests:
+	$(CC) $(TEST_FLAGS) $(TEST_SRC) -lvector -o bin/$(NAME)_test
+	/bin/bash -c bin/$(NAME)_test
 
 clean:
-	rm -rf build $(OBJECTS) $(TESTS)
-	rm -rf tests/tests.log
+	rm -rf build bin $(OBJECTS) $(TESTS)
 	rm -rf compile_flags.txt
 	find . -name "*.gc*" -delete
 	rm -rf `find . -name "*.dSYM" -print`
 
 install: all
-	sudo mkdir -p /usr/local/include/c/
-	install -d $(DESTDIR)/$(PREFIX)/lib/
-	install $(TARGET) $(DESTDIR)/$(PREFIX)/lib
+	mkdir -p /usr/local/include/c/
+	install -d $(DESTDIR)$(PREFIX)/lib/
+	install $(TARGET) $(DESTDIR)$(PREFIX)/lib
 	cp $(shell pwd)/src/*.h /usr/local/include/c/
 
 check:

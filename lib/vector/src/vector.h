@@ -5,6 +5,8 @@
 
 #include "dbg.h"
 
+typedef int (Vector_Traverse_Func)(void *);
+
 typedef struct Vector {
 	int end;
 	int max;
@@ -24,6 +26,8 @@ int Vector_Push(Vector *arr,void *el);
 void *Vector_Pop(Vector *arr);
 
 void Vector_Clear_Destroy(Vector *arr);
+
+int Vector_Traverse(Vector *arr,Vector_Traverse_Func func);
 
 #define Vector_Last(A) ((A)->contens[(A)->end])
 #define Vector_First(A) ((A)->contents[0])
