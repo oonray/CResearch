@@ -3,23 +3,6 @@
         "arguments": [
             "gcc",
             "-c",
-            "-g",
-            "-O2",
-            "-Wall",
-            "-Isrc",
-            "-DNDEBUG",
-            "-fPIC",
-            "-o",
-            "src/vector.o",
-            "src/vector.c"
-        ],
-        "directory": "/mnt/c/Users/alexa/git/CResearch/lib/vector",
-        "file": "src/vector.c"
-    },
-    {
-        "arguments": [
-            "gcc",
-            "-c",
             "-Isrc",
             "-o",
             "bin/vector_test",
@@ -27,18 +10,6 @@
         ],
         "directory": "/mnt/c/Users/alexa/git/CResearch/lib/vector",
         "file": "tests/vector_tests.c"
-    },
-    {
-        "arguments": [
-            "gcc",
-            "-c",
-            "-Isrc",
-            "-o",
-            "bin/vector_test",
-            "src/vector.c"
-        ],
-        "directory": "/mnt/c/Users/alexa/git/CResearch/lib/vector",
-        "file": "src/vector.c"
     },
     {
         "arguments": [

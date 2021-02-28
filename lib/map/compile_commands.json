@@ -3,14 +3,33 @@
         "arguments": [
             "gcc",
             "-c",
-            "-g",
-            "-O2",
-            "-Wall",
             "-Isrc",
-            "-DNDEBUG",
-            "-fPIC",
             "-o",
-            "src/map.o",
+            "build/_test",
+            "tests/map_tests.c"
+        ],
+        "directory": "/mnt/c/Users/alexa/git/CResearch/lib/map",
+        "file": "tests/map_tests.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-Isrc",
+            "-o",
+            "build/_test",
+            "tests/munit.c"
+        ],
+        "directory": "/mnt/c/Users/alexa/git/CResearch/lib/map",
+        "file": "tests/munit.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-Isrc",
+            "-o",
+            "build/_test",
             "src/map.c"
         ],
         "directory": "/mnt/c/Users/alexa/git/CResearch/lib/map",
