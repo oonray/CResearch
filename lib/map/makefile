@@ -1,16 +1,16 @@
 CC=gcc
+AR=ar
+RANLIB=ranlib
 PREFIX?=/usr/local
+MINGWPREFIX=/mnt/f/lib/SDL2/SDL2-2.0.14/x86_64-w64-mingw32/
 
-TEST_FLAGS=-lrt -lm -L$(PREFIX)/lib/ -lvector  -Isrc 
+TEST_FLAGS=-lrt -lm -Isrc 
+CFLAGS=-g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
+LIBS=-L /usr/local/lib -ldl $(OPTLIBS)
+LDLIBS=-ldl -lm $(OPTLIBS)
 
-CFLAGS= -g -O2 -Wall -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)
-
-LIBS=-ldl -L$(PREFIX)/lib/ -lvector $(OPTLIBS)
-LDLIBS=-ldl -lm -L$(PREFIX)/lib/ -lvector $(OPTLIBS)
-
-
-SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o, $(SOURCES))
+MINOBJECTS=$(patsubst %.o,%.mingw.o, $(OBJECTS))
 
 TEST_SRC=$(wildcard tests/*_tests.c)
 TEST_SRC+=tests/munit.c
@@ -21,18 +21,7 @@ NAME=map
 TARGET=build/lib$(NAME).a
 SO_TARGET=$(patsubst %.a,%.so, $(TARGET))
 
-all:$(TARGET) $(SO_TARGET) unitests
-
-dev: CFLAGS=-g -Wall -Isrc -Wextra $(OPTFLAGS)
-dev: all
-
-$(TARGET): CFLAGS += -fPIC
-$(TARGET): build $(OBJECTS)
-	ar rcs $@ $(OBJECTS)
-	ranlib $@
-
-$(SO_TARGET): $(TARGET) $(OBJECTS)
-	$(CC) -shared -o $@ $(OBJECTS)
+all:build unitests
 
 build:
 	@mkdir -p build
@@ -40,21 +29,18 @@ build:
 
 .PHONY: test
 unitests:
-	$(CC) $(TEST_FLAGS) tests/vector_tests.c tests/munit.c $(LIBS) -o bin/vector_test
-	/bin/bash -c bin/vector_test
-	$(CC) $(TEST_FLAGS) tests/map_tests.c tests/munit.c $(SOURCES) $(LIBS) -o bin/$(NAME)_test
+	$(CC) $(TEST_SRC) $(TEST_FLAGS) $(LIBS) -o bin/$(NAME)_test
 	/bin/bash -c bin/$(NAME)_test
 
 clean:
-	rm -rf build bin $(OBJECTS) $(TESTS)
-	rm -rf compile_flags.txt
+	rm -rf build bin $(OBJECTS) $(MINOBJECTS) $(TESTS)
+	rm -rf compile_commands.json
 	find . -name "*.gc*" -delete
 	rm -rf `find . -name "*.dSYM" -print`
+	rm -rf .ccls-cache .clangd
 
 install: all
 	mkdir -p /usr/local/include/c/
-	install -d $(DESTDIR)/$(PREFIX)/lib/
-	install $(TARGET) $(DESTDIR)/$(PREFIX)/lib
 	cp $(shell pwd)/src/*.h /usr/local/include/c/
 
 check:

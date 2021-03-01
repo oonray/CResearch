@@ -5,7 +5,7 @@
             "-c",
             "-Isrc",
             "-o",
-            "build/_test",
+            "bin/map_test",
             "tests/map_tests.c"
         ],
         "directory": "/mnt/c/Users/alexa/git/CResearch/lib/map",
@@ -17,22 +17,10 @@
             "-c",
             "-Isrc",
             "-o",
-            "build/_test",
+            "bin/map_test",
             "tests/munit.c"
         ],
         "directory": "/mnt/c/Users/alexa/git/CResearch/lib/map",
         "file": "tests/munit.c"
-    },
-    {
-        "arguments": [
-            "gcc",
-            "-c",
-            "-Isrc",
-            "-o",
-            "build/_test",
-            "src/map.c"
-        ],
-        "directory": "/mnt/c/Users/alexa/git/CResearch/lib/map",
-        "file": "src/map.c"
     }
 ]

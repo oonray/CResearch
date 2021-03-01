@@ -1,5 +1,5 @@
 #include "munit.h"
-#include "../src/vector.h"
+#include "vector.h"
 
 MunitResult test_new(const MunitParameter params[], void* user_data_or_fixture){
 		Vector *arr = Vector_New(sizeof(int),100);

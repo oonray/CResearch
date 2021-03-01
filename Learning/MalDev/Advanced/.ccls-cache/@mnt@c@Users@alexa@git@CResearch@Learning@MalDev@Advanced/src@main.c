@@ -1,12 +1,13 @@
-//
-// Created by alexa on 29/01/2021.
-//
+#include "libloaderapi.h"
 #include <stdio.h>
-#include "win.h"
-#include "winnt.h"
+
+#include <windows.h>
+#include <winbase.h>
+#include <winnt.h>
+
+#include <c/dbg.h>
+
 
 int main(){
-	IMAGE_FILE_HEADER ifh;
+			
 }
-
-
