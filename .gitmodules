@@ -4,3 +4,15 @@
 [submodule "Projects/C++/Checlister"]
 	path = Projects/C++/Checlister
 	url = https://github.com/oonray/Checlister
+[submodule "Learning/MalDev/TheArtOfExploitationBook-Material"]
+	path = Learning/MalDev/TheArtOfExploitationBook-Material
+	url = https://github.com/oonray/TheArtOfExploitationBook-Material
+[submodule "Learning/MalDev/Sektor7"]
+	path = Learning/MalDev/Sektor7
+	url = git@github.com:oonray/Sektor7.git
+[submodule "Learning/ShellCodersHandBook-Material"]
+	path = Learning/ShellCodersHandBook-Material
+	url = git@github.com:oonray/ShellCodersHandBook-Material.git
+[submodule "Learning/TheArtOfExploitationBook-Material"]
+	path = Learning/TheArtOfExploitationBook-Material
+	url = https://github.com/oonray/TheArtOfExploitationBook-Material

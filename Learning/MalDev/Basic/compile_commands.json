@@ -4,13 +4,16 @@
             "x86_64-w64-mingw32-gcc-9",
             "-c",
             "-I",
-            "/mnt/c/TDM-GCC-64/x86_64-w64-mingw32/include/",
+            "/mnt/f/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/include",
+            "-I",
+            "/usr/local/include",
+            "-w",
             "-mconsole",
             "-o",
-            "build/Windows/maldev01.exe",
-            "src/main.c"
+            "build/maldev01.exe",
+            "src/01.implant.c"
         ],
         "directory": "/mnt/c/Users/alexa/git/CResearch/Learning/MalDev/Basic",
-        "file": "src/main.c"
+        "file": "src/01.implant.c"
     }
 ]

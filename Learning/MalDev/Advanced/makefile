@@ -15,6 +15,6 @@ win_run: windows
 	build/Windows/${NAME}.exe
 
 clean:
-	rm -rf build*
+	rm -rf build/*
 
 

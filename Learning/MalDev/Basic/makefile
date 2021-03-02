@@ -1,27 +1,21 @@
+
 TARGET=$(wildcard src/*.c)
 GO_TARGET=$(wildcard src/*.go)
-WININCLUDE=-I /mnt/c/TDM-GCC-64/x86_64-w64-mingw32/include/
-WINLIBS=-lmingw32
-
+WININCLUDE=-I /mnt/f/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/include -I /usr/local/include
+WINLIBS=-lmingw32 
+WINFLAGS=-w -Wl,-subsystem,console -mconsole
 NAME=maldev01
-CC=gcc
+CC=x86_64-w64-mingw32-gcc-9
 
 all: windows
 
 windows:
-	x86_64-w64-mingw32-gcc-9  ${TARGET} ${WININCLUDE} ${WINLIBS} ${WINFLAGS} -mconsole -o  build/Windows/${NAME}.exe
-
-linux:
-	${CC} ${TARGET} ${INCLUDE} ${LIBS} ${FLAGS} -o  build/Linux/${NAME}
+	$(CC)  $(TARGET) $(WININCLUDE) $(WINLIBS) $(WINFLAGS) -o  build/${NAME}.exe
 
 win_run: windows
 	build/Windows/${NAME}.exe
 
-lin_run: linux
-	build/Linux/${NAME}
-
 clean:
-	rm -rf build/Linux/*
-	rm -rf build/Windows/*
+	rm -rf build/*
 
 
